@@ -1,8 +1,24 @@
 {% liquid
+  assign selected_product = section.settings.product
+  if selected_product == blank and product != blank
+    assign selected_product = product
+  endif
+
+  assign default_buy_link = routes.all_products_collection_url
+  if selected_product != blank
+    assign buy_link = selected_product.url
+  elsif section.settings.buy_link != blank
+    assign buy_link = section.settings.buy_link
+  else
+    assign buy_link = default_buy_link
+  endif
+
   assign anchor_id = section.settings.anchor_id | strip
 
   if section.settings.product_image != blank
     assign product_image = section.settings.product_image | image_url: width: 900
+  elsif selected_product != blank and selected_product.featured_image != blank
+    assign product_image = selected_product.featured_image | image_url: width: 900
   else
     assign product_image = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
   endif
@@ -17,6 +33,22 @@
     assign diagram_image_mobile = section.settings.diagram_image_mobile | image_url: width: 700
   else
     assign diagram_image_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/fairPlay_landing_movilno-hacer-caso-a-fotos-04.png'
+  endif
+
+  if section.settings.product_title != blank
+    assign product_title = section.settings.product_title
+  elsif selected_product != blank
+    assign product_title = selected_product.title
+  else
+    assign product_title = blank
+  endif
+
+  if section.settings.product_copy != blank
+    assign product_copy = section.settings.product_copy
+  elsif selected_product != blank and selected_product.description != blank
+    assign product_copy = selected_product.description | strip_html | truncate: 150
+  else
+    assign product_copy = blank
   endif
 %}
 
@@ -46,14 +78,24 @@
 
     <div class="fairplay-home-recommendations__detail">
       <div class="fairplay-home-recommendations__panel">
-        <img
-          src="{{ product_image }}"
-          alt="Presentacion Fair Play For Men"
-          loading="lazy"
+        <a
+          class="fairplay-home-recommendations__product-link"
+          href="{{ buy_link }}"
+          aria-label="Comprar {% if product_title != blank %}{{ product_title | escape }}{% else %}Fair Play For Men{% endif %}"
         >
+          <img
+            src="{{ product_image }}"
+            alt="{% if product_title != blank %}{{ product_title | escape }}{% else %}Presentacion Fair Play For Men{% endif %}"
+            loading="lazy"
+          >
+        </a>
         <div>
-          <h3>{{ section.settings.product_title }}</h3>
-          <p>{{ section.settings.product_copy }}</p>
+          {% if product_title != blank %}
+            <h3>{{ product_title }}</h3>
+          {% endif %}
+          {% if product_copy != blank %}
+            <p>{{ product_copy }}</p>
+          {% endif %}
         </div>
       </div>
 
@@ -121,9 +163,19 @@
       "default": "<p><strong>Conservacion:</strong> Conservese en su envase original, a temperatura ambiente y en un lugar fresco, ventilado y seco. Cerciorese de cerrarlo hermeticamente despues de cada uso para evitar su contaminacion y humedad.</p>"
     },
     {
+      "type": "product",
+      "id": "product",
+      "label": "Linked product"
+    },
+    {
       "type": "image_picker",
       "id": "product_image",
-      "label": "Product image"
+      "label": "Custom product image"
+    },
+    {
+      "type": "url",
+      "id": "buy_link",
+      "label": "Fallback buy link"
     },
     {
       "type": "range",

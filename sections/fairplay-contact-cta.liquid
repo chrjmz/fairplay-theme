@@ -1,12 +1,41 @@
 {% liquid
+  assign selected_product = section.settings.product
+  if selected_product == blank and product != blank
+    assign selected_product = product
+  endif
+
   assign default_buy_link = routes.all_products_collection_url
-  assign buy_link = section.settings.buy_link | default: default_buy_link
+  if selected_product != blank
+    assign buy_link = selected_product.url
+  elsif section.settings.buy_link != blank
+    assign buy_link = section.settings.buy_link
+  else
+    assign buy_link = default_buy_link
+  endif
   assign anchor_id = section.settings.anchor_id | strip
 
   if section.settings.product_image != blank
     assign product_image = section.settings.product_image | image_url: width: 900
+  elsif selected_product != blank and selected_product.featured_image != blank
+    assign product_image = selected_product.featured_image | image_url: width: 900
   else
     assign product_image = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
+  endif
+
+  if section.settings.product_title != blank
+    assign product_title = section.settings.product_title
+  elsif selected_product != blank
+    assign product_title = selected_product.title
+  else
+    assign product_title = blank
+  endif
+
+  if section.settings.product_copy != blank
+    assign product_copy = section.settings.product_copy
+  elsif selected_product != blank and selected_product.description != blank
+    assign product_copy = selected_product.description | strip_html | truncate: 150
+  else
+    assign product_copy = blank
   endif
 
   assign form_id = 'ContactForm-' | append: section.id
@@ -121,16 +150,22 @@
     </div>
 
     <aside class="fairplay-contact__product-card">
-      <img
-        src="{{ product_image }}"
-        alt="Fair Play For Men"
-        loading="lazy"
+      <a
+        class="fairplay-contact__product-link"
+        href="{{ buy_link }}"
+        aria-label="Comprar {% if product_title != blank %}{{ product_title | escape }}{% else %}Fair Play For Men{% endif %}"
       >
-      {% if section.settings.product_title != blank %}
-        <h3>{{ section.settings.product_title }}</h3>
+        <img
+          src="{{ product_image }}"
+          alt="{% if product_title != blank %}{{ product_title | escape }}{% else %}Fair Play For Men{% endif %}"
+          loading="lazy"
+        >
+      </a>
+      {% if product_title != blank %}
+        <h3>{{ product_title }}</h3>
       {% endif %}
-      {% if section.settings.product_copy != blank %}
-        <p>{{ section.settings.product_copy }}</p>
+      {% if product_copy != blank %}
+        <p>{{ product_copy }}</p>
       {% endif %}
       <a
         href="{{ buy_link }}"
@@ -253,6 +288,11 @@
     text-align: center;
   }
 
+  .fairplay-contact__product-link {
+    display: block;
+    width: 100%;
+  }
+
   .fairplay-contact__product-card img {
     width: min(100%, var(--fairplay-contact-product-width, 180px));
     object-fit: contain;
@@ -366,9 +406,14 @@
       "default": "Los campos marcados con * son obligatorios"
     },
     {
+      "type": "product",
+      "id": "product",
+      "label": "Linked product"
+    },
+    {
       "type": "image_picker",
       "id": "product_image",
-      "label": "Product image"
+      "label": "Custom product image"
     },
     {
       "type": "header",
@@ -415,7 +460,7 @@
     {
       "type": "url",
       "id": "buy_link",
-      "label": "Buy link"
+      "label": "Fallback buy link"
     },
     {
       "type": "header",

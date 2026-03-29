@@ -388,6 +388,11 @@
   background: transparent;
 }
 
+.fairplay-home-recommendations__product-link {
+  display: inline-flex;
+  justify-content: center;
+}
+
 .fairplay-home-recommendations__panel img {
   display: block;
   width: 100%;

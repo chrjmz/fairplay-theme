@@ -1,6 +1,17 @@
 {% liquid
+  assign selected_product = section.settings.product
+  if selected_product == blank and product != blank
+    assign selected_product = product
+  endif
+
   assign default_buy_link = routes.all_products_collection_url
-  assign buy_link = section.settings.buy_link | default: default_buy_link
+  if selected_product != blank
+    assign buy_link = selected_product.url
+  elsif section.settings.buy_link != blank
+    assign buy_link = section.settings.buy_link
+  else
+    assign buy_link = default_buy_link
+  endif
   assign anchor_id = section.settings.anchor_id | strip
   assign video_embed_url = section.settings.video_embed_url | default: 'https://www.youtube.com/embed/JVkUjvbwGYM'
 %}
@@ -66,9 +77,14 @@
       "default": "Comprar"
     },
     {
+      "type": "product",
+      "id": "product",
+      "label": "Linked product"
+    },
+    {
       "type": "url",
       "id": "buy_link",
-      "label": "Buy link"
+      "label": "Fallback buy link"
     },
     {
       "type": "url",

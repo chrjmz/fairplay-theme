@@ -1,6 +1,17 @@
 {% liquid
+  assign selected_product = section.settings.product
+  if selected_product == blank and product != blank
+    assign selected_product = product
+  endif
+
   assign default_buy_link = routes.all_products_collection_url
-  assign buy_link = section.settings.buy_link | default: default_buy_link
+  if selected_product != blank
+    assign buy_link = selected_product.url
+  elsif section.settings.buy_link != blank
+    assign buy_link = section.settings.buy_link
+  else
+    assign buy_link = default_buy_link
+  endif
   assign video_embed_url = section.settings.video_embed_url | default: 'https://www.youtube.com/embed/JVkUjvbwGYM'
 
   if section.settings.hero_background != blank
@@ -17,6 +28,8 @@
 
   if section.settings.hero_product != blank
     assign hero_product = section.settings.hero_product | image_url: width: 800
+  elsif selected_product != blank and selected_product.featured_image != blank
+    assign hero_product = selected_product.featured_image | image_url: width: 800
   else
     assign hero_product = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
   endif
@@ -41,6 +54,8 @@
 
   if section.settings.detail_image != blank
     assign detail_image = section.settings.detail_image | image_url: width: 900
+  elsif selected_product != blank and selected_product.featured_image != blank
+    assign detail_image = selected_product.featured_image | image_url: width: 900
   else
     assign detail_image = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
   endif
@@ -974,9 +989,14 @@
       "label": "Community banner mobile image"
     },
     {
+      "type": "product",
+      "id": "product",
+      "label": "Linked product"
+    },
+    {
       "type": "url",
       "id": "buy_link",
-      "label": "Buy link"
+      "label": "Fallback buy link"
     },
     {
       "type": "header",

@@ -1,6 +1,17 @@
 {% liquid
+  assign selected_product = section.settings.product
+  if selected_product == blank and product != blank
+    assign selected_product = product
+  endif
+
   assign default_buy_link = routes.all_products_collection_url
-  assign buy_link = section.settings.buy_link | default: default_buy_link
+  if selected_product != blank
+    assign buy_link = selected_product.url
+  elsif section.settings.buy_link != blank
+    assign buy_link = section.settings.buy_link
+  else
+    assign buy_link = default_buy_link
+  endif
   assign anchor_id = section.settings.anchor_id | strip
 
   if section.settings.hero_background != blank
@@ -17,6 +28,8 @@
 
   if section.settings.hero_product != blank
     assign hero_product = section.settings.hero_product | image_url: width: 800
+  elsif selected_product != blank and selected_product.featured_image != blank
+    assign hero_product = selected_product.featured_image | image_url: width: 800
   else
     assign hero_product = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
   endif
@@ -61,11 +74,11 @@
       <a
         class="fairplay-home-hero__product"
         href="{{ buy_link }}"
-        aria-label="Comprar Fair Play For Men"
+        aria-label="Comprar {% if selected_product != blank %}{{ selected_product.title | escape }}{% else %}Fair Play For Men{% endif %}"
       >
         <img
           src="{{ hero_product }}"
-          alt="Envase Fair Play For Men"
+          alt="{% if selected_product != blank %}{{ selected_product.title | escape }}{% else %}Envase Fair Play For Men{% endif %}"
           loading="lazy"
         >
       </a>
@@ -149,9 +162,14 @@
       "default": 96
     },
     {
+      "type": "product",
+      "id": "product",
+      "label": "Linked product"
+    },
+    {
       "type": "url",
       "id": "buy_link",
-      "label": "Buy link"
+      "label": "Fallback buy link"
     },
     {
       "type": "header",
