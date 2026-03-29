@@ -1,0 +1,411 @@
+{% liquid
+  assign default_buy_link = 'https://fairplay4men.com/producto/fair-play-4-men/'
+  assign buy_link = section.settings.buy_link | default: default_buy_link
+
+  if section.settings.product_image != blank
+    assign product_image = section.settings.product_image | image_url: width: 900
+  else
+    assign product_image = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
+  endif
+
+  assign form_id = 'ContactForm-' | append: section.id
+%}
+
+<div class="section-background color-scheme-1"></div>
+<section
+  class="fairplay-contact section section--page-width color-scheme-1"
+  style="--fairplay-contact-top: {{ section.settings.padding-block-start }}px; --fairplay-contact-bottom: {{ section.settings.padding-block-end }}px;"
+>
+  <div class="fairplay-contact__grid">
+    <div class="fairplay-contact__copy">
+      <p class="fairplay-contact__eyebrow">Unete al juego</p>
+      <h2>{{ section.settings.title }}</h2>
+      <p class="fairplay-contact__intro">{{ section.settings.intro }}</p>
+
+      {% form 'contact', id: form_id, class: 'fairplay-contact__form' %}
+        {% if form.posted_successfully? %}
+          <div class="fairplay-contact__message fairplay-contact__message--success">
+            Gracias. Recibimos tus datos y te contactaremos pronto.
+          </div>
+        {% endif %}
+
+        {% if form.errors %}
+          <div class="fairplay-contact__message fairplay-contact__message--error">
+            {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <input
+          type="hidden"
+          name="contact[Form]"
+          value="Fair Play CTA"
+        >
+
+        <textarea
+          class="fairplay-contact__hidden"
+          name="contact[body]"
+        >Quiero recibir mas informacion sobre Fair Play For Men.</textarea>
+
+        <div class="fairplay-contact__fields">
+          <input
+            type="text"
+            name="contact[name]"
+            placeholder="* Nombre"
+            value="{% if form.name %}{{ form.name }}{% endif %}"
+            required
+          >
+
+          <input
+            type="email"
+            name="contact[email]"
+            placeholder="* Correo electronico"
+            value="{% if form.email %}{{ form.email }}{% endif %}"
+            required
+          >
+
+          <input
+            type="tel"
+            name="contact[Telefono]"
+            placeholder="Telefono"
+            value="{% if form['Telefono'] %}{{ form['Telefono'] }}{% endif %}"
+          >
+
+          <select name="contact[Pais]">
+            <option value="">Elige el pais</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Chile">Chile</option>
+            <option value="Peru">Peru</option>
+            <option value="Otro">Otro</option>
+          </select>
+
+          <input
+            type="text"
+            name="contact[Ciudad]"
+            placeholder="Ciudad"
+            value="{% if form['Ciudad'] %}{{ form['Ciudad'] }}{% endif %}"
+          >
+        </div>
+
+        <label class="fairplay-contact__checkbox">
+          <input
+            type="checkbox"
+            name="contact[Autorizo informacion]"
+            value="Si"
+          >
+          <span>Estoy de acuerdo en recibir informacion relacionada con Fair Play.</span>
+        </label>
+
+        <label class="fairplay-contact__checkbox">
+          <input
+            type="checkbox"
+            name="contact[Acepta privacidad]"
+            value="Si"
+            required
+          >
+          <span>Estoy de acuerdo con el manejo de mis datos y la politica de privacidad.</span>
+        </label>
+
+        <button
+          type="submit"
+          class="button-secondary fairplay-contact__submit"
+        >
+          Enviar
+        </button>
+      {% endform %}
+    </div>
+
+    <aside class="fairplay-contact__product-card">
+      <img
+        src="{{ product_image }}"
+        alt="Fair Play For Men"
+        loading="lazy"
+      >
+      <h3>{{ section.settings.product_title }}</h3>
+      <p>{{ section.settings.product_copy }}</p>
+      <a
+        href="{{ buy_link }}"
+        class="button fairplay-contact__buy"
+      >
+        {{ section.settings.button_label }}
+      </a>
+    </aside>
+  </div>
+</section>
+
+{% stylesheet %}
+  .fairplay-contact {
+    --fairplay-contact-ink: #52545a;
+    --fairplay-contact-muted: #7a7b80;
+    --fairplay-contact-border: #d8d4cb;
+    --fairplay-contact-green: #90ab72;
+    padding-block: var(--fairplay-contact-top) var(--fairplay-contact-bottom);
+  }
+
+  .fairplay-contact__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+    gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: center;
+    padding: clamp(1.2rem, 3vw, 2rem);
+    border: 1px solid rgb(82 84 90 / 0.06);
+    border-radius: 36px;
+    background:
+      radial-gradient(circle at top left, rgb(144 171 114 / 0.08), transparent 26%),
+      #fff;
+    box-shadow: 0 18px 44px rgb(39 41 47 / 0.05);
+  }
+
+  .fairplay-contact__copy,
+  .fairplay-contact__form {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .fairplay-contact__eyebrow {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fairplay-contact-muted);
+  }
+
+  .fairplay-contact__copy h2,
+  .fairplay-contact__product-card h3 {
+    margin: 0;
+    color: var(--fairplay-contact-ink);
+    letter-spacing: -0.03em;
+  }
+
+  .fairplay-contact__copy h2 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.05;
+    font-weight: 300;
+  }
+
+  .fairplay-contact__intro,
+  .fairplay-contact__product-card p {
+    margin: 0;
+    color: var(--fairplay-contact-muted);
+    line-height: 1.75;
+  }
+
+  .fairplay-contact__fields {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .fairplay-contact__fields input,
+  .fairplay-contact__fields select {
+    width: 100%;
+    min-height: 50px;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--fairplay-contact-border);
+    border-radius: 16px;
+    background: #fff;
+    color: var(--fairplay-contact-ink);
+    font: inherit;
+    transition: border-color var(--animation-speed) var(--animation-easing), box-shadow var(--animation-speed) var(--animation-easing);
+  }
+
+  .fairplay-contact__fields input:focus,
+  .fairplay-contact__fields select:focus {
+    outline: none;
+    border-color: var(--fairplay-contact-green);
+    box-shadow: 0 0 0 4px rgb(144 171 114 / 0.12);
+  }
+
+  .fairplay-contact__checkbox {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+    color: var(--fairplay-contact-muted);
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .fairplay-contact__checkbox input {
+    margin-top: 0.2rem;
+    accent-color: var(--fairplay-contact-green);
+  }
+
+  .fairplay-contact__submit {
+    justify-self: start;
+    min-width: 144px;
+    border-radius: 999px;
+    color: var(--fairplay-contact-ink);
+    border-color: var(--fairplay-contact-ink);
+  }
+
+  .fairplay-contact__submit:hover {
+    background: rgb(82 84 90 / 0.05);
+  }
+
+  .fairplay-contact__product-card {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    padding: clamp(1.2rem, 3vw, 2rem);
+    border-radius: 28px;
+    background: linear-gradient(180deg, #faf8f3 0%, #fff 100%);
+    text-align: center;
+  }
+
+  .fairplay-contact__product-card img {
+    width: min(100%, 240px);
+    object-fit: contain;
+    filter: drop-shadow(0 18px 32px rgb(45 47 54 / 0.12));
+  }
+
+  .fairplay-contact__product-card h3 {
+    font-size: 1.65rem;
+    font-weight: 500;
+  }
+
+  .fairplay-contact__buy {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 999px;
+    background: var(--fairplay-contact-green);
+    border-color: var(--fairplay-contact-green);
+    color: #fff;
+  }
+
+  .fairplay-contact__buy:hover {
+    background: #7f9b62;
+    border-color: #7f9b62;
+  }
+
+  .fairplay-contact__message {
+    padding: 0.9rem 1rem;
+    border-radius: 16px;
+    font-size: 0.95rem;
+  }
+
+  .fairplay-contact__message--success {
+    background: rgb(144 171 114 / 0.12);
+    color: #496333;
+  }
+
+  .fairplay-contact__message--error {
+    background: rgb(168 77 77 / 0.1);
+    color: #8e4141;
+  }
+
+  .fairplay-contact__message :is(ul, li, p) {
+    margin: 0;
+  }
+
+  .fairplay-contact__hidden {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media screen and (max-width: 989px) {
+    .fairplay-contact__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .fairplay-contact__product-card {
+      order: -1;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .fairplay-contact__grid {
+      padding: 1rem;
+      border-radius: 24px;
+    }
+
+    .fairplay-contact__submit,
+    .fairplay-contact__buy {
+      width: 100%;
+      max-width: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Fair Play Contact CTA",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Que esperas para unirte al juego?"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro",
+      "default": "Dejanos tus datos para recibir informacion y acompanarte en tu compra de Fair Play For Men."
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "product_title",
+      "label": "Product title",
+      "default": "Fair Play 4 Men"
+    },
+    {
+      "type": "textarea",
+      "id": "product_copy",
+      "label": "Product copy",
+      "default": "Complemento alimenticio con fibra dietaria para una preparacion mas simple y limpia."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Comprar"
+    },
+    {
+      "type": "url",
+      "id": "buy_link",
+      "label": "Buy link"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 64
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Contact CTA"
+    }
+  ]
+}
+{% endschema %}

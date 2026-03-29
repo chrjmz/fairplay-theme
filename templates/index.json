@@ -1,0 +1,37 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */{
+  "sections": {
+    "fairplay_landing_j4mJ2C": {
+      "type": "fairplay-landing",
+      "settings": {
+        "buy_link": "",
+        "padding-block-start": 24,
+        "padding-block-end": 48
+      }
+    },
+    "fairplay_contact_home_x8R2Qa": {
+      "type": "fairplay-contact-cta",
+      "settings": {
+        "title": "Que esperas para unirte al juego?",
+        "intro": "Dejanos tus datos para recibir informacion y acompanarte en tu compra de Fair Play For Men.",
+        "product_title": "Fair Play 4 Men",
+        "product_copy": "Complemento alimenticio con fibra dietaria para una preparacion mas simple y limpia.",
+        "button_label": "Comprar",
+        "buy_link": "",
+        "padding-block-start": 16,
+        "padding-block-end": 72
+      }
+    }
+  },
+  "order": [
+    "fairplay_landing_j4mJ2C",
+    "fairplay_contact_home_x8R2Qa"
+  ]
+}
