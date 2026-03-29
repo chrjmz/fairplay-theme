@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "fairplay_home_hero_8qTrf2": {
       "type": "fairplay-home-hero",
@@ -27,7 +28,7 @@
         "anchor_id": "video",
         "statement": "<p>Con <strong>Fair Play For Men</strong> estaras preparado para jugar desde el <strong>primer momento</strong>.</p>",
         "button_label": "Comprar",
-        "buy_link": "",
+        "buy_link": "shopify://products/fair-play-4-men",
         "video_embed_url": "https://www.youtube.com/embed/JVkUjvbwGYM",
         "padding_block_start": 0,
         "padding_block_end": 32
@@ -49,6 +50,7 @@
     "fairplay_home_feature_media_Wq5ePc": {
       "type": "fairplay-home-feature-media",
       "settings": {
+        "anchor_id": "feature-media",
         "image_alt": "Imagen destacada Fair Play",
         "padding_block_start": 16,
         "padding_block_end": 16
@@ -136,6 +138,7 @@
     "fairplay_home_warning_Hz41Nc": {
       "type": "fairplay-home-warning",
       "settings": {
+        "anchor_id": "warning",
         "copy": "<p>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></p>",
         "padding_block_start": 28,
         "padding_block_end": 28
@@ -161,6 +164,7 @@
     "fairplay_home_community_Ur16Mx": {
       "type": "fairplay-home-community",
       "settings": {
+        "anchor_id": "community",
         "image_alt": "Comunidad Fair Play",
         "badge_text": "Play",
         "padding_block_start": 56,
