@@ -27,7 +27,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-recommendations section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-recommendations-product-width: {{ section.settings.product_image_width | default: 170 }}px; --fairplay-recommendations-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 150 }}px; --fairplay-recommendations-diagram-width: {{ section.settings.diagram_image_width | default: 120 }}px; --fairplay-recommendations-diagram-width-mobile: {{ section.settings.diagram_image_width_mobile | default: 110 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-recommendations-product-width: {{ section.settings.product_image_width | default: 168 }}px; --fairplay-recommendations-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-recommendations-diagram-width: {{ section.settings.diagram_image_width | default: 120 }}px; --fairplay-recommendations-diagram-width-mobile: {{ section.settings.diagram_image_width_mobile | default: 108 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-recommendations__grid">
     <div class="fairplay-home-recommendations__copy">
@@ -133,7 +133,7 @@
       "max": 280,
       "step": 4,
       "unit": "px",
-      "default": 170
+      "default": 168
     },
     {
       "type": "range",
@@ -143,7 +143,7 @@
       "max": 220,
       "step": 4,
       "unit": "px",
-      "default": 150
+      "default": 148
     },
     {
       "type": "text",
@@ -185,7 +185,7 @@
       "max": 180,
       "step": 4,
       "unit": "px",
-      "default": 110
+      "default": 108
     },
     {
       "type": "text",
