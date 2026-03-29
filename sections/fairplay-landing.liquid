@@ -1,11 +1,18 @@
 {% liquid
   assign default_buy_link = 'https://fairplay4men.com/producto/fair-play-4-men/'
   assign buy_link = section.settings.buy_link | default: default_buy_link
+  assign video_embed_url = section.settings.video_embed_url | default: 'https://www.youtube.com/embed/JVkUjvbwGYM'
 
   if section.settings.hero_background != blank
     assign hero_background = section.settings.hero_background | image_url: width: 1800
   else
     assign hero_background = 'https://fairplay4men.com/wp-content/uploads/2021/04/fair-play-for-men-f2.png'
+  endif
+
+  if section.settings.hero_background_mobile != blank
+    assign hero_background_mobile = section.settings.hero_background_mobile | image_url: width: 900
+  else
+    assign hero_background_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/foto_pareja.jpg'
   endif
 
   if section.settings.hero_product != blank
@@ -15,15 +22,15 @@
   endif
 
   if section.settings.intro_image != blank
-    assign intro_image = section.settings.intro_image | image_url: width: 1200
+    assign intro_image = section.settings.intro_image | image_url: width: 1600
   else
-    assign intro_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/fair-play-2-1024x526.jpg'
+    assign intro_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/fair-play-2.jpg'
   endif
 
-  if section.settings.lifestyle_image != blank
-    assign lifestyle_image = section.settings.lifestyle_image | image_url: width: 1600
+  if section.settings.intro_image_mobile != blank
+    assign intro_image_mobile = section.settings.intro_image_mobile | image_url: width: 900
   else
-    assign lifestyle_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/foto_pareja.jpg'
+    assign intro_image_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/foto_movil_1_1-2.png'
   endif
 
   if section.settings.dosage_image != blank
@@ -33,15 +40,39 @@
   endif
 
   if section.settings.detail_image != blank
-    assign detail_image = section.settings.detail_image | image_url: width: 1200
+    assign detail_image = section.settings.detail_image | image_url: width: 900
   else
-    assign detail_image = 'https://fairplay4men.com/wp-content/uploads/2023/02/fairplay4men-paquete-1024x1024-1.jpg'
+    assign detail_image = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
+  endif
+
+  if section.settings.detail_diagram_image != blank
+    assign detail_diagram_image = section.settings.detail_diagram_image | image_url: width: 900
+  else
+    assign detail_diagram_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-8egoshop-2.png'
+  endif
+
+  if section.settings.detail_diagram_mobile != blank
+    assign detail_diagram_mobile = section.settings.detail_diagram_mobile | image_url: width: 700
+  else
+    assign detail_diagram_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/fairPlay_landing_movilno-hacer-caso-a-fotos-04.png'
   endif
 
   if section.settings.banner_image != blank
     assign banner_image = section.settings.banner_image | image_url: width: 1800
   else
-    assign banner_image = 'https://fairplay4men.com/wp-content/uploads/2023/02/fairplay4men-amigos-1024x1024-1.jpg'
+    assign banner_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/landing_FairPlay_ajustes-01-1.png'
+  endif
+
+  if section.settings.banner_image_mobile != blank
+    assign banner_image_mobile = section.settings.banner_image_mobile | image_url: width: 900
+  else
+    assign banner_image_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/foto_movil_2_1-3.png'
+  endif
+
+  if section.settings.warning_image != blank
+    assign warning_image = section.settings.warning_image | image_url: width: 560
+  else
+    assign warning_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/advertencia.svg'
   endif
 %}
 
@@ -51,132 +82,137 @@
   style="--fairplay-padding-top: {{ section.settings.padding-block-start }}px; --fairplay-padding-bottom: {{ section.settings.padding-block-end }}px;"
 >
   <div class="fairplay-landing__hero">
-    <div class="fairplay-landing__hero-shell">
-      <div class="fairplay-landing__copy">
-        <p class="fairplay-landing__eyebrow">Play clean, play better</p>
-        <h1>Con Fair Play For Men estaras preparado para jugar desde el primer momento</h1>
-        <p class="fairplay-landing__lede">
-          Un suplemento de fibra dietaria pensado para mejorar el transito intestinal, ayudarte a mantener una mejor
-          higiene personal y reducir la preparacion previa antes de tus encuentros.
-        </p>
-        <div class="fairplay-landing__actions">
-          <a
-            class="button fairplay-landing__button"
-            href="{{ buy_link }}"
-          >
-            Comprar ahora
-          </a>
-          <a
-            class="button-secondary fairplay-landing__button fairplay-landing__button--ghost"
-            href="#fairplay-composition-{{ section.id }}"
-          >
-            Ver composicion
-          </a>
-        </div>
-      </div>
-
-      <div class="fairplay-landing__visual">
-        <div class="fairplay-landing__hero-glow"></div>
-        <img
-          class="fairplay-landing__hero-couple"
-          src="{{ hero_background }}"
-          alt="Pareja Fair Play"
-          loading="lazy"
-        >
-        <div class="fairplay-landing__hero-product-card">
-          <img
-            src="{{ hero_product }}"
-            alt="Envase Fair Play For Men"
-            loading="lazy"
-          >
-        </div>
-      </div>
+    <div class="fairplay-landing__hero-copy">
+      <p class="fairplay-landing__eyebrow">Play clean, play better</p>
+      <h1>Con Fair Play For Men estaras preparado para jugar desde el primer momento</h1>
+      <p class="fairplay-landing__lede">
+        Un suplemento de fibra dietaria pensado para mejorar el transito intestinal, ayudarte a mantener una mejor
+        higiene personal y reducir el tiempo de preparacion antes de tus encuentros.
+      </p>
     </div>
 
-    <div class="fairplay-landing__dark-band">
-      <div>
-        <p class="fairplay-landing__band-title">Fair Play For Men</p>
-        <p>Preparate para jugar limpio desde el primer momento.</p>
-      </div>
+    <div class="fairplay-landing__hero-stage">
+      <picture>
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ hero_background_mobile }}"
+        >
+        <img
+          class="fairplay-landing__hero-image"
+          src="{{ hero_background }}"
+          alt="Fair Play For Men"
+          loading="lazy"
+        >
+      </picture>
+
       <a
+        class="fairplay-landing__hero-product"
         href="{{ buy_link }}"
-        class="button fairplay-landing__dark-band-button"
+        aria-label="Comprar Fair Play For Men"
       >
-        Comprar
+        <img
+          src="{{ hero_product }}"
+          alt="Envase Fair Play For Men"
+          loading="lazy"
+        >
       </a>
+    </div>
+  </div>
+
+  <div class="fairplay-landing__statement-band">
+    <div class="fairplay-landing__statement-copy">
+      <p>
+        Con <strong>Fair Play For Men</strong> estaras preparado para jugar desde el <strong>primer momento</strong>.
+      </p>
+    </div>
+    <a
+      href="{{ buy_link }}"
+      class="button fairplay-landing__button fairplay-landing__button--light"
+    >
+      Comprar
+    </a>
+  </div>
+
+  <div class="fairplay-landing__video-shell">
+    <div class="fairplay-landing__video-card">
+      <iframe
+        src="{{ video_embed_url }}"
+        title="Video Fair Play For Men"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 
   <div class="fairplay-landing__section fairplay-landing__section--intro">
     <div class="fairplay-landing__section-header">
       <p class="fairplay-landing__eyebrow">Que es Fair Play For Men?</p>
-      <h2>Una rutina mas simple, limpia y comoda</h2>
+      <h2>Una rutina mas limpia y placentera desde el primer momento</h2>
     </div>
 
-    <div class="fairplay-landing__intro-grid">
-      <a
-        class="fairplay-landing__media-card"
-        href="{{ buy_link }}"
-      >
-        <img
-          src="{{ intro_image }}"
-          alt="Presentacion Fair Play For Men"
-          loading="lazy"
-        >
-        <span class="fairplay-landing__play-badge" aria-hidden="true">Play</span>
-      </a>
-
-      <div class="fairplay-landing__body-copy">
-        <p>
-          Fair Play For Men es un suplemento de fibra dietaria que ayuda a mantener un adecuado transito intestinal y
-          contribuye con la higiene personal. En pocas palabras, es un aliado para vivir encuentros mas limpios y
-          placenteros.
-        </p>
-        <p>
-          Las fibras 100% naturales, debidamente hidratadas con agua, funcionan como un agente de limpieza a medida
-          que pasan a traves del sistema digestivo, reduciendo significativamente el uso de enemas y el tiempo que
-          dedicas para estar preparado.
-        </p>
-        <p>
-          La formula tambien incorpora ganoderma lucidum y colageno hidrolizado para sumar bienestar general, defensa
-          del organismo y soporte para piel, huesos, unas y cabello.
-        </p>
-      </div>
+    <div class="fairplay-landing__body-copy fairplay-landing__body-copy--wide">
+      <p>
+        <strong>Fair Play For Men</strong> es un suplemento de fibra dietaria que ayuda a mantener un adecuado
+        transito intestinal y contribuye con la higiene personal. En pocas palabras, es un aliado para experimentar
+        encuentros mas limpios y placenteros.
+      </p>
+      <p>
+        Las fibras 100% naturales, debidamente hidratadas con agua, funcionan como un agente de limpieza a medida que
+        pasan a traves del sistema digestivo, reduciendo significativamente el uso de enemas y el tiempo que dedicas
+        para estar preparado.
+      </p>
+      <p>
+        Adicionalmente, nuestra formula exclusiva incluye <strong>Ganoderma Lucidum</strong> y
+        <strong>Colageno Hidrolizado</strong>, ingredientes que fortalecen el sistema inmunologico y nutren el
+        cabello, la piel, los huesos y las unas.
+      </p>
     </div>
   </div>
 
-  <div class="fairplay-landing__section fairplay-landing__section--split">
-    <div class="fairplay-landing__split-media">
+  <div class="fairplay-landing__feature-media">
+    <picture>
+      <source
+        media="(max-width: 749px)"
+        srcset="{{ intro_image_mobile }}"
+      >
       <img
-        src="{{ lifestyle_image }}"
-        alt="Estilo de vida Fair Play"
+        src="{{ intro_image }}"
+        alt="Que es Fair Play For Men"
         loading="lazy"
       >
-    </div>
+    </picture>
+  </div>
 
-    <div class="fairplay-landing__split-copy">
+  <div class="fairplay-landing__section fairplay-landing__section--benefits">
+    <div class="fairplay-landing__benefits-copy">
       <p class="fairplay-landing__eyebrow">Y tu... Como juegas?</p>
       <h2>Mas bienestar para tu cuerpo, menos pasos antes de disfrutar</h2>
       <p>
-        Fair Play reune una combinacion de ingredientes que le aporta al organismo la fibra necesaria para garantizar
-        un adecuado transito intestinal, reduciendo el tiempo previo y ayudandote a sentirte listo bajo tus propias
-        reglas.
+        <strong>Fair Play For Men</strong> reune la mejor seleccion de ingredientes que le aportan a tu organismo la
+        cantidad de fibra necesaria para garantizar un adecuado transito intestinal que, junto a una sensacion de
+        bienestar, reducira significativamente el uso de enemas y el tiempo que dedicas para disfrutar de un
+        encuentro sexual mas limpio y placentero.
       </p>
       <p>
-        Ademas de facilitar una rutina mas limpia, su formula exclusiva potencia la capacidad de defensa del
-        organismo, actua como antioxidante y acompana el fortalecimiento de la piel, las articulaciones y el cabello.
+        De otro lado, nuestra formula exclusiva con <strong>Ganoderma Lucidum</strong> y
+        <strong>Colageno Hidrolizado</strong>, potencia la capacidad de defensa del organismo, funciona como
+        antioxidante y contribuye al fortalecimiento de la piel, las unas, el cabello y las articulaciones.
       </p>
+      <p class="fairplay-landing__benefits-highlight">
+        Ya lo sabes, con Fair Play For Men, estaras preparado para jugar desde el primer momento.
+      </p>
+    </div>
 
-      <div class="fairplay-landing__digest-card">
-        <div>
-          <span class="fairplay-landing__digest-label">Fair Play For Men</span>
-          <strong>Evacua totalmente tu sistema intestinal, sin dejar residuos que incomodan.</strong>
-        </div>
-        <img
-          src="{{ dosage_image }}"
-          alt="Beneficios digestivos de Fair Play"
-          loading="lazy"
-        >
+    <div class="fairplay-landing__digest-card">
+      <img
+        src="{{ dosage_image }}"
+        alt="Beneficios digestivos de Fair Play"
+        loading="lazy"
+      >
+      <div class="fairplay-landing__digest-copy">
+        <span class="fairplay-landing__digest-label">Fair Play For Men</span>
+        <strong>Evacua totalmente tu sistema intestinal, sin dejar residuos que incomodan.</strong>
       </div>
     </div>
   </div>
@@ -192,107 +228,167 @@
 
     <div class="fairplay-landing__composition-grid">
       <article class="fairplay-landing__composition-card">
-        <span>01</span>
+        <img
+          src="https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-5egoshop.png"
+          alt="Chia, linaza y psyllium"
+          loading="lazy"
+        >
         <h3>Chia, linaza y psyllium</h3>
-        <p>Alta composicion de fibra para facilitar el transito intestinal y aportar proteinas, antioxidantes y omega-3.</p>
+        <p class="fairplay-landing__composition-meta">Fibra</p>
+        <p>
+          Debidamente hidratados con agua, estos ingredientes facilitan el transito intestinal y aportan proteinas,
+          antioxidantes, acidos grasos y omega-3.
+        </p>
       </article>
 
       <article class="fairplay-landing__composition-card">
-        <span>02</span>
-        <h3>Ganoderma lucidum</h3>
-        <p>Hongo milenario reconocido por su potencial antioxidante, inmunorregulador y de bienestar general.</p>
+        <img
+          src="https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-6egoshop.png"
+          alt="Ganoderma Lucidum"
+          loading="lazy"
+        >
+        <h3>Ganoderma Lucidum</h3>
+        <p>
+          Hongo milenario al que se le reconocen efectos potencialmente terapeuticos como inmunoreguladores,
+          antioxidantes y de bienestar general.
+        </p>
       </article>
 
       <article class="fairplay-landing__composition-card">
-        <span>03</span>
-        <h3>Colageno hidrolizado</h3>
-        <p>Apoya la produccion natural de colageno y fortalece articulaciones, piel, unas, huesos y cabello.</p>
+        <img
+          src="https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-7egoshop.png"
+          alt="Colageno Hidrolizado"
+          loading="lazy"
+        >
+        <h3>Colageno Hidrolizado</h3>
+        <p>
+          Ayuda a estimular la produccion de colageno en el organismo, mejorando la piel y fortaleciendo
+          articulaciones, unas, huesos y cabello.
+        </p>
       </article>
 
       <article class="fairplay-landing__composition-card">
-        <span>04</span>
+        <img
+          src="https://fairplay4men.com/wp-content/uploads/2022/07/1vivimania.png"
+          alt="Vitamina C"
+          loading="lazy"
+        >
         <h3>Vitamina C</h3>
-        <p>Un antioxidante clave para proteger las celulas y acompanar la formacion de tejidos y colageno.</p>
+        <p>
+          Antioxidante que protege las celulas y participa en la formacion de vasos sanguineos, musculos, cartilagos
+          y colageno.
+        </p>
       </article>
 
       <article class="fairplay-landing__composition-card">
-        <span>05</span>
-        <h3>Aloe vera</h3>
-        <p>Ayuda a regular el pH del aparato digestivo y acompana una digestion mas comoda y equilibrada.</p>
+        <img
+          src="https://fairplay4men.com/wp-content/uploads/2022/07/1aloloe.png"
+          alt="Aloe Vera"
+          loading="lazy"
+        >
+        <h3>Aloe Vera</h3>
+        <p>
+          Regula el pH del aparato digestivo y ayuda a evitar afecciones como ulceras, digestiones lentas o pesadez
+          estomacal.
+        </p>
       </article>
     </div>
   </div>
 
   <div class="fairplay-landing__notice">
-    <span class="fairplay-landing__notice-icon" aria-hidden="true">!</span>
+    <img
+      class="fairplay-landing__notice-image"
+      src="{{ warning_image }}"
+      alt="Advertencia Fair Play"
+      loading="lazy"
+    >
     <p>
-      Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada. Mantener
-      fuera del alcance de los ninos y revisar la fecha de vencimiento antes de consumir.
+      Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene
+      una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique
+      su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un
+      medicamento y no suple una alimentacion equilibrada.</strong>
     </p>
   </div>
 
-  <div class="fairplay-landing__section fairplay-landing__section--play-clean">
-    <div class="fairplay-landing__play-clean-copy">
-      <p class="fairplay-landing__eyebrow">Juega a tu ritmo, juega limpio</p>
-      <h2>Presentacion pensada para que funcione mejor contigo</h2>
-      <p>
-        Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las cascaras
-        de psyllium. Esa hidratacion es la clave para alcanzar la consistencia necesaria y lograr una limpieza mas
-        efectiva del tracto intestinal.
-      </p>
-      <p>
-        La dosis sugerida es de 6 gramos, equivalentes a dos porciones del dosificador incluido, maximo dos veces al
-        dia disueltas en 240 ml de agua. Para mejores resultados, conservalo bien cerrado en un lugar fresco, seco y
-        ventilado.
-      </p>
-      <a
-        href="{{ buy_link }}"
-        class="link fairplay-landing__inline-link"
-      >
-        Ver producto completo
-      </a>
+  <div class="fairplay-landing__section fairplay-landing__section--recommendations">
+    <div class="fairplay-landing__recommendations-copy">
+      <p class="fairplay-landing__eyebrow">Recomendaciones</p>
+      <h2>Juega a tu ritmo, <strong>juega limpio</strong></h2>
+
+      <div class="fairplay-landing__body-copy">
+        <p>
+          <strong>Precauciones:</strong> No exceda la dosis diaria recomendada. Este producto debe ser consumido luego
+          de ser diluido en agua; consumirlo en polvo podria causar asfixia. Si al consumir el producto surgen
+          sintomas como dolor en el pecho, vomito, dificultad para respirar o tragar, o alguna otra reaccion
+          alergica, busque inmediatamente atencion medica.
+        </p>
+        <p>
+          Evite su uso en mujeres en embarazo o en periodo de lactancia, asi como en personas con dolor abdominal o
+          sintomas de diarrea. En caso de estar consumiendo algun medicamento o en medio de un tratamiento medico,
+          consulte con su medico antes de hacer uso de este producto. <strong>Producto sugerido para personas mayores
+          de 18 anos.</strong>
+        </p>
+        <p>
+          <strong>Conservacion:</strong> Conservese en su envase original, a temperatura ambiente y en un lugar
+          fresco, ventilado y seco. Cerciorese de cerrarlo hermeticamente despues de cada uso para evitar su
+          contaminacion y humedad.
+        </p>
+      </div>
     </div>
 
-    <div class="fairplay-landing__detail-card">
-      <img
-        src="{{ detail_image }}"
-          alt="Detalles del empaque Fair Play"
-        loading="lazy"
-      >
-      <div class="fairplay-landing__detail-list">
+    <div class="fairplay-landing__recommendations-detail">
+      <div class="fairplay-landing__detail-panel fairplay-landing__detail-panel--product">
+        <img
+          src="{{ detail_image }}"
+          alt="Presentacion Fair Play For Men"
+          loading="lazy"
+        >
         <div>
-          <strong>Presentacion</strong>
-          <p>210 g en polvo para mezclar con agua y mejorar la eficacia de la fibra.</p>
+          <h3>Presentacion</h3>
+          <p>
+            Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las
+            cascaras de psyllium. De esa hidratacion depende la consistencia necesaria para arrastrar los residuos del
+            tracto intestinal.
+          </p>
         </div>
+      </div>
+
+      <div class="fairplay-landing__detail-panel fairplay-landing__detail-panel--diagram">
+        <picture>
+          <source
+            media="(max-width: 749px)"
+            srcset="{{ detail_diagram_mobile }}"
+          >
+          <img
+            src="{{ detail_diagram_image }}"
+            alt="Modo de uso Fair Play For Men"
+            loading="lazy"
+          >
+        </picture>
         <div>
-          <strong>Dosis</strong>
-          <p>6 g por toma, maximo dos veces al dia, siempre diluido en agua.</p>
-        </div>
-        <div>
-          <strong>Precauciones</strong>
-          <p>No exceder la dosis diaria recomendada y consultar al medico si estas en tratamiento.</p>
+          <h3>Dosis</h3>
+          <p>
+            Consumir 6 gramos, equivalentes a 2 porciones del dosificador incluido en el producto, maximo dos veces al
+            dia, disueltas en 240 ml de agua.
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="fairplay-landing__banner">
-    <img
-      src="{{ banner_image }}"
-      alt="Comunidad Fair Play"
-      loading="lazy"
-    >
-    <div class="fairplay-landing__banner-overlay"></div>
-    <div class="fairplay-landing__banner-copy">
-      <p class="fairplay-landing__eyebrow fairplay-landing__eyebrow--light">Fair Play</p>
-      <h2>Que esperas para unirte al juego?</h2>
-      <a
-        href="{{ buy_link }}"
-        class="button fairplay-landing__button"
+  <div class="fairplay-landing__community-banner">
+    <picture>
+      <source
+        media="(max-width: 749px)"
+        srcset="{{ banner_image_mobile }}"
       >
-        Comprar
-      </a>
-    </div>
+      <img
+        src="{{ banner_image }}"
+        alt="Comunidad Fair Play"
+        loading="lazy"
+      >
+    </picture>
+    <span class="fairplay-landing__community-badge">Play</span>
   </div>
 </section>
 
@@ -300,63 +396,59 @@
   .fairplay-landing {
     --fairplay-ink: #505258;
     --fairplay-ink-soft: #6f7177;
-    --fairplay-mist: #f5f2ec;
-    --fairplay-smoke: #f9f8f5;
+    --fairplay-smoke: #f8f7f4;
+    --fairplay-paper: #fffdf9;
     --fairplay-border: #ddd7cf;
     --fairplay-green: #90ab72;
-    --fairplay-dark: #4d4f56;
+    --fairplay-dark: #525357;
     padding-block: var(--fairplay-padding-top) var(--fairplay-padding-bottom);
-    font-family: var(--font-body--family);
     color: var(--fairplay-ink);
     background:
-      radial-gradient(circle at top right, rgb(144 171 114 / 0.08), transparent 30%),
+      radial-gradient(circle at top right, rgb(144 171 114 / 0.08), transparent 28%),
       linear-gradient(180deg, #fff 0%, #fcfaf7 100%);
   }
 
   .fairplay-landing h1,
   .fairplay-landing h2,
   .fairplay-landing h3 {
+    margin: 0;
     color: var(--fairplay-ink);
     line-height: 1.05;
     letter-spacing: -0.03em;
-    margin: 0;
   }
 
   .fairplay-landing p {
     margin: 0;
-    line-height: 1.75;
     color: var(--fairplay-ink-soft);
+    line-height: 1.75;
+  }
+
+  .fairplay-landing strong {
+    color: var(--fairplay-ink);
   }
 
   .fairplay-landing__hero,
+  .fairplay-landing__statement-band,
+  .fairplay-landing__video-shell,
   .fairplay-landing__section,
+  .fairplay-landing__feature-media,
   .fairplay-landing__notice,
-  .fairplay-landing__banner {
-    width: min(1180px, calc(100% - 2rem));
+  .fairplay-landing__community-banner {
+    width: min(1120px, calc(100% - 2rem));
     margin-inline: auto;
   }
 
-  .fairplay-landing__hero-shell,
-  .fairplay-landing__intro-grid,
-  .fairplay-landing__section--split,
-  .fairplay-landing__section--play-clean {
+  .fairplay-landing__hero {
     display: grid;
-    gap: clamp(1.5rem, 4vw, 4rem);
-    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    padding-top: clamp(0.75rem, 2vw, 1.5rem);
+    text-align: center;
   }
 
-  .fairplay-landing__hero-shell {
-    min-height: clamp(520px, 72vw, 760px);
-    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
-    padding: clamp(1rem, 3vw, 2rem) 0 0;
-  }
-
-  .fairplay-landing__copy {
-    position: relative;
-    z-index: 1;
+  .fairplay-landing__hero-copy {
     display: grid;
-    gap: 1.5rem;
-    padding: clamp(1rem, 2vw, 2rem) 0;
+    gap: 1rem;
+    justify-items: center;
   }
 
   .fairplay-landing__eyebrow {
@@ -367,25 +459,69 @@
     color: var(--fairplay-ink-soft);
   }
 
-  .fairplay-landing__eyebrow--light {
-    color: rgb(255 255 255 / 0.75);
-  }
-
-  .fairplay-landing__copy h1 {
-    max-width: 12ch;
-    font-size: clamp(2.9rem, 7vw, 5.4rem);
+  .fairplay-landing__hero h1 {
+    max-width: 14ch;
+    font-size: clamp(2.4rem, 6vw, 4.8rem);
     font-weight: 300;
   }
 
   .fairplay-landing__lede {
-    max-width: 58ch;
+    max-width: 60ch;
     font-size: 1.05rem;
   }
 
-  .fairplay-landing__actions {
+  .fairplay-landing__hero-stage {
+    position: relative;
+    min-height: clamp(300px, 44vw, 560px);
+  }
+
+  .fairplay-landing__hero-stage picture,
+  .fairplay-landing__hero-stage img {
+    display: block;
+    width: 100%;
+  }
+
+  .fairplay-landing__hero-image {
+    object-fit: contain;
+    filter: drop-shadow(0 22px 50px rgb(31 33 39 / 0.14));
+  }
+
+  .fairplay-landing__hero-product {
+    position: absolute;
+    right: clamp(0.75rem, 7vw, 7rem);
+    bottom: clamp(-1rem, -1.5vw, -0.25rem);
+    width: clamp(118px, 16vw, 188px);
+    padding: 0.85rem;
+    border-radius: 28px;
+    background: rgb(255 255 255 / 0.94);
+    box-shadow: 0 18px 44px rgb(44 46 53 / 0.18);
+  }
+
+  .fairplay-landing__hero-product img {
+    object-fit: contain;
+  }
+
+  .fairplay-landing__statement-band {
     display: flex;
-    gap: 0.9rem;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: clamp(-2.25rem, -3vw, -1.25rem);
+    padding: clamp(1.3rem, 3vw, 1.8rem) clamp(1rem, 4vw, 2.5rem);
+    border-radius: 0;
+    background: var(--fairplay-dark);
+    text-align: center;
+  }
+
+  .fairplay-landing__statement-copy {
+    max-width: 32rem;
+  }
+
+  .fairplay-landing__statement-copy p,
+  .fairplay-landing__statement-copy strong {
+    color: #fff;
+    font-size: clamp(1.05rem, 2vw, 1.5rem);
+    line-height: 1.2;
   }
 
   .fairplay-landing__button {
@@ -402,99 +538,47 @@
     border-color: #7f9b62;
   }
 
-  .fairplay-landing__button--ghost {
-    background: transparent;
-    border-color: var(--fairplay-ink);
-    color: var(--fairplay-ink);
-  }
-
-  .fairplay-landing__button--ghost:hover {
-    background: rgb(80 82 88 / 0.05);
-  }
-
-  .fairplay-landing__visual {
-    position: relative;
-    min-height: clamp(380px, 62vw, 650px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .fairplay-landing__hero-glow {
-    position: absolute;
-    inset: 12% 14% auto;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgb(80 82 88 / 0.12) 0%, rgb(80 82 88 / 0.02) 55%, transparent 72%);
-    filter: blur(10px);
-  }
-
-  .fairplay-landing__hero-couple {
-    position: relative;
-    z-index: 1;
-    width: min(100%, 720px);
-    object-fit: contain;
-    filter: drop-shadow(0 26px 60px rgb(32 34 41 / 0.14));
-  }
-
-  .fairplay-landing__hero-product-card {
-    position: absolute;
-    right: 6%;
-    bottom: 2rem;
-    z-index: 2;
-    width: clamp(150px, 20vw, 210px);
-    padding: 1rem;
-    border-radius: 28px;
-    background: rgb(255 255 255 / 0.92);
-    box-shadow: 0 18px 50px rgb(44 46 53 / 0.18);
-    backdrop-filter: blur(10px);
-  }
-
-  .fairplay-landing__hero-product-card img {
-    width: 100%;
-    object-fit: contain;
-  }
-
-  .fairplay-landing__dark-band {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    margin-top: clamp(-1.8rem, -3vw, -1rem);
-    padding: 1.25rem clamp(1.2rem, 3vw, 2.2rem);
-    border-radius: 28px;
-    background: var(--fairplay-dark);
-    box-shadow: 0 20px 40px rgb(42 44 50 / 0.14);
-  }
-
-  .fairplay-landing__band-title {
-    color: #fff;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-  }
-
-  .fairplay-landing__dark-band p:last-child {
-    color: rgb(255 255 255 / 0.72);
-  }
-
-  .fairplay-landing__dark-band-button {
-    border-radius: 999px;
-    white-space: nowrap;
+  .fairplay-landing__button--light {
     background: #fff;
     border-color: #fff;
     color: var(--fairplay-dark);
   }
 
+  .fairplay-landing__button--light:hover {
+    background: rgb(255 255 255 / 0.9);
+    border-color: rgb(255 255 255 / 0.9);
+  }
+
+  .fairplay-landing__video-shell {
+    margin-top: clamp(-1.25rem, -2vw, -0.75rem);
+  }
+
+  .fairplay-landing__video-card {
+    overflow: hidden;
+    width: min(700px, calc(100% - 1rem));
+    margin-inline: auto;
+    border-radius: 28px;
+    background: #fff;
+    box-shadow: 0 20px 44px rgb(44 46 53 / 0.14);
+  }
+
+  .fairplay-landing__video-card iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+  }
+
   .fairplay-landing__section {
-    padding-top: clamp(4rem, 8vw, 7rem);
+    padding-top: clamp(4rem, 8vw, 6rem);
   }
 
   .fairplay-landing__section-header {
     display: grid;
     gap: 0.75rem;
-    margin-bottom: clamp(1.6rem, 3vw, 2.5rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    justify-items: center;
+    text-align: center;
   }
 
   .fairplay-landing__section-header h2 {
@@ -503,96 +587,72 @@
     font-weight: 300;
   }
 
-  .fairplay-landing__section-header--center {
-    justify-items: center;
-    text-align: center;
+  .fairplay-landing__body-copy {
+    display: grid;
+    gap: 1rem;
   }
 
-  .fairplay-landing__section-header--center h2 {
-    max-width: 12ch;
+  .fairplay-landing__body-copy--wide {
+    width: min(760px, 100%);
+    margin-inline: auto;
   }
 
-  .fairplay-landing__intro-grid {
-    grid-template-columns: minmax(280px, 0.88fr) minmax(0, 1fr);
-  }
-
-  .fairplay-landing__media-card {
-    position: relative;
+  .fairplay-landing__feature-media {
     overflow: hidden;
-    display: block;
-    border-radius: 34px;
-    background: var(--fairplay-mist);
-    min-height: 100%;
+    margin-top: clamp(2rem, 4vw, 3rem);
+    border-radius: 36px;
+    background: var(--fairplay-smoke);
   }
 
-  .fairplay-landing__media-card img,
-  .fairplay-landing__split-media img,
-  .fairplay-landing__detail-card img,
-  .fairplay-landing__banner img {
+  .fairplay-landing__feature-media img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .fairplay-landing__play-badge {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 76px;
-    padding: 0.65rem 1rem;
-    border-radius: 999px;
-    background: rgb(255 255 255 / 0.9);
-    color: var(--fairplay-dark);
-    font-weight: 600;
-    box-shadow: 0 12px 24px rgb(44 46 53 / 0.16);
-  }
-
-  .fairplay-landing__body-copy {
+  .fairplay-landing__section--benefits {
     display: grid;
-    gap: 1rem;
-  }
-
-  .fairplay-landing__section--split {
-    grid-template-columns: minmax(300px, 1.1fr) minmax(0, 0.9fr);
+    grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
+    gap: clamp(1.5rem, 4vw, 4rem);
     align-items: start;
   }
 
-  .fairplay-landing__split-media {
-    overflow: hidden;
-    border-radius: 38px;
-    min-height: 100%;
-    background: var(--fairplay-mist);
-  }
-
-  .fairplay-landing__split-copy {
+  .fairplay-landing__benefits-copy {
     display: grid;
     gap: 1rem;
   }
 
-  .fairplay-landing__split-copy h2,
-  .fairplay-landing__play-clean-copy h2 {
+  .fairplay-landing__benefits-copy h2,
+  .fairplay-landing__recommendations-copy h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 300;
   }
 
+  .fairplay-landing__benefits-highlight {
+    font-weight: 600;
+    color: var(--fairplay-ink);
+  }
+
   .fairplay-landing__digest-card {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 120px;
     gap: 1rem;
-    align-items: center;
-    margin-top: 1rem;
-    padding: 1.4rem;
+    justify-items: center;
+    padding: 1.6rem;
     border: 1px solid var(--fairplay-border);
-    border-radius: 28px;
-    background: var(--fairplay-smoke);
+    border-radius: 30px;
+    background: var(--fairplay-paper);
+    text-align: center;
+    box-shadow: 0 18px 36px rgb(42 44 50 / 0.06);
+  }
+
+  .fairplay-landing__digest-card img {
+    width: min(100%, 260px);
+    object-fit: contain;
   }
 
   .fairplay-landing__digest-label {
-    display: block;
+    display: inline-block;
     margin-bottom: 0.55rem;
     font-size: 0.78rem;
     font-weight: 600;
@@ -601,16 +661,15 @@
     color: var(--fairplay-green);
   }
 
-  .fairplay-landing__digest-card strong {
+  .fairplay-landing__digest-copy strong {
     display: block;
-    font-size: 1.05rem;
     color: var(--fairplay-ink);
+    font-size: 1.02rem;
     line-height: 1.45;
   }
 
-  .fairplay-landing__digest-card img {
-    width: 100%;
-    object-fit: contain;
+  .fairplay-landing__section--composition {
+    padding-top: clamp(4.5rem, 8vw, 6.5rem);
   }
 
   .fairplay-landing__composition-grid {
@@ -621,142 +680,133 @@
 
   .fairplay-landing__composition-card {
     display: grid;
-    gap: 1rem;
-    padding: 1.5rem;
-    border: 1px solid var(--fairplay-border);
+    align-content: start;
+    gap: 0.9rem;
+    padding: 1.5rem 1rem;
     border-radius: 28px;
     background: #fff;
-    box-shadow: 0 18px 44px rgb(37 39 45 / 0.05);
+    text-align: center;
+    box-shadow: 0 16px 38px rgb(37 39 45 / 0.05);
   }
 
-  .fairplay-landing__composition-card span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: rgb(144 171 114 / 0.12);
-    color: var(--fairplay-green);
-    font-weight: 700;
+  .fairplay-landing__composition-card img {
+    width: min(100%, 88px);
+    margin-inline: auto;
+    object-fit: contain;
   }
 
   .fairplay-landing__composition-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
   }
 
   .fairplay-landing__composition-card p {
-    font-size: 0.95rem;
+    font-size: 0.94rem;
+  }
+
+  .fairplay-landing__composition-meta {
+    margin-top: -0.35rem;
+    font-size: 0.86rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fairplay-green);
   }
 
   .fairplay-landing__notice {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 1rem;
-    align-items: start;
+    gap: 1.25rem;
+    justify-items: center;
     margin-top: clamp(3rem, 6vw, 5rem);
-    padding: 1.25rem 1.5rem;
-    border-radius: 24px;
+    padding: clamp(1.5rem, 3vw, 2rem);
     background: var(--fairplay-dark);
+    text-align: center;
   }
 
-  .fairplay-landing__notice p {
-    color: rgb(255 255 255 / 0.78);
+  .fairplay-landing__notice-image {
+    width: min(100%, 280px);
   }
 
-  .fairplay-landing__notice-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    background: rgb(255 255 255 / 0.14);
-    color: #fff;
+  .fairplay-landing__notice p,
+  .fairplay-landing__notice strong {
+    color: rgb(255 255 255 / 0.84);
+  }
+
+  .fairplay-landing__section--recommendations {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: start;
+  }
+
+  .fairplay-landing__recommendations-copy,
+  .fairplay-landing__recommendations-detail {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .fairplay-landing__recommendations-copy h2 strong {
     font-weight: 700;
   }
 
-  .fairplay-landing__section--play-clean {
-    grid-template-columns: minmax(0, 0.88fr) minmax(300px, 1fr);
-    align-items: start;
-  }
-
-  .fairplay-landing__play-clean-copy {
-    display: grid;
+  .fairplay-landing__recommendations-detail {
     gap: 1rem;
   }
 
-  .fairplay-landing__inline-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-    color: var(--fairplay-green);
-    font-weight: 600;
-    text-underline-offset: 0.2em;
-  }
-
-  .fairplay-landing__detail-card {
-    overflow: hidden;
-    border-radius: 34px;
-    background: #fff;
-    border: 1px solid var(--fairplay-border);
-    box-shadow: 0 24px 48px rgb(44 46 53 / 0.08);
-  }
-
-  .fairplay-landing__detail-card img {
-    aspect-ratio: 1 / 0.88;
-    background: var(--fairplay-mist);
-  }
-
-  .fairplay-landing__detail-list {
+  .fairplay-landing__detail-panel {
     display: grid;
-    gap: 1.1rem;
-    padding: 1.5rem;
+    grid-template-columns: minmax(150px, 0.72fr) minmax(0, 1fr);
+    gap: 1rem;
+    align-items: center;
+    padding: 1.3rem;
+    border: 1px solid var(--fairplay-border);
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0 18px 40px rgb(44 46 53 / 0.06);
   }
 
-  .fairplay-landing__detail-list strong {
+  .fairplay-landing__detail-panel img {
     display: block;
-    margin-bottom: 0.25rem;
-    color: var(--fairplay-ink);
+    width: 100%;
+    object-fit: contain;
   }
 
-  .fairplay-landing__banner {
+  .fairplay-landing__detail-panel h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .fairplay-landing__community-banner {
     position: relative;
     overflow: hidden;
-    min-height: clamp(360px, 42vw, 520px);
-    margin-top: clamp(4rem, 8vw, 7rem);
-    border-radius: 42px;
+    margin-top: clamp(4rem, 8vw, 6rem);
+    border-radius: 0;
     background: var(--fairplay-dark);
   }
 
-  .fairplay-landing__banner img {
+  .fairplay-landing__community-banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .fairplay-landing__community-badge {
     position: absolute;
-    inset: 0;
-  }
-
-  .fairplay-landing__banner-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgb(44 46 53 / 0.72) 0%, rgb(44 46 53 / 0.18) 58%, rgb(44 46 53 / 0.55) 100%);
-  }
-
-  .fairplay-landing__banner-copy {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    align-content: center;
-    gap: 1rem;
-    min-height: 100%;
-    padding: clamp(1.5rem, 5vw, 4rem);
-    max-width: 26rem;
-  }
-
-  .fairplay-landing__banner-copy h2 {
+    right: clamp(1rem, 4vw, 2.5rem);
+    top: clamp(1rem, 4vw, 2.5rem);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 86px;
+    min-height: 86px;
+    border-radius: 50%;
+    background: rgb(82 83 87 / 0.82);
     color: #fff;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 300;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
   }
 
   @media screen and (max-width: 1199px) {
@@ -766,34 +816,21 @@
   }
 
   @media screen and (max-width: 989px) {
-    .fairplay-landing__hero-shell,
-    .fairplay-landing__intro-grid,
-    .fairplay-landing__section--split,
-    .fairplay-landing__section--play-clean {
+    .fairplay-landing__statement-band,
+    .fairplay-landing__section--benefits,
+    .fairplay-landing__section--recommendations,
+    .fairplay-landing__detail-panel {
       grid-template-columns: 1fr;
     }
 
-    .fairplay-landing__hero-shell {
-      min-height: auto;
-      padding-top: 0;
+    .fairplay-landing__statement-band {
+      display: grid;
+      justify-items: center;
     }
 
-    .fairplay-landing__copy h1,
-    .fairplay-landing__section-header h2,
-    .fairplay-landing__split-copy h2,
-    .fairplay-landing__play-clean-copy h2,
-    .fairplay-landing__banner-copy h2 {
-      max-width: none;
-    }
-
-    .fairplay-landing__visual {
-      order: -1;
-      min-height: 320px;
-    }
-
-    .fairplay-landing__dark-band {
-      flex-direction: column;
-      align-items: flex-start;
+    .fairplay-landing__hero-product {
+      right: 1rem;
+      bottom: -0.5rem;
     }
 
     .fairplay-landing__composition-grid {
@@ -807,41 +844,60 @@
     }
 
     .fairplay-landing__hero,
+    .fairplay-landing__statement-band,
+    .fairplay-landing__video-shell,
     .fairplay-landing__section,
+    .fairplay-landing__feature-media,
     .fairplay-landing__notice,
-    .fairplay-landing__banner {
+    .fairplay-landing__community-banner {
       width: min(100%, calc(100% - 1rem));
     }
 
-    .fairplay-landing__actions {
-      display: grid;
-      grid-template-columns: 1fr;
+    .fairplay-landing__hero {
+      gap: 0.75rem;
     }
 
-    .fairplay-landing__button {
-      width: 100%;
+    .fairplay-landing__hero h1 {
+      font-size: clamp(2rem, 11vw, 3rem);
     }
 
-    .fairplay-landing__hero-product-card {
-      right: 0;
-      bottom: 1rem;
+    .fairplay-landing__hero-stage {
+      min-height: 240px;
     }
 
-    .fairplay-landing__digest-card {
-      grid-template-columns: 1fr;
+    .fairplay-landing__hero-product {
+      width: 118px;
+      padding: 0.65rem;
+    }
+
+    .fairplay-landing__statement-band {
+      margin-top: 0;
+      padding-inline: 1rem;
+    }
+
+    .fairplay-landing__video-shell {
+      margin-top: -0.5rem;
+    }
+
+    .fairplay-landing__section-header h2,
+    .fairplay-landing__benefits-copy h2,
+    .fairplay-landing__recommendations-copy h2 {
+      max-width: none;
+      font-size: clamp(1.85rem, 8vw, 2.4rem);
     }
 
     .fairplay-landing__composition-grid {
       grid-template-columns: 1fr;
     }
 
-    .fairplay-landing__notice {
-      grid-template-columns: 1fr;
+    .fairplay-landing__detail-panel {
+      padding: 1rem;
     }
 
-    .fairplay-landing__banner {
-      min-height: 420px;
-      border-radius: 30px;
+    .fairplay-landing__community-badge {
+      min-width: 68px;
+      min-height: 68px;
+      font-size: 1rem;
     }
   }
 {% endstylesheet %}
@@ -859,18 +915,28 @@
     },
     {
       "type": "image_picker",
+      "id": "hero_background_mobile",
+      "label": "Hero background mobile"
+    },
+    {
+      "type": "image_picker",
       "id": "hero_product",
       "label": "Hero product image"
     },
     {
-      "type": "image_picker",
-      "id": "intro_image",
-      "label": "Intro image"
+      "type": "url",
+      "id": "video_embed_url",
+      "label": "Video embed URL"
     },
     {
       "type": "image_picker",
-      "id": "lifestyle_image",
-      "label": "Lifestyle image"
+      "id": "intro_image",
+      "label": "Feature image"
+    },
+    {
+      "type": "image_picker",
+      "id": "intro_image_mobile",
+      "label": "Feature image mobile"
     },
     {
       "type": "image_picker",
@@ -880,12 +946,32 @@
     {
       "type": "image_picker",
       "id": "detail_image",
-      "label": "Detail card image"
+      "label": "Recommendations product image"
+    },
+    {
+      "type": "image_picker",
+      "id": "detail_diagram_image",
+      "label": "Usage diagram image"
+    },
+    {
+      "type": "image_picker",
+      "id": "detail_diagram_mobile",
+      "label": "Usage diagram mobile image"
+    },
+    {
+      "type": "image_picker",
+      "id": "warning_image",
+      "label": "Warning image"
     },
     {
       "type": "image_picker",
       "id": "banner_image",
-      "label": "Bottom banner image"
+      "label": "Community banner image"
+    },
+    {
+      "type": "image_picker",
+      "id": "banner_image_mobile",
+      "label": "Community banner mobile image"
     },
     {
       "type": "url",
