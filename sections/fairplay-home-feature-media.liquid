@@ -1,0 +1,102 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | strip
+
+  if section.settings.image != blank
+    assign feature_image = section.settings.image | image_url: width: 1800
+  else
+    assign feature_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/fair-play-2.jpg'
+  endif
+
+  if section.settings.image_mobile != blank
+    assign feature_image_mobile = section.settings.image_mobile | image_url: width: 900
+  else
+    assign feature_image_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/foto_movil_1_1-2.png'
+  endif
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-media section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+>
+  <div class="fairplay-home-section__wrap">
+    <div class="fairplay-home-media__card">
+      <picture>
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ feature_image_mobile }}"
+        >
+        <img
+          src="{{ feature_image }}"
+          alt="{{ section.settings.image_alt | escape | default: 'Imagen destacada Fair Play' }}"
+          loading="lazy"
+        >
+      </picture>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Feature Image",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt",
+      "default": "Imagen destacada Fair Play"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Feature Image"
+    }
+  ]
+}
+{% endschema %}

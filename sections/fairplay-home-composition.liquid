@@ -1,0 +1,161 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | strip
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-composition section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+>
+  <div class="fairplay-home-section__wrap fairplay-home-composition__wrap">
+    <div class="fairplay-home-composition__header">
+      <p class="fairplay-home-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="fairplay-home-title">{{ section.settings.title }}</h2>
+    </div>
+
+    <div class="fairplay-home-composition__grid">
+      {% for block in section.blocks %}
+        {% liquid
+          if block.settings.image != blank
+            assign card_image = block.settings.image | image_url: width: 320
+          elsif block.settings.image_url != blank
+            assign card_image = block.settings.image_url
+          else
+            assign card_image = blank
+          endif
+        %}
+        <article
+          class="fairplay-home-composition__card"
+          {{ block.shopify_attributes }}
+        >
+          {% if card_image != blank %}
+            <img
+              src="{{ card_image }}"
+              alt="{{ block.settings.title | escape }}"
+              loading="lazy"
+            >
+          {% endif %}
+          <h3>{{ block.settings.title }}</h3>
+          {% if block.settings.meta != blank %}
+            <p class="fairplay-home-composition__meta">{{ block.settings.meta }}</p>
+          {% endif %}
+          <p>{{ block.settings.copy }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Composition",
+  "tag": "section",
+  "class": "section-wrapper",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "composicion"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Composicion"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Ingredientes que juegan a tu favor"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "image_url",
+          "label": "Fallback image URL"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Ingredient"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Meta"
+        },
+        {
+          "type": "textarea",
+          "id": "copy",
+          "label": "Copy",
+          "default": "Ingredient description."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Composition",
+      "blocks": [
+        {
+          "type": "ingredient"
+        },
+        {
+          "type": "ingredient"
+        },
+        {
+          "type": "ingredient"
+        },
+        {
+          "type": "ingredient"
+        },
+        {
+          "type": "ingredient"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

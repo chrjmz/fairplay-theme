@@ -8,17 +8,169 @@
  * ------------------------------------------------------------
  */{
   "sections": {
-    "fairplay_landing_j4mJ2C": {
-      "type": "fairplay-landing",
+    "fairplay_home_hero_8qTrf2": {
+      "type": "fairplay-home-hero",
       "settings": {
+        "anchor_id": "fairplay",
+        "eyebrow": "Play clean, play better",
+        "title": "Con Fair Play For Men estaras preparado para jugar desde el primer momento",
+        "lede": "Un suplemento de fibra dietaria pensado para mejorar el transito intestinal, ayudarte a mantener una mejor higiene personal y reducir el tiempo de preparacion antes de tus encuentros.",
+        "image_alt": "Fair Play For Men",
         "buy_link": "",
-        "padding-block-start": 24,
-        "padding-block-end": 48
+        "padding_block_start": 24,
+        "padding_block_end": 8
+      }
+    },
+    "fairplay_home_statement_video_4dJsa9": {
+      "type": "fairplay-home-statement-video",
+      "settings": {
+        "anchor_id": "video",
+        "statement": "<p>Con <strong>Fair Play For Men</strong> estaras preparado para jugar desde el <strong>primer momento</strong>.</p>",
+        "button_label": "Comprar",
+        "buy_link": "",
+        "video_embed_url": "https://www.youtube.com/embed/JVkUjvbwGYM",
+        "padding_block_start": 0,
+        "padding_block_end": 32
+      }
+    },
+    "fairplay_home_intro_Bm73Lp": {
+      "type": "fairplay-home-intro",
+      "settings": {
+        "anchor_id": "que-es-fairplay",
+        "eyebrow": "Que es Fair Play For Men?",
+        "title": "Una rutina mas limpia y placentera desde el primer momento",
+        "body_1": "<p><strong>Fair Play For Men</strong> es un suplemento de fibra dietaria que ayuda a mantener un adecuado transito intestinal y contribuye con la higiene personal. En pocas palabras, es un aliado para experimentar encuentros mas limpios y placenteros.</p>",
+        "body_2": "<p>Las fibras 100% naturales, debidamente hidratadas con agua, funcionan como un agente de limpieza a medida que pasan a traves del sistema digestivo, reduciendo significativamente el uso de enemas y el tiempo que dedicas para estar preparado.</p>",
+        "body_3": "<p>Adicionalmente, nuestra formula exclusiva incluye <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, ingredientes que fortalecen el sistema inmunologico y nutren el cabello, la piel, los huesos y las unas.</p>",
+        "padding_block_start": 72,
+        "padding_block_end": 24
+      }
+    },
+    "fairplay_home_feature_media_Wq5ePc": {
+      "type": "fairplay-home-feature-media",
+      "settings": {
+        "image_alt": "Imagen destacada Fair Play",
+        "padding_block_start": 16,
+        "padding_block_end": 16
+      }
+    },
+    "fairplay_home_benefits_Ku92Vz": {
+      "type": "fairplay-home-benefits",
+      "settings": {
+        "anchor_id": "beneficios",
+        "eyebrow": "Y tu... Como juegas?",
+        "title": "Mas bienestar para tu cuerpo, menos pasos antes de disfrutar",
+        "body_1": "<p><strong>Fair Play For Men</strong> reune la mejor seleccion de ingredientes que le aportan a tu organismo la cantidad de fibra necesaria para garantizar un adecuado transito intestinal que, junto a una sensacion de bienestar, reducira significativamente el uso de enemas y el tiempo que dedicas para disfrutar de un encuentro sexual mas limpio y placentero.</p>",
+        "body_2": "<p>De otro lado, nuestra formula exclusiva con <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, potencia la capacidad de defensa del organismo, funciona como antioxidante y contribuye al fortalecimiento de la piel, las unas, el cabello y las articulaciones.</p>",
+        "highlight": "Ya lo sabes, con Fair Play For Men, estaras preparado para jugar desde el primer momento.",
+        "card_label": "Fair Play For Men",
+        "card_text": "Evacua totalmente tu sistema intestinal, sin dejar residuos que incomodan.",
+        "padding_block_start": 72,
+        "padding_block_end": 24
+      }
+    },
+    "fairplay_home_composition_Xa37Hs": {
+      "type": "fairplay-home-composition",
+      "blocks": {
+        "ingredient_1": {
+          "type": "ingredient",
+          "settings": {
+            "image_url": "https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-5egoshop.png",
+            "title": "Chia, linaza y psyllium",
+            "meta": "Fibra",
+            "copy": "Debidamente hidratados con agua, estos ingredientes facilitan el transito intestinal y aportan proteinas, antioxidantes, acidos grasos y omega-3."
+          }
+        },
+        "ingredient_2": {
+          "type": "ingredient",
+          "settings": {
+            "image_url": "https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-6egoshop.png",
+            "title": "Ganoderma Lucidum",
+            "meta": "",
+            "copy": "Hongo milenario al que se le reconocen efectos potencialmente terapeuticos como inmunoreguladores, antioxidantes y de bienestar general."
+          }
+        },
+        "ingredient_3": {
+          "type": "ingredient",
+          "settings": {
+            "image_url": "https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-7egoshop.png",
+            "title": "Colageno Hidrolizado",
+            "meta": "",
+            "copy": "Ayuda a estimular la produccion de colageno en el organismo, mejorando la piel y fortaleciendo articulaciones, unas, huesos y cabello."
+          }
+        },
+        "ingredient_4": {
+          "type": "ingredient",
+          "settings": {
+            "image_url": "https://fairplay4men.com/wp-content/uploads/2022/07/1vivimania.png",
+            "title": "Vitamina C",
+            "meta": "",
+            "copy": "Antioxidante que protege las celulas y participa en la formacion de vasos sanguineos, musculos, cartilagos y colageno."
+          }
+        },
+        "ingredient_5": {
+          "type": "ingredient",
+          "settings": {
+            "image_url": "https://fairplay4men.com/wp-content/uploads/2022/07/1aloloe.png",
+            "title": "Aloe Vera",
+            "meta": "",
+            "copy": "Regula el pH del aparato digestivo y ayuda a evitar afecciones como ulceras, digestiones lentas o pesadez estomacal."
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_1",
+        "ingredient_2",
+        "ingredient_3",
+        "ingredient_4",
+        "ingredient_5"
+      ],
+      "settings": {
+        "anchor_id": "composicion",
+        "eyebrow": "Composicion",
+        "title": "Ingredientes que juegan a tu favor",
+        "padding_block_start": 72,
+        "padding_block_end": 24
+      }
+    },
+    "fairplay_home_warning_Hz41Nc": {
+      "type": "fairplay-home-warning",
+      "settings": {
+        "copy": "<p>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></p>",
+        "padding_block_start": 28,
+        "padding_block_end": 28
+      }
+    },
+    "fairplay_home_recommendations_Ym84Qd": {
+      "type": "fairplay-home-recommendations",
+      "settings": {
+        "anchor_id": "recomendaciones",
+        "eyebrow": "Recomendaciones",
+        "title": "Juega a tu ritmo, juega limpio",
+        "body_1": "<p><strong>Precauciones:</strong> No exceda la dosis diaria recomendada. Este producto debe ser consumido luego de ser diluido en agua; consumirlo en polvo podria causar asfixia. Si al consumir el producto surgen sintomas como dolor en el pecho, vomito, dificultad para respirar o tragar, o alguna otra reaccion alergica, busque inmediatamente atencion medica.</p>",
+        "body_2": "<p>Evite su uso en mujeres en embarazo o en periodo de lactancia, asi como en personas con dolor abdominal o sintomas de diarrea. En caso de estar consumiendo algun medicamento o en medio de un tratamiento medico, consulte con su medico antes de hacer uso de este producto. <strong>Producto sugerido para personas mayores de 18 anos.</strong></p>",
+        "body_3": "<p><strong>Conservacion:</strong> Conservese en su envase original, a temperatura ambiente y en un lugar fresco, ventilado y seco. Cerciorese de cerrarlo hermeticamente despues de cada uso para evitar su contaminacion y humedad.</p>",
+        "product_title": "Presentacion",
+        "product_copy": "Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las cascaras de psyllium. De esa hidratacion depende la consistencia necesaria para arrastrar los residuos del tracto intestinal.",
+        "dose_title": "Dosis",
+        "dose_copy": "Consumir 6 gramos, equivalentes a 2 porciones del dosificador incluido en el producto, maximo dos veces al dia, disueltas en 240 ml de agua.",
+        "padding_block_start": 72,
+        "padding_block_end": 24
+      }
+    },
+    "fairplay_home_community_Ur16Mx": {
+      "type": "fairplay-home-community",
+      "settings": {
+        "image_alt": "Comunidad Fair Play",
+        "badge_text": "Play",
+        "padding_block_start": 56,
+        "padding_block_end": 0
       }
     },
     "fairplay_contact_home_x8R2Qa": {
       "type": "fairplay-contact-cta",
       "settings": {
+        "anchor_id": "contacto",
         "title": "Que esperas para unirte al juego?",
         "intro": "Dejanos tus datos para recibir informacion y acompanarte en tu compra de Fair Play For Men.",
         "product_title": "Fair Play 4 Men",
@@ -31,7 +183,15 @@
     }
   },
   "order": [
-    "fairplay_landing_j4mJ2C",
+    "fairplay_home_hero_8qTrf2",
+    "fairplay_home_statement_video_4dJsa9",
+    "fairplay_home_intro_Bm73Lp",
+    "fairplay_home_feature_media_Wq5ePc",
+    "fairplay_home_benefits_Ku92Vz",
+    "fairplay_home_composition_Xa37Hs",
+    "fairplay_home_warning_Hz41Nc",
+    "fairplay_home_recommendations_Ym84Qd",
+    "fairplay_home_community_Ur16Mx",
     "fairplay_contact_home_x8R2Qa"
   ]
 }

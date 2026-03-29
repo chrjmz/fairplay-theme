@@ -1,0 +1,109 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | strip
+
+  if section.settings.image != blank
+    assign community_image = section.settings.image | image_url: width: 1800
+  else
+    assign community_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/landing_FairPlay_ajustes-01-1.png'
+  endif
+
+  if section.settings.image_mobile != blank
+    assign community_image_mobile = section.settings.image_mobile | image_url: width: 900
+  else
+    assign community_image_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/foto_movil_2_1-3.png'
+  endif
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-community section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+>
+  <div class="fairplay-home-section__wrap">
+    <div class="fairplay-home-community__card">
+      <picture>
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ community_image_mobile }}"
+        >
+        <img
+          src="{{ community_image }}"
+          alt="{{ section.settings.image_alt | escape | default: 'Comunidad Fair Play' }}"
+          loading="lazy"
+        >
+      </picture>
+      <span class="fairplay-home-community__badge">{{ section.settings.badge_text }}</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Community Banner",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt",
+      "default": "Comunidad Fair Play"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "Play"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 56
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Community Banner"
+    }
+  ]
+}
+{% endschema %}

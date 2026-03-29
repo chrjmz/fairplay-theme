@@ -1,0 +1,159 @@
+{% liquid
+  assign default_buy_link = 'https://fairplay4men.com/producto/fair-play-4-men/'
+  assign buy_link = section.settings.buy_link | default: default_buy_link
+  assign anchor_id = section.settings.anchor_id | strip
+
+  if section.settings.hero_background != blank
+    assign hero_background = section.settings.hero_background | image_url: width: 1800
+  else
+    assign hero_background = 'https://fairplay4men.com/wp-content/uploads/2021/04/fair-play-for-men-f2.png'
+  endif
+
+  if section.settings.hero_background_mobile != blank
+    assign hero_background_mobile = section.settings.hero_background_mobile | image_url: width: 900
+  else
+    assign hero_background_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/foto_pareja.jpg'
+  endif
+
+  if section.settings.hero_product != blank
+    assign hero_product = section.settings.hero_product | image_url: width: 800
+  else
+    assign hero_product = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
+  endif
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-hero section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+>
+  <div class="fairplay-home-section__wrap fairplay-home-hero__wrap">
+    <div class="fairplay-home-hero__copy">
+      <p class="fairplay-home-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h1 class="fairplay-home-hero__title">{{ section.settings.title }}</h1>
+      {% if section.settings.lede != blank %}
+        <p class="fairplay-home-hero__lede">{{ section.settings.lede }}</p>
+      {% endif %}
+    </div>
+
+    <div class="fairplay-home-hero__stage">
+      <picture>
+        <source
+          media="(max-width: 749px)"
+          srcset="{{ hero_background_mobile }}"
+        >
+        <img
+          class="fairplay-home-hero__image"
+          src="{{ hero_background }}"
+          alt="{{ section.settings.image_alt | escape | default: 'Fair Play For Men' }}"
+          loading="lazy"
+        >
+      </picture>
+
+      <a
+        class="fairplay-home-hero__product"
+        href="{{ buy_link }}"
+        aria-label="Comprar Fair Play For Men"
+      >
+        <img
+          src="{{ hero_product }}"
+          alt="Envase Fair Play For Men"
+          loading="lazy"
+        >
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Hero",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "fairplay"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Play clean, play better"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Con Fair Play For Men estaras preparado para jugar desde el primer momento"
+    },
+    {
+      "type": "textarea",
+      "id": "lede",
+      "label": "Intro text",
+      "default": "Un suplemento de fibra dietaria pensado para mejorar el transito intestinal, ayudarte a mantener una mejor higiene personal y reducir el tiempo de preparacion antes de tus encuentros."
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Hero image alt",
+      "default": "Fair Play For Men"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_background",
+      "label": "Hero background"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_background_mobile",
+      "label": "Hero background mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_product",
+      "label": "Hero product image"
+    },
+    {
+      "type": "url",
+      "id": "buy_link",
+      "label": "Buy link"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Hero"
+    }
+  ]
+}
+{% endschema %}

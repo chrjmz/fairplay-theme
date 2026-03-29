@@ -1,0 +1,87 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | strip
+
+  if section.settings.warning_image != blank
+    assign warning_image = section.settings.warning_image | image_url: width: 560
+  else
+    assign warning_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/advertencia.svg'
+  endif
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-warning section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+>
+  <div class="fairplay-home-section__wrap fairplay-home-warning__wrap">
+    <img
+      class="fairplay-home-warning__image"
+      src="{{ warning_image }}"
+      alt="Advertencia Fair Play"
+      loading="lazy"
+    >
+    <div class="fairplay-home-richtext fairplay-home-warning__copy">
+      {{ section.settings.copy }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Warning",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": ""
+    },
+    {
+      "type": "image_picker",
+      "id": "warning_image",
+      "label": "Warning image"
+    },
+    {
+      "type": "richtext",
+      "id": "copy",
+      "label": "Copy",
+      "default": "<p>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></p>"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 28
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Warning"
+    }
+  ]
+}
+{% endschema %}

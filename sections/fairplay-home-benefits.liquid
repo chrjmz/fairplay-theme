@@ -1,0 +1,137 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | strip
+
+  if section.settings.digest_image != blank
+    assign digest_image = section.settings.digest_image | image_url: width: 1000
+  else
+    assign digest_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/fair-play-for-men-digestion.png'
+  endif
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-benefits section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+>
+  <div class="fairplay-home-section__wrap fairplay-home-benefits__grid">
+    <div class="fairplay-home-benefits__copy">
+      <p class="fairplay-home-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="fairplay-home-title">{{ section.settings.title }}</h2>
+      <div class="fairplay-home-body-copy">
+        {{ section.settings.body_1 }}
+        {{ section.settings.body_2 }}
+      </div>
+      {% if section.settings.highlight != blank %}
+        <p class="fairplay-home-benefits__highlight">{{ section.settings.highlight }}</p>
+      {% endif %}
+    </div>
+
+    <div class="fairplay-home-benefits__card">
+      <img
+        src="{{ digest_image }}"
+        alt="Beneficios digestivos de Fair Play"
+        loading="lazy"
+      >
+      <div>
+        <span class="fairplay-home-benefits__label">{{ section.settings.card_label }}</span>
+        <strong>{{ section.settings.card_text }}</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Benefits",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "beneficios"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Y tu... Como juegas?"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Mas bienestar para tu cuerpo, menos pasos antes de disfrutar"
+    },
+    {
+      "type": "richtext",
+      "id": "body_1",
+      "label": "Paragraph 1",
+      "default": "<p><strong>Fair Play For Men</strong> reune la mejor seleccion de ingredientes que le aportan a tu organismo la cantidad de fibra necesaria para garantizar un adecuado transito intestinal que, junto a una sensacion de bienestar, reducira significativamente el uso de enemas y el tiempo que dedicas para disfrutar de un encuentro sexual mas limpio y placentero.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_2",
+      "label": "Paragraph 2",
+      "default": "<p>De otro lado, nuestra formula exclusiva con <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, potencia la capacidad de defensa del organismo, funciona como antioxidante y contribuye al fortalecimiento de la piel, las unas, el cabello y las articulaciones.</p>"
+    },
+    {
+      "type": "text",
+      "id": "highlight",
+      "label": "Highlight line",
+      "default": "Ya lo sabes, con Fair Play For Men, estaras preparado para jugar desde el primer momento."
+    },
+    {
+      "type": "image_picker",
+      "id": "digest_image",
+      "label": "Digest image"
+    },
+    {
+      "type": "text",
+      "id": "card_label",
+      "label": "Card label",
+      "default": "Fair Play For Men"
+    },
+    {
+      "type": "textarea",
+      "id": "card_text",
+      "label": "Card text",
+      "default": "Evacua totalmente tu sistema intestinal, sin dejar residuos que incomodan."
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Benefits"
+    }
+  ]
+}
+{% endschema %}

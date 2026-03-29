@@ -1,0 +1,189 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | strip
+
+  if section.settings.product_image != blank
+    assign product_image = section.settings.product_image | image_url: width: 900
+  else
+    assign product_image = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
+  endif
+
+  if section.settings.diagram_image != blank
+    assign diagram_image = section.settings.diagram_image | image_url: width: 900
+  else
+    assign diagram_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-8egoshop-2.png'
+  endif
+
+  if section.settings.diagram_image_mobile != blank
+    assign diagram_image_mobile = section.settings.diagram_image_mobile | image_url: width: 700
+  else
+    assign diagram_image_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/fairPlay_landing_movilno-hacer-caso-a-fotos-04.png'
+  endif
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-recommendations section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+>
+  <div class="fairplay-home-section__wrap fairplay-home-recommendations__grid">
+    <div class="fairplay-home-recommendations__copy">
+      <p class="fairplay-home-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="fairplay-home-title">{{ section.settings.title }}</h2>
+      <div class="fairplay-home-body-copy">
+        {{ section.settings.body_1 }}
+        {{ section.settings.body_2 }}
+        {{ section.settings.body_3 }}
+      </div>
+    </div>
+
+    <div class="fairplay-home-recommendations__detail">
+      <div class="fairplay-home-recommendations__panel">
+        <img
+          src="{{ product_image }}"
+          alt="Presentacion Fair Play For Men"
+          loading="lazy"
+        >
+        <div>
+          <h3>{{ section.settings.product_title }}</h3>
+          <p>{{ section.settings.product_copy }}</p>
+        </div>
+      </div>
+
+      <div class="fairplay-home-recommendations__panel">
+        <picture>
+          <source
+            media="(max-width: 749px)"
+            srcset="{{ diagram_image_mobile }}"
+          >
+          <img
+            src="{{ diagram_image }}"
+            alt="Modo de uso Fair Play For Men"
+            loading="lazy"
+          >
+        </picture>
+        <div>
+          <h3>{{ section.settings.dose_title }}</h3>
+          <p>{{ section.settings.dose_copy }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Recommendations",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "recomendaciones"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Recomendaciones"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Juega a tu ritmo, juega limpio"
+    },
+    {
+      "type": "richtext",
+      "id": "body_1",
+      "label": "Paragraph 1",
+      "default": "<p><strong>Precauciones:</strong> No exceda la dosis diaria recomendada. Este producto debe ser consumido luego de ser diluido en agua; consumirlo en polvo podria causar asfixia. Si al consumir el producto surgen sintomas como dolor en el pecho, vomito, dificultad para respirar o tragar, o alguna otra reaccion alergica, busque inmediatamente atencion medica.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_2",
+      "label": "Paragraph 2",
+      "default": "<p>Evite su uso en mujeres en embarazo o en periodo de lactancia, asi como en personas con dolor abdominal o sintomas de diarrea. En caso de estar consumiendo algun medicamento o en medio de un tratamiento medico, consulte con su medico antes de hacer uso de este producto. <strong>Producto sugerido para personas mayores de 18 anos.</strong></p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_3",
+      "label": "Paragraph 3",
+      "default": "<p><strong>Conservacion:</strong> Conservese en su envase original, a temperatura ambiente y en un lugar fresco, ventilado y seco. Cerciorese de cerrarlo hermeticamente despues de cada uso para evitar su contaminacion y humedad.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "product_title",
+      "label": "Product title",
+      "default": "Presentacion"
+    },
+    {
+      "type": "textarea",
+      "id": "product_copy",
+      "label": "Product copy",
+      "default": "Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las cascaras de psyllium. De esa hidratacion depende la consistencia necesaria para arrastrar los residuos del tracto intestinal."
+    },
+    {
+      "type": "image_picker",
+      "id": "diagram_image",
+      "label": "Diagram image"
+    },
+    {
+      "type": "image_picker",
+      "id": "diagram_image_mobile",
+      "label": "Diagram mobile image"
+    },
+    {
+      "type": "text",
+      "id": "dose_title",
+      "label": "Dose title",
+      "default": "Dosis"
+    },
+    {
+      "type": "textarea",
+      "id": "dose_copy",
+      "label": "Dose copy",
+      "default": "Consumir 6 gramos, equivalentes a 2 porciones del dosificador incluido en el producto, maximo dos veces al dia, disueltas en 240 ml de agua."
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Recommendations"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,109 @@
+{% liquid
+  assign default_buy_link = 'https://fairplay4men.com/producto/fair-play-4-men/'
+  assign buy_link = section.settings.buy_link | default: default_buy_link
+  assign anchor_id = section.settings.anchor_id | strip
+  assign video_embed_url = section.settings.video_embed_url | default: 'https://www.youtube.com/embed/JVkUjvbwGYM'
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-band section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+>
+  <div class="fairplay-home-section__wrap fairplay-home-band__stack">
+    <div class="fairplay-home-band__bar">
+      <div class="fairplay-home-band__statement">
+        {{ section.settings.statement }}
+      </div>
+      <a
+        href="{{ buy_link }}"
+        class="button fairplay-home-button fairplay-home-button--light"
+      >
+        {{ section.settings.button_label }}
+      </a>
+    </div>
+
+    <div class="fairplay-home-band__video">
+      <div class="fairplay-home-band__video-card">
+        <iframe
+          src="{{ video_embed_url }}"
+          title="Video Fair Play For Men"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Statement + Video",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": ""
+    },
+    {
+      "type": "richtext",
+      "id": "statement",
+      "label": "Statement",
+      "default": "<p>Con <strong>Fair Play For Men</strong> estaras preparado para jugar desde el <strong>primer momento</strong>.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Comprar"
+    },
+    {
+      "type": "url",
+      "id": "buy_link",
+      "label": "Buy link"
+    },
+    {
+      "type": "url",
+      "id": "video_embed_url",
+      "label": "Video embed URL"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Statement + Video"
+    }
+  ]
+}
+{% endschema %}

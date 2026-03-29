@@ -1,0 +1,101 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | strip
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-intro section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+>
+  <div class="fairplay-home-section__wrap fairplay-home-intro__wrap">
+    <div class="fairplay-home-intro__header">
+      <p class="fairplay-home-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="fairplay-home-title">{{ section.settings.title }}</h2>
+    </div>
+
+    <div class="fairplay-home-body-copy fairplay-home-intro__body">
+      {{ section.settings.body_1 }}
+      {{ section.settings.body_2 }}
+      {{ section.settings.body_3 }}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Intro",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "que-es-fairplay"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Que es Fair Play For Men?"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Una rutina mas limpia y placentera desde el primer momento"
+    },
+    {
+      "type": "richtext",
+      "id": "body_1",
+      "label": "Paragraph 1",
+      "default": "<p><strong>Fair Play For Men</strong> es un suplemento de fibra dietaria que ayuda a mantener un adecuado transito intestinal y contribuye con la higiene personal. En pocas palabras, es un aliado para experimentar encuentros mas limpios y placenteros.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_2",
+      "label": "Paragraph 2",
+      "default": "<p>Las fibras 100% naturales, debidamente hidratadas con agua, funcionan como un agente de limpieza a medida que pasan a traves del sistema digestivo, reduciendo significativamente el uso de enemas y el tiempo que dedicas para estar preparado.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "body_3",
+      "label": "Paragraph 3",
+      "default": "<p>Adicionalmente, nuestra formula exclusiva incluye <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, ingredientes que fortalecen el sistema inmunologico y nutren el cabello, la piel, los huesos y las unas.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Fair Play Intro"
+    }
+  ]
+}
+{% endschema %}
