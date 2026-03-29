@@ -1,5 +1,5 @@
 {% liquid
-  assign default_buy_link = 'https://fairplay4men.com/producto/fair-play-4-men/'
+  assign default_buy_link = routes.all_products_collection_url
   assign buy_link = section.settings.buy_link | default: default_buy_link
   assign anchor_id = section.settings.anchor_id | strip
   assign video_embed_url = section.settings.video_embed_url | default: 'https://www.youtube.com/embed/JVkUjvbwGYM'
