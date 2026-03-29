@@ -19,8 +19,12 @@
 >
   <div class="fairplay-home-section__wrap fairplay-home-benefits__grid">
     <div class="fairplay-home-benefits__copy">
-      <p class="fairplay-home-eyebrow">{{ section.settings.eyebrow }}</p>
-      <h2 class="fairplay-home-title">{{ section.settings.title }}</h2>
+      {% if section.settings.eyebrow != blank %}
+        <p class="fairplay-home-eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <h2 class="fairplay-home-title">{{ section.settings.title }}</h2>
+      {% endif %}
       <div class="fairplay-home-body-copy">
         {{ section.settings.body_1 }}
         {{ section.settings.body_2 }}

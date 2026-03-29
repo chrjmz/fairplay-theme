@@ -172,9 +172,9 @@
       "settings": {
         "anchor_id": "contacto",
         "title": "Que esperas para unirte al juego?",
-        "intro": "Dejanos tus datos para recibir informacion y acompanarte en tu compra de Fair Play For Men.",
-        "product_title": "Fair Play 4 Men",
-        "product_copy": "Complemento alimenticio con fibra dietaria para una preparacion mas simple y limpia.",
+        "intro": "Los campos marcados con * son obligatorios",
+        "product_title": "",
+        "product_copy": "",
         "button_label": "Comprar",
         "buy_link": "",
         "padding-block-start": 16,
