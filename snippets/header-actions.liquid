@@ -57,6 +57,14 @@
   </svg>
 {% endcapture %}
 
+{% capture cart_total %}
+  {% unless cart == empty %}
+    <span class="header-actions__cart-total">
+      {{ cart.total_price | money_without_trailing_zeros }}
+    </span>
+  {% endunless %}
+{% endcapture %}
+
 <header-actions
   {% if display_style == 'text' %}
     class="header-actions--text"
@@ -170,6 +178,7 @@
         data-testid="cart-drawer-trigger"
       >
         {{ cart_icon }}
+        {{ cart_total }}
       </button>
 
       <dialog
@@ -248,6 +257,7 @@
       aria-describedby="cart-bubble-text"
     >
       {{ cart_icon }}
+      {{ cart_total }}
     </a>
   {% endif %}
 
@@ -699,6 +709,16 @@
     align-items: center;
   }
 
+  .action__cart {
+    align-items: center;
+    gap: var(--gap-xs);
+  }
+
+  .header-actions__cart-total {
+    display: none;
+    white-space: nowrap;
+  }
+
   @media screen and (min-width: 750px) {
     .header-actions__cart-icon--text {
       display: flex;
@@ -708,6 +728,33 @@
 
     .header__column--right .header-actions--text {
       margin-inline-start: 0;
+    }
+
+    .header-actions__cart-total {
+      display: block;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--color-foreground);
+    }
+
+    .header__row--top .account-button {
+      min-width: 32px;
+    }
+
+    .header__row--top .account-button__icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .header__row--top .header-actions__cart-icon {
+      --cart-bubble-top: -3px;
+      --cart-bubble-right: -4px;
+    }
+
+    .header__row--top .header-actions__cart-icon .svg-wrapper {
+      width: 30px;
+      height: 30px;
     }
   }
 {% endstylesheet %}

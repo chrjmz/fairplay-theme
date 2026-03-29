@@ -15,7 +15,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-benefits section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-benefits-card-width: {{ section.settings.digest_image_width | default: 180 }}px; --fairplay-benefits-card-width-mobile: {{ section.settings.digest_image_width_mobile | default: 150 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-benefits__grid">
     <div class="fairplay-home-benefits__copy">
@@ -94,6 +94,30 @@
       "type": "image_picker",
       "id": "digest_image",
       "label": "Digest image"
+    },
+    {
+      "type": "header",
+      "content": "Digest image size"
+    },
+    {
+      "type": "range",
+      "id": "digest_image_width",
+      "label": "Desktop width",
+      "min": 100,
+      "max": 280,
+      "step": 4,
+      "unit": "px",
+      "default": 180
+    },
+    {
+      "type": "range",
+      "id": "digest_image_width_mobile",
+      "label": "Mobile width",
+      "min": 80,
+      "max": 220,
+      "step": 4,
+      "unit": "px",
+      "default": 150
     },
     {
       "type": "text",

@@ -47,6 +47,8 @@
             case platform
               when 'x'
                 assign platform = 'twitter'
+              when 'wa', 'api', 'whatsapp'
+                assign platform = 'whatsapp'
               else
                 assign render_icon = false
             endcase

@@ -89,6 +89,106 @@
       grid-column: 1 / -1;
     }
   }
+
+  .footer-content {
+    width: min(1180px, calc(100% - 2rem));
+    margin-inline: auto;
+  }
+
+  .footer-content > .group-block {
+    min-width: 0;
+  }
+
+  .footer-content .group-block-content {
+    height: 100%;
+  }
+
+  .footer-content .text-block,
+  .footer-content .text-block > * {
+    color: #fff;
+  }
+
+  .footer-content .text-block p {
+    line-height: 1.75;
+  }
+
+  .footer-content .text-block strong {
+    color: inherit;
+    font-weight: 600;
+  }
+
+  .footer-content .logo-block {
+    width: auto;
+  }
+
+  .footer-content .social-icons__wrapper {
+    gap: 0.85rem;
+    justify-content: flex-start;
+  }
+
+  .footer-content .social-icons__icon-wrapper {
+    width: auto;
+    height: auto;
+  }
+
+  .footer-content .social-icons__icon-wrapper a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid rgb(255 255 255 / 0.88);
+    border-radius: 999px;
+    color: #fff;
+    text-decoration: none;
+    transition: transform var(--animation-speed) var(--animation-easing), background-color var(--animation-speed) var(--animation-easing);
+  }
+
+  .footer-content .social-icons__icon {
+    display: block;
+    width: 22px;
+    height: 22px;
+  }
+
+  .footer-content .social-icons__icon-wrapper:has(.social-icons__icon path) {
+    width: auto;
+  }
+
+  .footer-content .social-icons__icon-label {
+    display: none;
+  }
+
+  .footer-content .social-icons__icon-wrapper a:hover {
+    transform: translateY(-1px);
+    background: rgb(255 255 255 / 0.08);
+  }
+
+  @media screen and (min-width: 990px) {
+    .footer-content {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: clamp(2rem, 9vw, 8rem);
+    }
+
+    .footer-content > .group-block:last-child {
+      justify-self: end;
+    }
+  }
+
+  @media screen and (max-width: 989px) {
+    .footer-content {
+      justify-items: center;
+      text-align: center;
+    }
+
+    .footer-content .text-block {
+      align-items: center;
+    }
+
+    .footer-content .social-icons__wrapper {
+      justify-content: center;
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}

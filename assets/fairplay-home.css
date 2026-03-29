@@ -145,7 +145,7 @@
   position: absolute;
   right: clamp(0.75rem, 9vw, 7rem);
   bottom: clamp(-0.25rem, -1vw, 0);
-  width: clamp(92px, 12vw, 138px);
+  width: min(100%, var(--fairplay-hero-product-width, 138px));
   padding: 0.55rem;
   background: #fff;
   box-shadow: 0 12px 28px rgb(40 42 48 / 0.14);
@@ -266,7 +266,7 @@
 }
 
 .fairplay-home-benefits__card img {
-  width: min(100%, 180px);
+  width: min(100%, var(--fairplay-benefits-card-width, 180px));
   object-fit: contain;
 }
 
@@ -395,12 +395,12 @@
 }
 
 .fairplay-home-recommendations__panel:first-child img {
-  width: min(100%, 170px);
+  width: min(100%, var(--fairplay-recommendations-product-width, 170px));
   margin-inline: auto;
 }
 
 .fairplay-home-recommendations__panel:last-child img {
-  width: min(100%, 120px);
+  width: min(100%, var(--fairplay-recommendations-diagram-width, 120px));
   margin-inline: auto;
 }
 
@@ -499,7 +499,7 @@
 
   .fairplay-home-hero__product {
     right: 0.6rem;
-    width: 96px;
+    width: min(100%, var(--fairplay-hero-product-width-mobile, 96px));
     padding: 0.45rem;
   }
 
@@ -522,12 +522,20 @@
   }
 
   .fairplay-home-benefits__card img {
-    width: min(100%, 150px);
+    width: min(100%, var(--fairplay-benefits-card-width-mobile, 150px));
   }
 
   .fairplay-home-composition__grid,
   .fairplay-home-recommendations__detail {
     grid-template-columns: 1fr;
+  }
+
+  .fairplay-home-recommendations__panel:first-child img {
+    width: min(100%, var(--fairplay-recommendations-product-width-mobile, 150px));
+  }
+
+  .fairplay-home-recommendations__panel:last-child img {
+    width: min(100%, var(--fairplay-recommendations-diagram-width-mobile, 110px));
   }
 
   .fairplay-home-community__badge {

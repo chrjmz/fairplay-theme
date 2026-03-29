@@ -3,6 +3,7 @@
 {% liquid
   assign block_settings = block.settings
   assign image = settings.logo
+  assign fallback_logo_ratio = 123 | times: 1.0 | divided_by: 92
 
   if block_settings.inverse and settings.logo_inverse
     assign image = settings.logo_inverse
@@ -23,6 +24,15 @@
         sizes: '(min-width: 750px) calc(var(--logo-width)), 100vw'
     -}}
   {% endcapture %}
+{%- else -%}
+  {% capture logo_image %}
+    <img
+      src="{{ 'fairplay-logo.png' | asset_url }}"
+      class="logo-block__image logo-block__image--fallback"
+      alt="{{ shop.name | escape }}"
+      loading="lazy"
+    >
+  {% endcapture %}
 {%- endif -%}
 
 <div
@@ -37,7 +47,7 @@
       {% if image %}
         --logo-width: {{ image.width | times: 1.00 | divided_by: image.height | times: block_settings.pixel_height }}px;
       {% else %}
-        --logo-width: {{ shop.name.size | times: 0.65 }}em;
+        --logo-width: {{ fallback_logo_ratio | times: block_settings.pixel_height }}px;
         --logo-height: {{ block_settings.pixel_height }}px;
       {% endif %}
     {% endif %}
@@ -49,9 +59,9 @@
       {% else %}
         {% if image %}
           --logo-width-mobile: {{ image.width | times: 1.00 | divided_by: image.height | times: block_settings.pixel_height_mobile }}px;
-          {% else %}
-            --logo-width-mobile: {{ shop.name.size | times: 0.65 }}em;
-            --logo-height-mobile: {{ block_settings.pixel_height_mobile }}px;
+        {% else %}
+          --logo-width-mobile: {{ fallback_logo_ratio | times: block_settings.pixel_height_mobile }}px;
+          --logo-height-mobile: {{ block_settings.pixel_height_mobile }}px;
         {% endif %}
       {% endif %}
     {% endif %}
@@ -59,13 +69,9 @@
   "
   {{ block.shopify_attributes }}
 >
-  {% if logo_image %}
-    <div class="logo-block__image-wrapper">
-      {{ logo_image }}
-    </div>
-  {% else %}
-    {% render 'jumbo-text', text: shop.name %}
-  {% endif %}
+  <div class="logo-block__image-wrapper">
+    {{ logo_image }}
+  </div>
 </div>
 
 {% stylesheet %}
