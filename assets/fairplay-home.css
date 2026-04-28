@@ -188,6 +188,7 @@
 
 .fairplay-home-band .fairplay-home-section__wrap {
   width: 100%;
+  max-width: none;
 }
 
 .fairplay-home-band__stack {

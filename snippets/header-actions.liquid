@@ -572,7 +572,7 @@
   }
 
   .header__column--right header-actions {
-    margin-inline-start: calc(var(--gap-md) * -1);
+    margin-inline-start: 0;
   }
 
   .header-actions__cart-icon {
@@ -709,7 +709,8 @@
     align-items: center;
   }
 
-  .action__cart {
+  .action__cart,
+  [data-testid='cart-drawer-trigger'] {
     align-items: center;
     gap: var(--gap-xs);
   }
