@@ -21,7 +21,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-media section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-feature-image-width: {{ section.settings.image_width_percent | default: 100 }}%;"
 >
   <div class="fairplay-home-section__wrap">
     <div class="fairplay-home-media__card">
@@ -69,6 +69,16 @@
       "id": "image_alt",
       "label": "Image alt",
       "default": "Imagen destacada Fair Play"
+    },
+    {
+      "type": "range",
+      "id": "image_width_percent",
+      "label": "Image width",
+      "min": 40,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "default": 100
     },
     {
       "type": "header",

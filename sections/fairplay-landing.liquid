@@ -103,7 +103,7 @@
 <div class="section-background color-scheme-1"></div>
 <section
   class="fairplay-landing section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding-block-start }}px; --fairplay-padding-bottom: {{ section.settings.padding-block-end }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding-block-start }}px; --fairplay-padding-bottom: {{ section.settings.padding-block-end }}px; --fairplay-video-width: {{ section.settings.video_width_percent | default: 64 }}%; --fairplay-feature-image-width: {{ section.settings.feature_image_width_percent | default: 100 }}%; --fairplay-community-image-width: {{ section.settings.community_image_width_percent | default: 100 }}%;"
 >
   <div class="fairplay-landing__hero">
     <div class="fairplay-landing__hero-copy">
@@ -458,7 +458,7 @@
   .fairplay-landing__feature-media,
   .fairplay-landing__notice,
   .fairplay-landing__community-banner {
-    width: min(1120px, calc(100% - 2rem));
+    width: min(1280px, calc(100% - 2rem));
     margin-inline: auto;
   }
 
@@ -579,7 +579,7 @@
 
   .fairplay-landing__video-card {
     overflow: hidden;
-    width: min(700px, calc(100% - 1rem));
+    width: min(var(--fairplay-video-width, 64%), 1280px);
     margin-inline: auto;
     border-radius: 28px;
     background: #fff;
@@ -623,6 +623,7 @@
 
   .fairplay-landing__feature-media {
     overflow: hidden;
+    width: min(var(--fairplay-feature-image-width, 100%), 1280px);
     margin-top: clamp(2rem, 4vw, 3rem);
     border-radius: 36px;
     background: var(--fairplay-smoke);
@@ -804,6 +805,7 @@
   .fairplay-landing__community-banner {
     position: relative;
     overflow: hidden;
+    width: min(var(--fairplay-community-image-width, 100%), 1280px);
     margin-top: clamp(4rem, 8vw, 6rem);
     border-radius: 0;
     background: var(--fairplay-dark);
@@ -903,6 +905,12 @@
       margin-top: -0.5rem;
     }
 
+    .fairplay-landing__video-card,
+    .fairplay-landing__feature-media,
+    .fairplay-landing__community-banner {
+      width: min(100%, calc(100% - 1rem));
+    }
+
     .fairplay-landing__section-header h2,
     .fairplay-landing__benefits-copy h2,
     .fairplay-landing__recommendations-copy h2 {
@@ -953,6 +961,16 @@
       "label": "Video embed URL"
     },
     {
+      "type": "range",
+      "id": "video_width_percent",
+      "label": "Video width",
+      "min": 30,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "default": 64
+    },
+    {
       "type": "image_picker",
       "id": "intro_image",
       "label": "Feature image"
@@ -961,6 +979,16 @@
       "type": "image_picker",
       "id": "intro_image_mobile",
       "label": "Feature image mobile"
+    },
+    {
+      "type": "range",
+      "id": "feature_image_width_percent",
+      "label": "Feature image width",
+      "min": 40,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "default": 100
     },
     {
       "type": "image_picker",
@@ -996,6 +1024,16 @@
       "type": "image_picker",
       "id": "banner_image_mobile",
       "label": "Community banner mobile image"
+    },
+    {
+      "type": "range",
+      "id": "community_image_width_percent",
+      "label": "Community banner width",
+      "min": 40,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "default": 100
     },
     {
       "type": "product",

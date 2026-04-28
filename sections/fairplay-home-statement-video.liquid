@@ -30,7 +30,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-band section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-video-width: {{ section.settings.video_width_percent | default: 46 }}%;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-band__stack">
     <div class="fairplay-home-band__bar">
@@ -99,6 +99,16 @@
       "type": "url",
       "id": "video_embed_url",
       "label": "Video embed URL"
+    },
+    {
+      "type": "range",
+      "id": "video_width_percent",
+      "label": "Video width",
+      "min": 30,
+      "max": 100,
+      "step": 2,
+      "unit": "%",
+      "default": 46
     },
     {
       "type": "header",

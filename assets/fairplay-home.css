@@ -14,6 +14,7 @@
 
 .fairplay-home-section__wrap {
   width: min(900px, calc(100% - 2rem));
+  max-width: 1280px;
   margin-inline: auto;
 }
 
@@ -106,7 +107,7 @@
 .fairplay-home-hero__wrap {
   display: grid;
   gap: 0;
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1280px, calc(100% - 2rem));
   padding-top: 1.15rem;
   text-align: center;
 }
@@ -133,7 +134,7 @@
 
 .fairplay-home-hero__stage {
   position: relative;
-  width: min(1120px, 100%);
+  width: min(1280px, 100%);
   margin-inline: auto;
   min-height: clamp(420px, 47vw, 690px);
 }
@@ -204,6 +205,10 @@
   text-align: center;
 }
 
+.fairplay-home-band__bar > * {
+  max-width: 1280px;
+}
+
 .fairplay-home-band__statement {
   max-width: 36rem;
 }
@@ -225,7 +230,7 @@
 
 .fairplay-home-band__video-card {
   overflow: hidden;
-  width: min(430px, calc(100% - 1rem));
+  width: min(var(--fairplay-video-width, 46%), 1280px);
   margin-inline: auto;
   background: #fff;
   box-shadow: 0 16px 36px rgb(44 46 53 / 0.16);
@@ -246,7 +251,7 @@
 }
 
 .fairplay-home-media .fairplay-home-section__wrap {
-  width: 100%;
+  width: min(1280px, calc(100% - 2rem));
 }
 
 .fairplay-home-intro__wrap {
@@ -268,6 +273,8 @@
 
 .fairplay-home-media__card {
   overflow: hidden;
+  width: min(var(--fairplay-feature-image-width, 100%), 1280px);
+  margin-inline: auto;
   background: transparent;
 }
 
@@ -498,13 +505,14 @@
 }
 
 .fairplay-home-community .fairplay-home-section__wrap {
-  width: 100%;
+  width: min(1280px, calc(100% - 2rem));
 }
 
 .fairplay-home-community__card {
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: min(var(--fairplay-community-image-width, 100%), 1280px);
+  margin-inline: auto;
   background: var(--fairplay-dark);
 }
 
@@ -610,6 +618,10 @@
 
   .fairplay-home-band__video {
     margin-top: -2.7rem;
+  }
+
+  .fairplay-home-band__video-card {
+    width: min(100%, calc(100% - 1rem));
   }
 
   .fairplay-home-title {
