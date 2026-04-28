@@ -15,6 +15,12 @@
 
   assign anchor_id = section.settings.anchor_id | strip
 
+  if section.settings.lifestyle_image != blank
+    assign lifestyle_image = section.settings.lifestyle_image | image_url: width: 900
+  else
+    assign lifestyle_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-7egoshop-2-1.png'
+  endif
+
   if section.settings.product_image != blank
     assign product_image = section.settings.product_image | image_url: width: 900
   elsif selected_product != blank and selected_product.featured_image != blank
@@ -74,6 +80,16 @@
         {{ section.settings.body_2 }}
         {{ section.settings.body_3 }}
       </div>
+    </div>
+
+    <div class="fairplay-home-recommendations__photo">
+      <img
+        src="{{ lifestyle_image }}"
+        alt="{{ section.settings.lifestyle_image_alt | escape | default: 'Fair Play For Men' }}"
+        width="{{ section.settings.lifestyle_image.width | default: 529 }}"
+        height="{{ section.settings.lifestyle_image.height | default: 850 }}"
+        loading="lazy"
+      >
     </div>
 
     <div class="fairplay-home-recommendations__detail">
@@ -165,6 +181,17 @@
       "id": "body_3",
       "label": "Paragraph 3",
       "default": "<p><strong>Conservacion:</strong> Conservese en su envase original, a temperatura ambiente y en un lugar fresco, ventilado y seco. Cerciorese de cerrarlo hermeticamente despues de cada uso para evitar su contaminacion y humedad.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "lifestyle_image",
+      "label": "Lifestyle image"
+    },
+    {
+      "type": "text",
+      "id": "lifestyle_image_alt",
+      "label": "Lifestyle image alt",
+      "default": "Fair Play For Men"
     },
     {
       "type": "product",

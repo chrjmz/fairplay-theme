@@ -407,9 +407,10 @@
 
 .fairplay-home-recommendations__grid {
   display: grid;
-  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
-  gap: clamp(1.5rem, 4vw, 3.2rem);
+  grid-template-columns: minmax(0, 360px) minmax(230px, 0.72fr);
+  gap: clamp(1.75rem, 4vw, 3rem);
   align-items: start;
+  justify-content: center;
 }
 
 .fairplay-home-recommendations__copy,
@@ -418,12 +419,28 @@
   gap: 1rem;
 }
 
+.fairplay-home-recommendations__copy {
+  max-width: 330px;
+}
+
+.fairplay-home-recommendations__photo {
+  justify-self: start;
+  width: min(100%, 236px);
+}
+
+.fairplay-home-recommendations__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 .fairplay-home-recommendations__detail {
   grid-column: 1 / -1;
-  grid-template-columns: 180px minmax(0, 280px) minmax(150px, 0.8fr);
-  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: 160px minmax(0, 265px) 74px minmax(0, 170px);
+  gap: clamp(1rem, 2.8vw, 2.1rem);
   align-items: start;
-  margin-top: 2rem;
+  margin-top: clamp(1.75rem, 4vw, 3rem);
 }
 
 .fairplay-home-recommendations__panel {
@@ -434,6 +451,8 @@
   display: inline-flex;
   justify-content: center;
   grid-column: 1;
+  align-self: start;
+  padding-top: 0.2rem;
 }
 
 .fairplay-home-recommendations__panel img {
@@ -452,23 +471,30 @@
 }
 
 .fairplay-home-recommendations__panel:last-child picture {
-  display: none;
+  display: block;
+  grid-column: 3;
+  justify-self: center;
 }
 
 .fairplay-home-recommendations__panel:last-child > div {
-  grid-column: 3;
+  grid-column: 4;
 }
 
 .fairplay-home-recommendations__panel:last-child img {
-  width: min(100%, var(--fairplay-recommendations-diagram-width, 120px));
+  width: min(100%, var(--fairplay-recommendations-diagram-width, 74px));
   margin-inline: auto;
 }
 
 .fairplay-home-recommendations__panel h3 {
   margin-bottom: 0.4rem;
-  font-size: 0.9rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.fairplay-home-recommendations__panel p {
+  font-size: 0.84rem;
+  line-height: 1.58;
 }
 
 .fairplay-home-community .fairplay-home-section__wrap {
@@ -517,12 +543,17 @@
     grid-template-columns: 1fr;
   }
 
+  .fairplay-home-recommendations__copy,
+  .fairplay-home-recommendations__photo {
+    justify-self: center;
+  }
+
   .fairplay-home-band__bar {
     padding-bottom: 8rem;
   }
 
   .fairplay-home-recommendations__detail {
-    grid-template-columns: 160px minmax(0, 1fr) minmax(150px, 0.8fr);
+    grid-template-columns: 150px minmax(0, 1fr) 70px minmax(0, 0.78fr);
   }
 
   .fairplay-home-composition__grid {
@@ -606,8 +637,13 @@
 
   .fairplay-home-recommendations__product-link,
   .fairplay-home-recommendations__panel:first-child > div,
+  .fairplay-home-recommendations__panel:last-child picture,
   .fairplay-home-recommendations__panel:last-child > div {
     grid-column: auto;
+  }
+
+  .fairplay-home-recommendations__photo {
+    width: min(100%, 260px);
   }
 
   .fairplay-home-recommendations__panel:first-child img {
