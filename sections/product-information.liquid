@@ -1,14 +1,17 @@
 
+{% liquid
+  assign current_product = closest.product | default: product
+%}
 
 <script type="application/ld+json">
-  {{ closest.product | structured_data }}
+  {{ current_product | structured_data }}
 </script>
 
 {% capture media_gallery %}
   {%- content_for 'block',
     type: '_product-media-gallery',
     id: 'media-gallery',
-    closest.product: closest.product
+    closest.product: current_product
   -%}
 {% endcapture %}
 
@@ -16,7 +19,7 @@
   {% content_for 'block',
     type: '_product-details',
     id: 'product-details',
-    closest.product: closest.product
+    closest.product: current_product
   %}
 {% endcapture %}
 
@@ -26,7 +29,7 @@
 
 {% if section.settings.enable_sticky_add_to_cart %}
   {% liquid
-    assign current_variant = product.selected_or_first_available_variant
+    assign current_variant = current_product.selected_or_first_available_variant
     # Get the initial quantity based on quantity rules
     assign initial_quantity = current_variant.quantity_rule.min | default: 1
   %}
@@ -34,7 +37,7 @@
   <sticky-add-to-cart
     class="sticky-add-to-cart"
     data-variant-available="{{ current_variant.available }}"
-    data-product-id="{{ product.id }}"
+    data-product-id="{{ current_product.id }}"
     data-current-variant-id="{{ current_variant.id }}"
     data-initial-quantity="{{ initial_quantity }}"
     data-default-variant-title="{{ 'products.product.default_title' | t }}"
@@ -47,13 +50,13 @@
       aria-label="{{ 'products.product.sticky_add_to_cart' | t }}"
     >
       {% liquid
-        assign image_to_show = current_variant.featured_image | default: product.featured_image
+        assign image_to_show = current_variant.featured_image | default: current_product.featured_image
       %}
       {% if image_to_show %}
         <div
           class="sticky-add-to-cart__image"
         >
-          {% assign image_alt = image_to_show.alt | default: product.title | escape %}
+          {% assign image_alt = image_to_show.alt | default: current_product.title | escape %}
           {{
             image_to_show
             | image_url: width: 120
@@ -71,7 +74,7 @@
 
       {% liquid
         assign has_single_option = false
-        if product.has_only_default_variant != true and product.options.size == 1
+        if current_product.has_only_default_variant != true and current_product.options.size == 1
           assign has_single_option = true
         endif
 
@@ -91,16 +94,16 @@
           class="sticky-add-to-cart__title"
           data-testid="sticky-product-title"
         >
-          {{ product.title | escape }}
+          {{ current_product.title | escape }}
         </p>
         <div
           class="sticky-add-to-cart__variant"
           data-testid="sticky-variant-title"
-          {% if product.has_only_default_variant %}
+          {% if current_product.has_only_default_variant %}
             style="display: none;"
           {% endif %}
         >
-          {% unless product.has_only_default_variant %}
+          {% unless current_product.has_only_default_variant %}
             {% if current_variant != blank %}
               {% assign variant_title = current_variant.title | escape %}
             {% endif %}
@@ -113,7 +116,7 @@
         class="sticky-add-to-cart__price"
         data-testid="sticky-price-display"
       >
-        {% render 'price', product_resource: product, show_sale_price_first: true %}
+        {% render 'price', product_resource: current_product, show_sale_price_first: true %}
       </div>
 
       <button
@@ -168,7 +171,7 @@
 {% endif %}
 
 {% render 'product-information-content',
-  product_media_size: closest.product.media.size,
+  product_media_size: current_product.media.size,
   section_id: section.id,
   settings: section.settings,
   media_gallery: media_gallery,
