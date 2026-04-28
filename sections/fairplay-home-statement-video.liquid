@@ -13,7 +13,7 @@
     assign buy_link = default_buy_link
   endif
   assign anchor_id = section.settings.anchor_id | strip
-  assign video_embed_url = section.settings.video_embed_url | default: 'https://www.youtube.com/embed/JVkUjvbwGYM'
+  assign video_embed_url = section.settings.video_embed_url
 %}
 
 {{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
@@ -38,17 +38,19 @@
       </a>
     </div>
 
-    <div class="fairplay-home-band__video">
-      <div class="fairplay-home-band__video-card">
-        <iframe
-          src="{{ video_embed_url }}"
-          title="Video Fair Play For Men"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+    {% if video_embed_url != blank %}
+      <div class="fairplay-home-band__video">
+        <div class="fairplay-home-band__video-card">
+          <iframe
+            src="{{ video_embed_url }}"
+            title="Video Fair Play For Men"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
-    </div>
+    {% endif %}
   </div>
 </section>
 
@@ -68,7 +70,7 @@
       "type": "richtext",
       "id": "statement",
       "label": "Statement",
-      "default": "<p>Con <strong>Fair Play For Men</strong> estaras preparado para jugar desde el <strong>primer momento</strong>.</p>"
+      "default": "<p>Con <strong>Fair Play For Men</strong> estarás preparado para jugar desde el <strong>primer momento</strong></p>"
     },
     {
       "type": "text",

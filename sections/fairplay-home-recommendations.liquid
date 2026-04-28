@@ -86,6 +86,8 @@
           <img
             src="{{ product_image }}"
             alt="{% if product_title != blank %}{{ product_title | escape }}{% else %}Presentacion Fair Play For Men{% endif %}"
+            width="{{ section.settings.product_image.width | default: selected_product.featured_image.width | default: 426 }}"
+            height="{{ section.settings.product_image.height | default: selected_product.featured_image.height | default: 641 }}"
             loading="lazy"
           >
         </a>
@@ -108,6 +110,8 @@
           <img
             src="{{ diagram_image }}"
             alt="Modo de uso Fair Play For Men"
+            width="{{ section.settings.diagram_image.width | default: 131 }}"
+            height="{{ section.settings.diagram_image.height | default: 439 }}"
             loading="lazy"
           >
         </picture>

@@ -33,6 +33,8 @@
         <img
           src="{{ community_image }}"
           alt="{{ section.settings.image_alt | escape | default: 'Comunidad Fair Play' }}"
+          width="{{ section.settings.image.width | default: 1920 }}"
+          height="{{ section.settings.image.height | default: 889 }}"
           loading="lazy"
         >
       </picture>

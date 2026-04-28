@@ -1,18 +1,19 @@
 .fairplay-home-section {
-  --fairplay-ink: #53555b;
-  --fairplay-ink-soft: #7a7b80;
+  --fairplay-ink: #6f7178;
+  --fairplay-ink-soft: #7c7e85;
   --fairplay-smoke: #f8f7f4;
   --fairplay-paper: #fff;
   --fairplay-border: #d9d5ce;
   --fairplay-green: #8faa73;
-  --fairplay-dark: #53545a;
+  --fairplay-dark: #53555b;
   padding-block: var(--fairplay-padding-top, 0) var(--fairplay-padding-bottom, 0);
   color: var(--fairplay-ink);
   background: #fff;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 .fairplay-home-section__wrap {
-  width: min(980px, calc(100% - 2rem));
+  width: min(900px, calc(100% - 2rem));
   margin-inline: auto;
 }
 
@@ -22,30 +23,32 @@
   margin: 0;
   color: var(--fairplay-ink);
   line-height: 1.08;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
 }
 
 .fairplay-home-section p {
   margin: 0;
   color: var(--fairplay-ink-soft);
   line-height: 1.72;
-  font-size: 0.96rem;
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 .fairplay-home-section strong {
   color: var(--fairplay-ink);
+  font-weight: 700;
 }
 
 .fairplay-home-eyebrow {
   margin: 0;
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   color: #9a9ba0;
 }
 
 .fairplay-home-title {
-  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  font-size: clamp(2.1rem, 4vw, 3rem);
   font-weight: 300;
 }
 
@@ -64,12 +67,14 @@
 }
 
 .fairplay-home-button {
-  min-width: 138px;
-  min-height: 40px;
-  border-radius: 0;
-  padding-inline: 1.3rem;
-  font-size: 0.88rem;
-  letter-spacing: 0.03em;
+  min-width: 126px;
+  min-height: 38px;
+  border-radius: 6px;
+  padding-inline: 1.2rem;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .fairplay-home-button.button {
@@ -100,23 +105,25 @@
 
 .fairplay-home-hero__wrap {
   display: grid;
-  gap: 0.4rem;
-  padding-top: clamp(0.5rem, 2vw, 1.2rem);
+  gap: 0;
+  width: min(1120px, calc(100% - 2rem));
+  padding-top: 1.15rem;
   text-align: center;
 }
 
 .fairplay-home-hero__copy {
   display: grid;
-  gap: 0.7rem;
+  gap: 0;
   justify-items: center;
-  max-width: 42rem;
+  max-width: none;
   margin-inline: auto;
 }
 
 .fairplay-home-hero__title {
-  max-width: 12ch;
-  font-size: clamp(2rem, 5.2vw, 3.9rem);
+  max-width: none;
+  font-size: clamp(2.25rem, 3.25vw, 3rem);
   font-weight: 300;
+  color: #6b6d74;
 }
 
 .fairplay-home-hero__lede {
@@ -126,9 +133,9 @@
 
 .fairplay-home-hero__stage {
   position: relative;
-  width: min(860px, 100%);
+  width: min(1120px, 100%);
   margin-inline: auto;
-  min-height: clamp(240px, 37vw, 470px);
+  min-height: clamp(420px, 47vw, 690px);
 }
 
 .fairplay-home-hero__stage picture,
@@ -141,14 +148,32 @@
   object-fit: contain;
 }
 
+.fairplay-home-hero__button {
+  position: absolute;
+  left: 0;
+  bottom: clamp(5.3rem, 8vw, 8rem);
+  min-width: 116px;
+  min-height: 50px;
+  border-radius: 6px;
+  background: #fff;
+  border-color: #55575d;
+  color: #55575d;
+  font-size: 0.88rem;
+}
+
+.fairplay-home-hero__button:hover {
+  background: #f8f8f8;
+}
+
 .fairplay-home-hero__product {
   position: absolute;
-  right: clamp(0.75rem, 9vw, 7rem);
-  bottom: clamp(-0.25rem, -1vw, 0);
+  right: clamp(2rem, 10vw, 9rem);
+  bottom: clamp(-4.3rem, -6vw, -2.5rem);
   width: min(100%, var(--fairplay-hero-product-width, 138px));
-  padding: 0.55rem;
-  background: #fff;
-  box-shadow: 0 12px 28px rgb(40 42 48 / 0.14);
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  z-index: 3;
 }
 
 .fairplay-home-hero__product img {
@@ -160,28 +185,38 @@
   z-index: 2;
 }
 
+.fairplay-home-band .fairplay-home-section__wrap {
+  width: 100%;
+}
+
 .fairplay-home-band__stack {
   display: grid;
+  width: 100%;
 }
 
 .fairplay-home-band__bar {
   display: grid;
   justify-items: center;
   gap: 1rem;
-  margin-top: -0.75rem;
-  padding: 1.35rem 1rem 4.8rem;
+  margin-top: 0;
+  padding: clamp(5.5rem, 7vw, 7.25rem) 1rem clamp(12rem, 18vw, 16rem);
   background: var(--fairplay-dark);
   text-align: center;
 }
 
 .fairplay-home-band__statement {
-  max-width: 24rem;
+  max-width: 36rem;
 }
 
 .fairplay-home-band__statement :is(p, strong) {
   color: #fff;
-  font-size: clamp(1rem, 1.9vw, 1.25rem);
-  line-height: 1.22;
+  font-size: clamp(1.85rem, 3.1vw, 2.55rem);
+  line-height: 0.98;
+  font-weight: 300;
+}
+
+.fairplay-home-band__statement strong {
+  font-weight: 700;
 }
 
 .fairplay-home-band__video {
@@ -204,16 +239,19 @@
 }
 
 .fairplay-home-intro .fairplay-home-section__wrap,
-.fairplay-home-media .fairplay-home-section__wrap,
 .fairplay-home-benefits .fairplay-home-section__wrap,
 .fairplay-home-composition .fairplay-home-section__wrap,
 .fairplay-home-recommendations .fairplay-home-section__wrap {
-  width: min(860px, calc(100% - 2rem));
+  width: min(900px, calc(100% - 2rem));
+}
+
+.fairplay-home-media .fairplay-home-section__wrap {
+  width: 100%;
 }
 
 .fairplay-home-intro__wrap {
   display: grid;
-  gap: 1.5rem;
+  gap: 1.55rem;
   justify-items: center;
   text-align: center;
 }
@@ -224,7 +262,8 @@
 }
 
 .fairplay-home-intro__body {
-  width: min(660px, 100%);
+  width: min(560px, 100%);
+  text-align: left;
 }
 
 .fairplay-home-media__card {
@@ -241,8 +280,8 @@
 
 .fairplay-home-benefits__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 205px;
-  gap: clamp(1.5rem, 4vw, 3.2rem);
+  grid-template-columns: minmax(0, 1fr) 245px;
+  gap: clamp(2rem, 6vw, 5rem);
   align-items: start;
 }
 
@@ -268,6 +307,7 @@
 .fairplay-home-benefits__card img {
   width: min(100%, var(--fairplay-benefits-card-width, 180px));
   object-fit: contain;
+  opacity: 0.82;
 }
 
 .fairplay-home-benefits__label {
@@ -294,14 +334,14 @@
 .fairplay-home-composition__header {
   display: grid;
   gap: 0.65rem;
-  justify-items: center;
-  text-align: center;
+  justify-items: start;
+  text-align: left;
 }
 
 .fairplay-home-composition__grid {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1.4rem;
+  gap: 1.6rem;
 }
 
 .fairplay-home-composition__card {
@@ -314,19 +354,20 @@
 }
 
 .fairplay-home-composition__card img {
-  width: min(100%, 56px);
+  width: min(100%, 98px);
   margin-inline: auto;
   object-fit: contain;
+  opacity: 0.62;
 }
 
 .fairplay-home-composition__card h3 {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .fairplay-home-composition__card p {
-  font-size: 0.85rem;
-  line-height: 1.56;
+  font-size: 0.87rem;
+  line-height: 1.72;
 }
 
 .fairplay-home-composition__meta {
@@ -334,7 +375,7 @@
   font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
+  text-transform: none;
   color: var(--fairplay-ink-soft);
 }
 
@@ -354,16 +395,19 @@
 }
 
 .fairplay-home-warning__copy {
-  max-width: 860px;
+  max-width: 620px;
 }
 
 .fairplay-home-warning__copy :is(p, strong) {
-  color: rgb(255 255 255 / 0.84);
+  color: #fff;
+  font-size: 0.92rem;
+  line-height: 1.68;
+  font-weight: 600;
 }
 
 .fairplay-home-recommendations__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  grid-template-columns: minmax(0, 360px) minmax(0, 1fr);
   gap: clamp(1.5rem, 4vw, 3.2rem);
   align-items: start;
 }
@@ -375,22 +419,21 @@
 }
 
 .fairplay-home-recommendations__detail {
-  grid-template-columns: 1fr 1fr;
-  gap: 1.4rem;
+  grid-column: 1 / -1;
+  grid-template-columns: 180px minmax(0, 280px) minmax(150px, 0.8fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: start;
+  margin-top: 2rem;
 }
 
 .fairplay-home-recommendations__panel {
-  display: grid;
-  gap: 0.75rem;
-  align-content: start;
-  padding: 0;
-  background: transparent;
+  display: contents;
 }
 
 .fairplay-home-recommendations__product-link {
   display: inline-flex;
   justify-content: center;
+  grid-column: 1;
 }
 
 .fairplay-home-recommendations__panel img {
@@ -404,6 +447,18 @@
   margin-inline: auto;
 }
 
+.fairplay-home-recommendations__panel:first-child > div {
+  grid-column: 2;
+}
+
+.fairplay-home-recommendations__panel:last-child picture {
+  display: none;
+}
+
+.fairplay-home-recommendations__panel:last-child > div {
+  grid-column: 3;
+}
+
 .fairplay-home-recommendations__panel:last-child img {
   width: min(100%, var(--fairplay-recommendations-diagram-width, 120px));
   margin-inline: auto;
@@ -411,8 +466,9 @@
 
 .fairplay-home-recommendations__panel h3 {
   margin-bottom: 0.4rem;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .fairplay-home-community .fairplay-home-section__wrap {
@@ -462,11 +518,11 @@
   }
 
   .fairplay-home-band__bar {
-    padding-bottom: 4.2rem;
+    padding-bottom: 8rem;
   }
 
   .fairplay-home-recommendations__detail {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 160px minmax(0, 1fr) minmax(150px, 0.8fr);
   }
 
   .fairplay-home-composition__grid {
@@ -490,7 +546,7 @@
   }
 
   .fairplay-home-hero__title {
-    font-size: clamp(1.75rem, 9vw, 2.8rem);
+    font-size: clamp(2rem, 9vw, 2.7rem);
   }
 
   .fairplay-home-hero__lede {
@@ -499,18 +555,26 @@
   }
 
   .fairplay-home-hero__stage {
-    min-height: 220px;
+    min-height: 270px;
+  }
+
+  .fairplay-home-hero__button {
+    left: 0.25rem;
+    bottom: 2.2rem;
+    min-width: 96px;
+    min-height: 42px;
   }
 
   .fairplay-home-hero__product {
-    right: 0.6rem;
+    right: 0.75rem;
+    bottom: -1.5rem;
     width: min(100%, var(--fairplay-hero-product-width-mobile, 96px));
-    padding: 0.45rem;
+    padding: 0;
   }
 
   .fairplay-home-band__bar {
     margin-top: 0;
-    padding: 1rem 0.75rem 3.7rem;
+    padding: 4.5rem 0.75rem 7rem;
   }
 
   .fairplay-home-band__video {
@@ -533,6 +597,17 @@
   .fairplay-home-composition__grid,
   .fairplay-home-recommendations__detail {
     grid-template-columns: 1fr;
+  }
+
+  .fairplay-home-recommendations__panel {
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .fairplay-home-recommendations__product-link,
+  .fairplay-home-recommendations__panel:first-child > div,
+  .fairplay-home-recommendations__panel:last-child > div {
+    grid-column: auto;
   }
 
   .fairplay-home-recommendations__panel:first-child img {

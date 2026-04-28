@@ -67,9 +67,20 @@
           class="fairplay-home-hero__image"
           src="{{ hero_background }}"
           alt="{{ section.settings.image_alt | escape | default: 'Fair Play For Men' }}"
+          width="{{ section.settings.hero_background.width | default: 1500 }}"
+          height="{{ section.settings.hero_background.height | default: 1001 }}"
           loading="lazy"
         >
       </picture>
+
+      {% if section.settings.button_label != blank %}
+        <a
+          href="{{ buy_link }}"
+          class="button-secondary fairplay-home-hero__button"
+        >
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
 
       <a
         class="fairplay-home-hero__product"
@@ -79,6 +90,8 @@
         <img
           src="{{ hero_product }}"
           alt="{% if selected_product != blank %}{{ selected_product.title | escape }}{% else %}Envase Fair Play For Men{% endif %}"
+          width="{{ section.settings.hero_product.width | default: selected_product.featured_image.width | default: 426 }}"
+          height="{{ section.settings.hero_product.height | default: selected_product.featured_image.height | default: 641 }}"
           loading="lazy"
         >
       </a>
@@ -108,13 +121,19 @@
       "type": "textarea",
       "id": "title",
       "label": "Title",
-      "default": "Con Fair Play For Men estaras preparado para jugar desde el primer momento"
+      "default": "Play clean, play better"
     },
     {
       "type": "textarea",
       "id": "lede",
       "label": "Intro text",
-      "default": "Un suplemento de fibra dietaria pensado para mejorar el transito intestinal, ayudarte a mantener una mejor higiene personal y reducir el tiempo de preparacion antes de tus encuentros."
+      "default": ""
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Comprar"
     },
     {
       "type": "text",

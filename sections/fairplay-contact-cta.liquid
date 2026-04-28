@@ -78,13 +78,13 @@
         <textarea
           class="fairplay-contact__hidden"
           name="contact[body]"
-        >Quiero recibir mas informacion sobre Fair Play For Men.</textarea>
+        >Quiero recibir más información sobre Fair Play For Men.</textarea>
 
         <div class="fairplay-contact__fields">
           <input
             type="text"
             name="contact[name]"
-            placeholder="* Nombre"
+            placeholder="*Nombre"
             value="{% if form.name %}{{ form.name }}{% endif %}"
             required
           >
@@ -92,7 +92,7 @@
           <input
             type="email"
             name="contact[email]"
-            placeholder="* Correo electronico"
+            placeholder="*Correo Electronico"
             value="{% if form.email %}{{ form.email }}{% endif %}"
             required
           >
@@ -105,7 +105,7 @@
           >
 
           <select name="contact[Pais]">
-            <option value="">Elige el pais</option>
+            <option value="">- Elige el país -</option>
             <option value="Colombia">Colombia</option>
             <option value="Mexico">Mexico</option>
             <option value="Chile">Chile</option>
@@ -127,7 +127,7 @@
             name="contact[Autorizo informacion]"
             value="Si"
           >
-          <span>Estoy de acuerdo en recibir informacion relacionada con Fair Play.</span>
+          <span>*Estoy de acuerdo en recibir información relacionada con Fair Play</span>
         </label>
 
         <label class="fairplay-contact__checkbox">
@@ -137,7 +137,7 @@
             value="Si"
             required
           >
-          <span>Estoy de acuerdo con el manejo de mis datos y la politica de privacidad.</span>
+          <span>*Estoy de acuerdo con el manejos de mis datos y la política de privacidad</span>
         </label>
 
         <button
@@ -158,6 +158,8 @@
         <img
           src="{{ product_image }}"
           alt="{% if product_title != blank %}{{ product_title | escape }}{% else %}Fair Play For Men{% endif %}"
+          width="{{ section.settings.product_image.width | default: selected_product.featured_image.width | default: 426 }}"
+          height="{{ section.settings.product_image.height | default: selected_product.featured_image.height | default: 641 }}"
           loading="lazy"
         >
       </a>
@@ -185,14 +187,15 @@
     --fairplay-contact-green: #90ab72;
     padding-block: var(--fairplay-contact-top) var(--fairplay-contact-bottom);
     background: #fff;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   .fairplay-contact__grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 210px;
-    gap: clamp(2rem, 6vw, 5rem);
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: clamp(2rem, 7vw, 6rem);
     align-items: start;
-    max-width: 860px;
+    max-width: 900px;
     margin-inline: auto;
   }
 
@@ -206,14 +209,15 @@
   .fairplay-contact__product-card h3 {
     margin: 0;
     color: var(--fairplay-contact-ink);
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
   }
 
   .fairplay-contact__copy h2 {
     font-size: clamp(2rem, 4.2vw, 3rem);
     line-height: 1.08;
     font-weight: 300;
-    max-width: 14ch;
+    max-width: none;
+    letter-spacing: 0;
   }
 
   .fairplay-contact__intro {
@@ -233,14 +237,14 @@
   .fairplay-contact__fields input,
   .fairplay-contact__fields select {
     width: 100%;
-    min-height: 40px;
-    padding: 0.7rem 0.85rem;
+    min-height: 42px;
+    padding: 0.65rem 0.85rem;
     border: 1px solid var(--fairplay-contact-border);
     border-radius: 0;
     background: #fff;
     color: var(--fairplay-contact-ink);
     font: inherit;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     transition: border-color var(--animation-speed) var(--animation-easing), box-shadow var(--animation-speed) var(--animation-easing);
   }
 
@@ -256,9 +260,10 @@
     grid-template-columns: auto minmax(0, 1fr);
     gap: 0.6rem;
     align-items: start;
-    color: var(--fairplay-contact-muted);
-    font-size: 0.88rem;
-    line-height: 1.45;
+    color: var(--fairplay-contact-ink);
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.18;
   }
 
   .fairplay-contact__checkbox input {
@@ -270,7 +275,7 @@
     justify-self: start;
     min-width: 112px;
     min-height: 36px;
-    border-radius: 0;
+    border-radius: 6px;
     color: var(--fairplay-contact-ink);
     border-color: #b7b8bc;
     background: #fff;
@@ -314,7 +319,7 @@
     width: 100%;
     max-width: 140px;
     min-height: 36px;
-    border-radius: 0;
+    border-radius: 6px;
     background: #fff;
     border-color: #b7b8bc;
     color: var(--fairplay-contact-ink);
@@ -397,13 +402,13 @@
       "type": "text",
       "id": "title",
       "label": "Title",
-      "default": "Que esperas para unirte al juego?"
+      "default": "¿Qué esperas para unirte al juego?"
     },
     {
       "type": "textarea",
       "id": "intro",
       "label": "Intro",
-      "default": "Los campos marcados con * son obligatorios"
+      "default": "LOS CAMPOS MARCADOS CON * SON OBLIGATORIOS"
     },
     {
       "type": "product",
@@ -449,7 +454,7 @@
       "type": "textarea",
       "id": "product_copy",
       "label": "Product copy",
-      "default": "Complemento alimenticio con fibra dietaria para una preparacion mas simple y limpia."
+      "default": "Complemento alimenticio con fibra dietaria para una preparación más simple y limpia."
     },
     {
       "type": "text",
