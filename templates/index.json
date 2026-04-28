@@ -20,7 +20,7 @@
         "image_alt": "Fair Play For Men",
         "product_image_width": 248,
         "product_image_width_mobile": 126,
-        "buy_link": "/products/fair-play-4-men",
+        "buy_link": "",
         "padding_block_start": 24,
         "padding_block_end": 0
       }
@@ -31,7 +31,7 @@
         "anchor_id": "video",
         "statement": "<p>Con <strong>Fair Play For Men</strong> estarás preparado para jugar desde el <strong>primer momento</strong></p>",
         "button_label": "Comprar",
-        "buy_link": "/products/fair-play-4-men",
+        "buy_link": "",
         "video_embed_url": "",
         "padding_block_start": 0,
         "padding_block_end": 0
@@ -160,7 +160,7 @@
         "body_3": "",
         "product_image_width": 190,
         "product_image_width_mobile": 150,
-        "buy_link": "/products/fair-play-4-men",
+        "buy_link": "",
         "product_title": "PRESENTACIÓN:",
         "product_copy": "Fair Play For Men viene en polvo, pues se ha demostrado que al mezclarse con agua, es mucho más efectivo para hidratar adecuadamente la linaza, la chía y las cáscaras de psyllium. De una suficiente hidratación, depende el éxito del producto, pues solo de esta manera será posible crear la consistencia necesaria para que Fair Play pueda arrastrar o adherirse a los residuos que se hayan en el tracto intestinal.",
         "diagram_image_width": 120,
@@ -192,7 +192,7 @@
         "product_title": "",
         "product_copy": "",
         "button_label": "Comprar",
-        "buy_link": "/products/fair-play-4-men",
+        "buy_link": "",
         "padding-block-start": 112,
         "padding-block-end": 72
       }
