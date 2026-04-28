@@ -1,0 +1,237 @@
+{% liquid
+  assign current_product = product
+  assign current_variant = current_product.selected_or_first_available_variant
+%}
+
+<script type="application/ld+json">
+  {{ current_product | structured_data }}
+</script>
+
+<section class="fairplay-product section section--page-width color-{{ section.settings.color_scheme }}">
+  <div class="fairplay-product__grid">
+    <div class="fairplay-product__media">
+      {% if current_product.featured_media %}
+        {{
+          current_product.featured_media
+          | image_url: width: 1200
+          | image_tag:
+            loading: 'eager',
+            widths: '360, 540, 720, 900, 1200',
+            sizes: '(min-width: 990px) 50vw, 100vw',
+            alt: current_product.featured_media.alt | default: current_product.title
+        }}
+      {% elsif current_product.featured_image %}
+        {{
+          current_product.featured_image
+          | image_url: width: 1200
+          | image_tag:
+            loading: 'eager',
+            widths: '360, 540, 720, 900, 1200',
+            sizes: '(min-width: 990px) 50vw, 100vw',
+            alt: current_product.title
+        }}
+      {% endif %}
+
+      {% if current_product.media.size > 1 %}
+        <div class="fairplay-product__thumbs">
+          {% for media in current_product.media limit: 4 %}
+            {% if media.media_type == 'image' %}
+              {{
+                media
+                | image_url: width: 180
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '90, 140, 180',
+                  sizes: '90px',
+                  alt: media.alt | default: current_product.title
+              }}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="fairplay-product__details">
+      <p class="fairplay-product__eyebrow">Fair Play for Men</p>
+      <h1>{{ current_product.title }}</h1>
+
+      <div class="fairplay-product__price">
+        {{ current_variant.price | money }}
+      </div>
+
+      {% form 'product', current_product, class: 'fairplay-product__form' %}
+        <input type="hidden" name="id" value="{{ current_variant.id }}">
+
+        <button
+          type="submit"
+          name="add"
+          class="fairplay-product__button"
+          {% unless current_variant.available %}
+            disabled
+          {% endunless %}
+        >
+          {% if current_variant.available %}
+            Agregar al carrito
+          {% else %}
+            Agotado
+          {% endif %}
+        </button>
+      {% endform %}
+
+      {% if current_product.description != blank %}
+        <div class="fairplay-product__description rte">
+          {{ current_product.description }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .fairplay-product {
+    --fairplay-product-green: #90ab72;
+    --fairplay-product-ink: #52545a;
+    --fairplay-product-muted: #777980;
+    --fairplay-product-panel: #f6f3ee;
+    --fairplay-product-border: #e3ddd3;
+    padding-block: clamp(2rem, 6vw, 4rem);
+  }
+
+  .fairplay-product__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+    gap: clamp(2rem, 6vw, 4rem);
+    align-items: start;
+  }
+
+  .fairplay-product__media {
+    border-radius: 32px;
+    background: var(--fairplay-product-panel);
+    padding: clamp(1rem, 2.5vw, 1.75rem);
+    box-shadow: 0 20px 48px rgb(39 41 47 / 0.06);
+  }
+
+  .fairplay-product__media > img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 22px;
+  }
+
+  .fairplay-product__thumbs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.9rem;
+  }
+
+  .fairplay-product__thumbs img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--fairplay-product-border);
+  }
+
+  .fairplay-product__details {
+    color: var(--fairplay-product-ink);
+    max-width: 38rem;
+  }
+
+  .fairplay-product__eyebrow {
+    margin: 0 0 0.6rem;
+    color: var(--fairplay-product-green);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .fairplay-product__details h1 {
+    margin: 0;
+    color: var(--fairplay-product-ink);
+    font-size: clamp(2.4rem, 4vw, 3.5rem);
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1.04;
+  }
+
+  .fairplay-product__price {
+    margin-top: 1rem;
+    color: var(--fairplay-product-green);
+    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    font-weight: 500;
+  }
+
+  .fairplay-product__form {
+    margin-top: 1.6rem;
+  }
+
+  .fairplay-product__button {
+    width: min(100%, 360px);
+    min-height: 52px;
+    border: 1px solid var(--fairplay-product-green);
+    border-radius: 999px;
+    background: var(--fairplay-product-green);
+    color: #fff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .fairplay-product__button:hover {
+    background: #7f9b62;
+    border-color: #7f9b62;
+  }
+
+  .fairplay-product__button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .fairplay-product__description {
+    padding-top: 1.4rem;
+    margin-top: 1.6rem;
+    border-top: 1px solid var(--fairplay-product-border);
+    color: var(--fairplay-product-muted);
+  }
+
+  .fairplay-product__description :is(p, li) {
+    color: var(--fairplay-product-muted);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .fairplay-product__description a {
+    color: var(--fairplay-product-green);
+  }
+
+  @media screen and (max-width: 749px) {
+    .fairplay-product__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .fairplay-product__media {
+      border-radius: 24px;
+      padding: 0.9rem;
+    }
+
+    .fairplay-product__button {
+      width: 100%;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Fair Play product",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-1"
+    }
+  ]
+}
+{% endschema %}
