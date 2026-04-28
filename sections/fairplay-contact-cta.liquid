@@ -5,10 +5,17 @@
   endif
 
   assign default_buy_link = routes.all_products_collection_url
-  if selected_product != blank
-    assign buy_link = selected_product.url
-  elsif section.settings.buy_link != blank
+  assign selected_product_handle = selected_product.handle | downcase
+  assign selected_product_title = selected_product.title | downcase
+  assign product_is_placeholder = false
+  if selected_product_handle == 'aaaa' or selected_product_title == 'aaaa'
+    assign product_is_placeholder = true
+  endif
+
+  if section.settings.buy_link != blank
     assign buy_link = section.settings.buy_link
+  elsif selected_product != blank and product_is_placeholder == false
+    assign buy_link = selected_product.url
   else
     assign buy_link = default_buy_link
   endif
