@@ -548,6 +548,8 @@
 
   header-actions {
     display: flex;
+    align-items: center;
+    gap: 1rem;
 
     @media screen and (max-width: 749px) {
       justify-self: flex-end;
@@ -712,7 +714,7 @@
   .action__cart,
   [data-testid='cart-drawer-trigger'] {
     align-items: center;
-    gap: var(--gap-xs);
+    gap: 0.65rem;
   }
 
   .header-actions__cart-total {
@@ -751,6 +753,7 @@
     .header__row--top .header-actions__cart-icon {
       --cart-bubble-top: -3px;
       --cart-bubble-right: -4px;
+      margin-inline-end: 0.35rem;
     }
 
     .header__row--top .header-actions__cart-icon .svg-wrapper {
