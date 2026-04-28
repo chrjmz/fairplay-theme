@@ -745,6 +745,8 @@
     grid-template-areas: 'left center right';
     grid-gap: var(--gap-xl);
     grid-template-columns: var(--header-template-columns);
+    width: min(1280px, 100%);
+    margin-inline: auto;
 
     /* If menu is in center column */
     &:has(.header__column--center header-menu) {

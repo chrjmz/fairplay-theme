@@ -623,7 +623,8 @@
 
   .fairplay-landing__feature-media {
     overflow: hidden;
-    width: min(var(--fairplay-feature-image-width, 100%), 1280px);
+    width: var(--fairplay-feature-image-width, 100%);
+    max-width: none;
     margin-top: clamp(2rem, 4vw, 3rem);
     border-radius: 36px;
     background: var(--fairplay-smoke);
@@ -805,7 +806,8 @@
   .fairplay-landing__community-banner {
     position: relative;
     overflow: hidden;
-    width: min(var(--fairplay-community-image-width, 100%), 1280px);
+    width: var(--fairplay-community-image-width, 100%);
+    max-width: none;
     margin-top: clamp(4rem, 8vw, 6rem);
     border-radius: 0;
     background: var(--fairplay-dark);
@@ -905,9 +907,7 @@
       margin-top: -0.5rem;
     }
 
-    .fairplay-landing__video-card,
-    .fairplay-landing__feature-media,
-    .fairplay-landing__community-banner {
+    .fairplay-landing__video-card {
       width: min(100%, calc(100% - 1rem));
     }
 
