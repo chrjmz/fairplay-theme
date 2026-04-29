@@ -40,6 +40,15 @@
   else
     assign hero_product = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
   endif
+
+  case section.settings.text_alignment
+    when 'left'
+      assign justify_items = 'start'
+    when 'right'
+      assign justify_items = 'end'
+    else
+      assign justify_items = 'center'
+  endcase
 %}
 
 {{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
@@ -49,7 +58,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-hero section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 1280 }}px; --fairplay-hero-copy-width: {{ section.settings.text_width | default: 1120 }}px; --fairplay-hero-product-width: {{ section.settings.product_image_width | default: 140 }}px; --fairplay-hero-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 96 }}px; --fairplay-hero-product-offset-y: {{ section.settings.product_image_offset_y | default: 0 }}px; --fairplay-hero-product-offset-y-mobile: {{ section.settings.product_image_offset_y_mobile | default: 0 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 1280 }}px; --fairplay-hero-copy-width: {{ section.settings.text_width | default: 1120 }}px; --fairplay-hero-product-width: {{ section.settings.product_image_width | default: 140 }}px; --fairplay-hero-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 96 }}px; --fairplay-hero-product-offset-y: {{ section.settings.product_image_offset_y | default: 0 }}px; --fairplay-hero-product-offset-y-mobile: {{ section.settings.product_image_offset_y_mobile | default: 0 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'center' }}; --fairplay-justify-items: {{ justify_items | default: 'center' }}; --fairplay-title-size: {{ section.settings.title_size | default: 48 }}px; --fairplay-title-size-mobile: {{ section.settings.title_size_mobile | default: 36 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-hero__wrap">
     <div class="fairplay-home-hero__copy">
@@ -240,6 +249,41 @@
       "type": "url",
       "id": "buy_link",
       "label": "Fallback buy link"
+    },
+    {
+      "type": "header",
+      "content": "Texto"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Alineación",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Tamaño título desktop",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Tamaño título mobile",
+      "min": 14,
+      "max": 52,
+      "step": 2,
+      "unit": "px",
+      "default": 36
     },
     {
       "type": "header",

@@ -43,6 +43,7 @@
     --fairplay-mobile-logo-block-width: {{ block_settings.mobile_logo_block_width | default: section.settings.mobile_logo_block_width | default: 76 }}px;
     --fairplay-mobile-header-height: {{ block_settings.mobile_logo_block_height | default: section.settings.mobile_logo_block_height | default: 58 }}px;
     --fairplay-mobile-logo-image-height: {{ block_settings.mobile_logo_image_height | default: section.settings.mobile_logo_image_height | default: 38 }}px;
+    --fairplay-mobile-logo-alignment: {{ block_settings.mobile_logo_alignment | default: 'center' }};
   "
   {{ block.shopify_attributes }}
 >
@@ -218,6 +219,17 @@
       "step": 4,
       "unit": "px",
       "default": 38
+    },
+    {
+      "type": "select",
+      "id": "mobile_logo_alignment",
+      "label": "Alineación logo mobile",
+      "options": [
+        { "value": "start", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "end", "label": "Derecha" }
+      ],
+      "default": "center"
     },
     {
       "type": "header",

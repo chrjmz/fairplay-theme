@@ -6,6 +6,15 @@
   else
     assign digest_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/fair-play-for-men-digestion.png'
   endif
+
+  case section.settings.text_alignment
+    when 'center'
+      assign justify_items = 'center'
+    when 'right'
+      assign justify_items = 'end'
+    else
+      assign justify_items = 'start'
+  endcase
 %}
 
 {{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
@@ -15,7 +24,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-benefits section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-benefits-copy-width: {{ section.settings.text_width | default: 580 }}px; --fairplay-benefits-card-width: {{ section.settings.digest_image_width | default: 180 }}px; --fairplay-benefits-card-width-mobile: {{ section.settings.digest_image_width_mobile | default: 148 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-benefits-copy-width: {{ section.settings.text_width | default: 580 }}px; --fairplay-benefits-card-width: {{ section.settings.digest_image_width | default: 180 }}px; --fairplay-benefits-card-width-mobile: {{ section.settings.digest_image_width_mobile | default: 148 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items: {{ justify_items | default: 'start' }}; --fairplay-title-size: {{ section.settings.title_size | default: 48 }}px; --fairplay-title-size-mobile: {{ section.settings.title_size_mobile | default: 36 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-benefits__grid">
     <div class="fairplay-home-benefits__copy">
@@ -152,6 +161,41 @@
       "id": "card_text",
       "label": "Card text",
       "default": "Evacua totalmente tu sistema intestinal, sin dejar residuos que incomodan."
+    },
+    {
+      "type": "header",
+      "content": "Texto"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Alineación",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Tamaño título desktop",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Tamaño título mobile",
+      "min": 14,
+      "max": 52,
+      "step": 2,
+      "unit": "px",
+      "default": 36
     },
     {
       "type": "header",

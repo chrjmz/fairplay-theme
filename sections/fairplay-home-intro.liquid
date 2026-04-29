@@ -1,5 +1,13 @@
 {% liquid
   assign anchor_id = section.settings.anchor_id | strip
+  case section.settings.text_alignment
+    when 'left'
+      assign justify_items = 'start'
+    when 'right'
+      assign justify_items = 'end'
+    else
+      assign justify_items = 'center'
+  endcase
 %}
 
 {{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
@@ -9,7 +17,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-intro section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-intro-text-width: {{ section.settings.text_width | default: 560 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-intro-text-width: {{ section.settings.text_width | default: 560 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'center' }}; --fairplay-body-align: {{ section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items: {{ justify_items | default: 'center' }}; --fairplay-title-size: {{ section.settings.title_size | default: 48 }}px; --fairplay-title-size-mobile: {{ section.settings.title_size_mobile | default: 36 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-intro__wrap">
     <div class="fairplay-home-intro__header">
@@ -90,6 +98,41 @@
       "step": 20,
       "unit": "px",
       "default": 900
+    },
+    {
+      "type": "header",
+      "content": "Texto"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Alineación",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Tamaño título desktop",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Tamaño título mobile",
+      "min": 14,
+      "max": 52,
+      "step": 2,
+      "unit": "px",
+      "default": 36
     },
     {
       "type": "header",
