@@ -21,7 +21,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-media section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-feature-image-width: {{ section.settings.image_width_percent | default: 100 }}%;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 1280 }}px; --fairplay-feature-image-width: {{ section.settings.image_width_percent | default: 100 }}%;"
 >
   <div class="fairplay-home-section__wrap">
     <div class="fairplay-home-media__card">
@@ -79,6 +79,16 @@
       "step": 2,
       "unit": "%",
       "default": 100
+    },
+    {
+      "type": "range",
+      "id": "section_width",
+      "label": "Section content width",
+      "min": 320,
+      "max": 1280,
+      "step": 20,
+      "unit": "px",
+      "default": 1280
     },
     {
       "type": "header",

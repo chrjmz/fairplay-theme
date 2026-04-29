@@ -13,7 +13,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-warning section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-warning__wrap">
     {% if warning_image != blank %}
@@ -54,6 +54,16 @@
       "id": "copy",
       "label": "Copy",
       "default": "<p>Manténgase fuera del alcance de los niños. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida útil de 24 meses. Evite consumir el producto si el sello de la tapa está roto o deteriorado. Verificar su fecha de vencimiento antes de consumir. <strong>ESTE PRODUCTO ES UN SUPLEMENTO DIETARIO. NO ES UN MEDICAMENTO Y NO SUPLE UNA ALIMENTACIÓN EQUILIBRADA</strong></p>"
+    },
+    {
+      "type": "range",
+      "id": "section_width",
+      "label": "Section content width",
+      "min": 320,
+      "max": 1280,
+      "step": 20,
+      "unit": "px",
+      "default": 900
     },
     {
       "type": "header",

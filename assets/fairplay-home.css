@@ -13,7 +13,7 @@
 }
 
 .fairplay-home-section__wrap {
-  width: min(900px, calc(100% - 2rem));
+  width: min(var(--fairplay-section-width, 900px), calc(100% - 2rem));
   max-width: 1280px;
   margin-inline: auto;
 }
@@ -107,7 +107,7 @@
 .fairplay-home-hero__wrap {
   display: grid;
   gap: 0;
-  width: min(1280px, calc(100% - 2rem));
+  width: min(var(--fairplay-section-width, 1280px), calc(100% - 2rem));
   padding-top: 1.15rem;
   text-align: center;
 }
@@ -209,7 +209,7 @@
 }
 
 .fairplay-home-band__bar > * {
-  max-width: 1280px;
+  max-width: min(100%, var(--fairplay-section-width, 1280px));
 }
 
 .fairplay-home-band__statement {
@@ -233,7 +233,7 @@
 
 .fairplay-home-band__video-card {
   overflow: hidden;
-  width: min(var(--fairplay-video-width, 46%), 1280px);
+  width: min(var(--fairplay-video-width, 46%), var(--fairplay-section-width, 1280px));
   margin-inline: auto;
   background: #fff;
   box-shadow: 0 16px 36px rgb(44 46 53 / 0.16);
@@ -250,7 +250,7 @@
 .fairplay-home-benefits .fairplay-home-section__wrap,
 .fairplay-home-composition .fairplay-home-section__wrap,
 .fairplay-home-recommendations .fairplay-home-section__wrap {
-  width: min(900px, calc(100% - 2rem));
+  width: min(var(--fairplay-section-width, 900px), calc(100% - 2rem));
 }
 
 .fairplay-home-media .fairplay-home-section__wrap {
@@ -278,6 +278,7 @@
 .fairplay-home-media__card {
   overflow: hidden;
   width: var(--fairplay-feature-image-width, 100%);
+  max-width: min(100%, var(--fairplay-section-width, 1280px));
   margin-inline: auto;
   background: transparent;
 }
@@ -518,6 +519,7 @@
   position: relative;
   overflow: hidden;
   width: var(--fairplay-community-image-width, 100%);
+  max-width: min(100%, var(--fairplay-section-width, 1280px));
   margin-inline: auto;
   background: var(--fairplay-dark);
 }
