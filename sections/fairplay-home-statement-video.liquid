@@ -30,7 +30,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-band section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-video-width: {{ section.settings.video_width_percent | default: 46 }}%;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-video-width: {{ section.settings.video_width_percent | default: 46 }}%; --fairplay-video-offset-y: {{ section.settings.video_offset_y | default: 0 }}px; --fairplay-video-offset-y-mobile: {{ section.settings.video_offset_y_mobile | default: 0 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-band__stack">
     <div class="fairplay-home-band__bar">
@@ -109,6 +109,26 @@
       "step": 2,
       "unit": "%",
       "default": 46
+    },
+    {
+      "type": "range",
+      "id": "video_offset_y",
+      "label": "Video vertical position",
+      "min": -200,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "video_offset_y_mobile",
+      "label": "Video mobile vertical position",
+      "min": -160,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "header",

@@ -49,7 +49,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-hero section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-hero-product-width: {{ section.settings.product_image_width | default: 140 }}px; --fairplay-hero-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 96 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-hero-product-width: {{ section.settings.product_image_width | default: 140 }}px; --fairplay-hero-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 96 }}px; --fairplay-hero-product-offset-y: {{ section.settings.product_image_offset_y | default: 0 }}px; --fairplay-hero-product-offset-y-mobile: {{ section.settings.product_image_offset_y_mobile | default: 0 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-hero__wrap">
     <div class="fairplay-home-hero__copy">
@@ -186,6 +186,26 @@
       "step": 4,
       "unit": "px",
       "default": 96
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_y",
+      "label": "Desktop vertical position",
+      "min": -200,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "product_image_offset_y_mobile",
+      "label": "Mobile vertical position",
+      "min": -160,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 0
     },
     {
       "type": "product",
