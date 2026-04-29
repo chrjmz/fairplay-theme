@@ -69,7 +69,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-hero section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 1280 }}px; --fairplay-hero-copy-width: {{ section.settings.text_width | default: 1120 }}px; --fairplay-hero-product-width: {{ section.settings.product_image_width | default: 140 }}px; --fairplay-hero-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 96 }}px; --fairplay-hero-product-offset-y: {{ section.settings.product_image_offset_y | default: 0 }}px; --fairplay-hero-product-offset-y-mobile: {{ section.settings.product_image_offset_y_mobile | default: 0 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'center' }}; --fairplay-justify-items: {{ justify_items | default: 'center' }}; --fairplay-text-align-mobile: {{ section.settings.text_alignment_mobile | default: section.settings.text_alignment | default: 'center' }}; --fairplay-justify-items-mobile: {{ justify_items_mobile | default: justify_items | default: 'center' }}; --fairplay-title-size: {{ section.settings.title_size | default: 48 }}px; --fairplay-title-size-mobile: {{ section.settings.title_size_mobile | default: 36 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 1280 }}px; --fairplay-hero-copy-width: {{ section.settings.text_width | default: 1120 }}px; --fairplay-hero-product-width: {{ section.settings.product_image_width | default: 140 }}px; --fairplay-hero-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 96 }}px; --fairplay-hero-product-offset-y: {{ section.settings.product_image_offset_y | default: 0 }}px; --fairplay-hero-product-offset-y-mobile: {{ section.settings.product_image_offset_y_mobile | default: 0 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'center' }}; --fairplay-justify-items: {{ justify_items | default: 'center' }}; --fairplay-text-align-mobile: {{ section.settings.text_alignment_mobile | default: section.settings.text_alignment | default: 'center' }}; --fairplay-justify-items-mobile: {{ justify_items_mobile | default: justify_items | default: 'center' }}; --fairplay-title-size: {{ section.settings.title_size | default: 48 }}px; --fairplay-title-size-mobile: {{ section.settings.title_size_mobile | default: 36 }}px; --fairplay-lede-size: {{ section.settings.lede_size | default: 15 }}px; --fairplay-lede-size-mobile: {{ section.settings.lede_size_mobile | default: 14 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-hero__wrap">
     <div class="fairplay-home-hero__copy">
@@ -303,10 +303,30 @@
       "id": "title_size_mobile",
       "label": "Tamaño título mobile",
       "min": 14,
-      "max": 52,
+      "max": 96,
       "step": 2,
       "unit": "px",
       "default": 36
+    },
+    {
+      "type": "range",
+      "id": "lede_size",
+      "label": "Tamano texto desktop",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "lede_size_mobile",
+      "label": "Tamano texto mobile",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 14
     },
     {
       "type": "header",
