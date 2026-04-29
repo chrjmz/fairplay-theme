@@ -9,7 +9,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-intro section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-intro-text-width: {{ section.settings.text_width | default: 560 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-intro__wrap">
     <div class="fairplay-home-intro__header">
@@ -70,6 +70,16 @@
       "id": "body_3",
       "label": "Paragraph 3",
       "default": "<p>Adicionalmente, nuestra formula exclusiva incluye <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, ingredientes que fortalecen el sistema inmunologico y nutren el cabello, la piel, los huesos y las unas.</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_width",
+      "label": "Text container width",
+      "min": 280,
+      "max": 1280,
+      "step": 20,
+      "unit": "px",
+      "default": 560
     },
     {
       "type": "header",

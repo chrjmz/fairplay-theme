@@ -116,7 +116,8 @@
   display: grid;
   gap: 0;
   justify-items: center;
-  max-width: none;
+  width: min(100%, var(--fairplay-hero-copy-width, 1120px));
+  max-width: 1280px;
   margin-inline: auto;
 }
 
@@ -212,7 +213,7 @@
 }
 
 .fairplay-home-band__statement {
-  max-width: 36rem;
+  max-width: min(100%, var(--fairplay-statement-width, 36rem));
 }
 
 .fairplay-home-band__statement :is(p, strong) {
@@ -270,7 +271,7 @@
 }
 
 .fairplay-home-intro__body {
-  width: min(560px, 100%);
+  width: min(var(--fairplay-intro-text-width, 560px), 100%);
   text-align: left;
 }
 
@@ -298,6 +299,7 @@
 .fairplay-home-benefits__copy {
   display: grid;
   gap: 0.9rem;
+  max-width: min(100%, var(--fairplay-benefits-copy-width, 580px));
 }
 
 .fairplay-home-benefits__highlight {
@@ -430,7 +432,7 @@
 }
 
 .fairplay-home-recommendations__copy {
-  max-width: 330px;
+  max-width: min(100%, var(--fairplay-recommendations-copy-width, 330px));
 }
 
 .fairplay-home-recommendations__photo {

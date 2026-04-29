@@ -72,7 +72,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-recommendations section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-recommendations-product-width: {{ section.settings.product_image_width | default: 168 }}px; --fairplay-recommendations-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-recommendations-diagram-width: {{ section.settings.diagram_image_width | default: 120 }}px; --fairplay-recommendations-diagram-width-mobile: {{ section.settings.diagram_image_width_mobile | default: 108 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-recommendations-copy-width: {{ section.settings.text_width | default: 330 }}px; --fairplay-recommendations-product-width: {{ section.settings.product_image_width | default: 168 }}px; --fairplay-recommendations-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-recommendations-diagram-width: {{ section.settings.diagram_image_width | default: 120 }}px; --fairplay-recommendations-diagram-width-mobile: {{ section.settings.diagram_image_width_mobile | default: 108 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-recommendations__grid">
     <div class="fairplay-home-recommendations__copy">
@@ -188,6 +188,16 @@
       "id": "body_3",
       "label": "Paragraph 3",
       "default": "<p><strong>Conservacion:</strong> Conservese en su envase original, a temperatura ambiente y en un lugar fresco, ventilado y seco. Cerciorese de cerrarlo hermeticamente despues de cada uso para evitar su contaminacion y humedad.</p>"
+    },
+    {
+      "type": "range",
+      "id": "text_width",
+      "label": "Text container width",
+      "min": 280,
+      "max": 1280,
+      "step": 20,
+      "unit": "px",
+      "default": 340
     },
     {
       "type": "image_picker",
