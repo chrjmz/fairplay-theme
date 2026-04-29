@@ -580,11 +580,18 @@
 @media screen and (max-width: 749px) {
   .fairplay-home-section__wrap,
   .fairplay-home-intro .fairplay-home-section__wrap,
-  .fairplay-home-media .fairplay-home-section__wrap,
   .fairplay-home-benefits .fairplay-home-section__wrap,
   .fairplay-home-composition .fairplay-home-section__wrap,
   .fairplay-home-recommendations .fairplay-home-section__wrap {
-    width: min(100%, calc(100% - 1rem));
+    width: min(100%, calc(100% - 40px));
+  }
+
+  .fairplay-home-hero__wrap,
+  .fairplay-home-band .fairplay-home-section__wrap,
+  .fairplay-home-media .fairplay-home-section__wrap,
+  .fairplay-home-community .fairplay-home-section__wrap {
+    width: 100%;
+    max-width: none;
   }
 
   .fairplay-home-button {
@@ -601,19 +608,23 @@
     font-size: 0.88rem;
   }
 
+  .fairplay-home-hero__copy {
+    width: min(100%, calc(100% - 40px));
+  }
+
   .fairplay-home-hero__stage {
     min-height: 270px;
   }
 
   .fairplay-home-hero__button {
-    left: 0.25rem;
+    left: 20px;
     bottom: 2.2rem;
     min-width: 96px;
     min-height: 42px;
   }
 
   .fairplay-home-hero__product {
-    right: 0.75rem;
+    right: 20px;
     bottom: -1.5rem;
     width: min(100%, var(--fairplay-hero-product-width-mobile, 96px));
     padding: 0;
@@ -622,7 +633,7 @@
 
   .fairplay-home-band__bar {
     margin-top: 0;
-    padding: 4.5rem 0.75rem 7rem;
+    padding: 4.5rem 20px 7rem;
   }
 
   .fairplay-home-band__video {
@@ -630,7 +641,7 @@
   }
 
   .fairplay-home-band__video-card {
-    width: min(100%, calc(100% - 1rem));
+    width: 100%;
   }
 
   .fairplay-home-title {
