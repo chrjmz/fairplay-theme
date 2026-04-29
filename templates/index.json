@@ -37,7 +37,7 @@
         "buy_link": "",
         "video_embed_url": "https://www.youtube.com/embed/JVkUjvbwGYM",
         "video_width_percent": 62,
-        "video_offset_y": 0,
+        "video_offset_y": -140,
         "video_offset_y_mobile": 0,
         "padding_block_start": 0,
         "padding_block_end": 60
