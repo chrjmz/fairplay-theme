@@ -65,7 +65,7 @@
         "text_alignment": "center",
         "text_alignment_mobile": "",
         "title_size": 48,
-        "title_size_mobile": 36,
+        "title_size_mobile": 28,
         "padding_block_start": 72,
         "padding_block_end": 24
       }
@@ -104,7 +104,7 @@
         "text_alignment": "left",
         "text_alignment_mobile": "center",
         "title_size": 48,
-        "title_size_mobile": 36,
+        "title_size_mobile": 28,
         "padding_block_start": 72,
         "padding_block_end": 24
       }
@@ -175,7 +175,7 @@
         "eyebrow": "Composicion",
         "title": "Ingredientes que juegan a tu favor",
         "section_width": 1100,
-        "text_alignment": "left",
+        "text_alignment": "center",
         "text_alignment_mobile": "",
         "title_size": 48,
         "title_size_mobile": 36,
@@ -199,7 +199,8 @@
     "fairplay_home_recommendations_Ym84Qd": {
       "type": "fairplay-home-recommendations",
       "custom_css": [
-        "@media screen and (max-width: 749px) {.fairplay-home-recommendations__panel picture {width: 100%; } .fairplay-home-recommendations__photo {width: 100%; }}"
+        "@media screen and (max-width: 749px) {.fairplay-home-recommendations__panel picture {width: 100%; }}",
+        ".fairplay-home-recommendations__photo {width: 100%;}"
       ],
       "settings": {
         "anchor_id": "recomendaciones",
@@ -214,13 +215,13 @@
         "product": "fair-play-4-men",
         "product_image": "shopify://shop_images/tarro_fairplay-1.png",
         "buy_link": "",
-        "product_image_width": 280,
+        "product_image_width": 148,
         "product_image_width_mobile": 220,
         "product_title": "Presentacion",
         "product_copy": "Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las cascaras de psyllium. De esa hidratacion depende la consistencia necesaria para arrastrar los residuos del tracto intestinal.",
         "diagram_image": "shopify://shop_images/Recurso-8egoshop-2.png",
         "diagram_image_mobile": "shopify://shop_images/fairPlay_landing_movilno-hacer-caso-a-fotos-04.png",
-        "diagram_image_width": 220,
+        "diagram_image_width": 156,
         "diagram_image_width_mobile": 180,
         "dose_title": "Dosis",
         "dose_copy": "Consumir 6 gramos, equivalentes a 2 porciones del dosificador incluido en el producto, maximo dos veces al dia, disueltas en 240 ml de agua.",
