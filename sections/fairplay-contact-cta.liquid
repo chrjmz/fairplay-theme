@@ -33,6 +33,15 @@
       assign contact_mobile_align = 'left'
   endcase
 
+  case section.settings.product_image_alignment_mobile
+    when 'left'
+      assign contact_image_mobile_justify = 'start'
+    when 'right'
+      assign contact_image_mobile_justify = 'end'
+    else
+      assign contact_image_mobile_justify = 'center'
+  endcase
+
   if section.settings.product_image != blank
     assign product_image = section.settings.product_image | image_url: width: 900
   elsif selected_product != blank and selected_product.featured_image != blank
@@ -66,7 +75,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-contact section section--page-width color-scheme-1"
-  style="--fairplay-contact-top: {{ section.settings.padding-block-start }}px; --fairplay-contact-bottom: {{ section.settings.padding-block-end }}px; --fairplay-contact-product-width: {{ section.settings.product_image_width | default: 180 }}px; --fairplay-contact-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-contact-mobile-justify: {{ contact_mobile_justify | default: 'start' }}; --fairplay-contact-mobile-align: {{ contact_mobile_align | default: 'left' }};"
+  style="--fairplay-contact-top: {{ section.settings.padding-block-start }}px; --fairplay-contact-bottom: {{ section.settings.padding-block-end }}px; --fairplay-contact-product-width: {{ section.settings.product_image_width | default: 180 }}px; --fairplay-contact-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-contact-mobile-justify: {{ contact_mobile_justify | default: 'start' }}; --fairplay-contact-mobile-align: {{ contact_mobile_align | default: 'left' }}; --fairplay-contact-image-mobile-justify: {{ contact_image_mobile_justify | default: 'center' }};"
 >
   <div class="fairplay-contact__grid">
     <div class="fairplay-contact__copy">
@@ -395,8 +404,15 @@
       max-width: none;
     }
 
+    .fairplay-contact__product-link {
+      justify-self: var(--fairplay-contact-image-mobile-justify, center);
+      width: min(var(--fairplay-contact-product-width-mobile, 150px), 100%);
+      max-width: 100%;
+    }
+
     .fairplay-contact__product-card img {
-      width: min(100%, var(--fairplay-contact-product-width-mobile, 150px));
+      width: 100%;
+      margin-inline: 0;
     }
 
     .fairplay-contact__submit,
@@ -463,6 +479,17 @@
       "step": 4,
       "unit": "px",
       "default": 148
+    },
+    {
+      "type": "select",
+      "id": "product_image_alignment_mobile",
+      "label": "Mobile image alignment",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "center"
     },
     {
       "type": "text",

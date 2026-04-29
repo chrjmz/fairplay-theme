@@ -92,7 +92,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-recommendations section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-recommendations-copy-width: {{ section.settings.text_width | default: 330 }}px; --fairplay-recommendations-photo-width: {{ section.settings.lifestyle_image_width | default: 236 }}px; --fairplay-recommendations-product-width: {{ section.settings.product_image_width | default: 168 }}px; --fairplay-recommendations-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-recommendations-diagram-width: {{ section.settings.diagram_image_width | default: 120 }}px; --fairplay-recommendations-diagram-width-mobile: {{ section.settings.diagram_image_width_mobile | default: 108 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items: {{ justify_items | default: 'start' }}; --fairplay-text-align-mobile: {{ section.settings.text_alignment_mobile | default: section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items-mobile: {{ justify_items_mobile | default: justify_items | default: 'start' }}; --fairplay-title-size: {{ section.settings.title_size | default: 48 }}px; --fairplay-title-size-mobile: {{ section.settings.title_size_mobile | default: 36 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-recommendations-copy-width: {{ section.settings.text_width | default: 330 }}px; --fairplay-recommendations-photo-width: {{ section.settings.lifestyle_image_width | default: 236 }}px; --fairplay-recommendations-photo-width-mobile: {{ section.settings.lifestyle_image_width_mobile | default: 260 }}px; --fairplay-recommendations-product-width: {{ section.settings.product_image_width | default: 168 }}px; --fairplay-recommendations-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-recommendations-diagram-width: {{ section.settings.diagram_image_width | default: 120 }}px; --fairplay-recommendations-diagram-width-mobile: {{ section.settings.diagram_image_width_mobile | default: 108 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items: {{ justify_items | default: 'start' }}; --fairplay-text-align-mobile: {{ section.settings.text_alignment_mobile | default: section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items-mobile: {{ justify_items_mobile | default: justify_items | default: 'start' }}; --fairplay-title-size: {{ section.settings.title_size | default: 48 }}px; --fairplay-title-size-mobile: {{ section.settings.title_size_mobile | default: 36 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-recommendations__grid">
     <div class="fairplay-home-recommendations__copy">
@@ -251,6 +251,16 @@
       "default": 236
     },
     {
+      "type": "range",
+      "id": "lifestyle_image_width_mobile",
+      "label": "Lifestyle image mobile width",
+      "min": 160,
+      "max": 760,
+      "step": 4,
+      "unit": "px",
+      "default": 260
+    },
+    {
       "type": "product",
       "id": "product",
       "label": "Linked product"
@@ -280,7 +290,7 @@
       "id": "product_image_width_mobile",
       "label": "Product mobile width",
       "min": 80,
-      "max": 520,
+      "max": 760,
       "step": 4,
       "unit": "px",
       "default": 520
@@ -312,7 +322,7 @@
       "id": "diagram_image_width",
       "label": "Diagram desktop width",
       "min": 80,
-      "max": 420,
+      "max": 620,
       "step": 4,
       "unit": "px",
       "default": 120
@@ -322,7 +332,7 @@
       "id": "diagram_image_width_mobile",
       "label": "Diagram mobile width",
       "min": 60,
-      "max": 420,
+      "max": 760,
       "step": 4,
       "unit": "px",
       "default": 420
