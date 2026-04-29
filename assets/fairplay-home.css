@@ -659,8 +659,8 @@
   }
 
   .fairplay-home-benefits__card {
-    justify-items: start;
-    text-align: left;
+    justify-items: center;
+    text-align: center;
   }
 
   .fairplay-home-benefits__card img {
