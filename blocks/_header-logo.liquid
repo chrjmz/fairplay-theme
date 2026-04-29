@@ -40,6 +40,9 @@
     --font-family: var(--font-body--family);
     --font-style: var(--font-body--style);
     --font-weight: 600;
+    --fairplay-mobile-logo-block-width: {{ block_settings.mobile_logo_block_width | default: section.settings.mobile_logo_block_width | default: 76 }}px;
+    --fairplay-mobile-header-height: {{ block_settings.mobile_logo_block_height | default: section.settings.mobile_logo_block_height | default: 58 }}px;
+    --fairplay-mobile-logo-image-height: {{ block_settings.mobile_logo_image_height | default: section.settings.mobile_logo_image_height | default: 38 }}px;
   "
   {{ block.shopify_attributes }}
 >
@@ -181,6 +184,40 @@
       "id": "hide_logo_on_home_page",
       "label": "t:settings.hide_logo_on_home_page",
       "info": "t:info.hide_logo_on_home_page_help"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_block_width",
+      "label": "Ancho recuadro logo mobile",
+      "min": 48,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 76
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_block_height",
+      "label": "Alto recuadro logo mobile",
+      "min": 40,
+      "max": 88,
+      "step": 4,
+      "unit": "px",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_image_height",
+      "label": "Alto logo mobile",
+      "min": 24,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 38
     },
     {
       "type": "header",
