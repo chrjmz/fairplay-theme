@@ -200,6 +200,7 @@
       "type": "fairplay-home-community",
       "settings": {
         "anchor_id": "community",
+        "image": "shopify://shop_images/landing_FairPlay_ajustes-01-1.png",
         "image_alt": "Comunidad Fair Play",
         "badge_text": "Play",
         "image_width_percent": 100,
