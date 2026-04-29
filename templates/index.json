@@ -250,7 +250,7 @@
         "product_copy": "",
         "button_label": "Comprar",
         "buy_link": "shopify://products/fair-play-4-men",
-        "mobile_alignment": "left",
+        "mobile_alignment": "center",
         "padding-block-start": 72,
         "padding-block-end": 72
       }
