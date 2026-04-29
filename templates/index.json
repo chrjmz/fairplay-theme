@@ -196,7 +196,7 @@
     "fairplay_home_recommendations_Ym84Qd": {
       "type": "fairplay-home-recommendations",
       "custom_css": [
-        "@media screen and (max-width: 749px) {.fairplay-home-recommendations__panel picture {width: 100%; } .fairplay-home-recommendations__photo {width: 100%;}}"
+        "@media screen and (max-width: 749px) {.fairplay-home-recommendations__panel picture {width: 100%; } .fairplay-home-recommendations__photo {width: 100%; }}"
       ],
       "settings": {
         "anchor_id": "recomendaciones",
@@ -242,6 +242,9 @@
     },
     "fairplay_contact_home_x8R2Qa": {
       "type": "fairplay-contact-cta",
+      "custom_css": [
+        "a.fairplay-contact__product-link img {/* text-align: center; */ margin: auto;}"
+      ],
       "settings": {
         "anchor_id": "contacto",
         "title": "Que esperas para unirte al juego?",
