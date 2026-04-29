@@ -42,6 +42,15 @@
       assign contact_image_mobile_justify = 'center'
   endcase
 
+  case section.settings.product_image_alignment
+    when 'center'
+      assign contact_image_justify = 'center'
+    when 'right'
+      assign contact_image_justify = 'end'
+    else
+      assign contact_image_justify = 'start'
+  endcase
+
   if section.settings.product_image != blank
     assign product_image = section.settings.product_image | image_url: width: 900
   elsif selected_product != blank and selected_product.featured_image != blank
@@ -75,7 +84,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-contact section section--page-width color-scheme-1"
-  style="--fairplay-contact-top: {{ section.settings.padding-block-start }}px; --fairplay-contact-bottom: {{ section.settings.padding-block-end }}px; --fairplay-contact-product-width: {{ section.settings.product_image_width | default: 180 }}px; --fairplay-contact-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-contact-mobile-justify: {{ contact_mobile_justify | default: 'start' }}; --fairplay-contact-mobile-align: {{ contact_mobile_align | default: 'left' }}; --fairplay-contact-image-mobile-justify: {{ contact_image_mobile_justify | default: 'center' }};"
+  style="--fairplay-contact-top: {{ section.settings.padding-block-start }}px; --fairplay-contact-bottom: {{ section.settings.padding-block-end }}px; --fairplay-contact-product-width: {{ section.settings.product_image_width | default: 180 }}px; --fairplay-contact-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-contact-mobile-justify: {{ contact_mobile_justify | default: 'start' }}; --fairplay-contact-mobile-align: {{ contact_mobile_align | default: 'left' }}; --fairplay-contact-image-justify: {{ contact_image_justify | default: 'start' }}; --fairplay-contact-image-mobile-justify: {{ contact_image_mobile_justify | default: 'center' }};"
 >
   <div class="fairplay-contact__grid">
     <div class="fairplay-contact__copy">
@@ -324,6 +333,7 @@
   .fairplay-contact__product-link {
     display: block;
     width: 100%;
+    justify-self: var(--fairplay-contact-image-justify, start);
   }
 
   .fairplay-contact__product-card img {
@@ -487,8 +497,19 @@
     },
     {
       "type": "select",
+      "id": "product_image_alignment",
+      "label": "Alineacion imagen desktop",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
       "id": "product_image_alignment_mobile",
-      "label": "Centrado imagen mobile",
+      "label": "Alineacion imagen mobile",
       "options": [
         { "value": "left", "label": "Izquierda" },
         { "value": "center", "label": "Centro" },
