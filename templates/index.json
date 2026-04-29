@@ -11,6 +11,9 @@
   "sections": {
     "fairplay_home_hero_8qTrf2": {
       "type": "fairplay-home-hero",
+      "custom_css": [
+        ".fairplay-home-hero__copy {text-align: center;}"
+      ],
       "settings": {
         "anchor_id": "fairplay",
         "eyebrow": "Play clean, play better",
