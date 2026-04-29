@@ -437,7 +437,7 @@
 
 .fairplay-home-recommendations__photo {
   justify-self: start;
-  width: min(100%, 236px);
+  width: min(100%, var(--fairplay-recommendations-photo-width, 236px));
 }
 
 .fairplay-home-recommendations__photo img {
