@@ -17,8 +17,6 @@
         "title": "Con Fair Play For Men estaras preparado para jugar desde el primer momento",
         "lede": "Un suplemento de fibra dietaria pensado para mejorar el transito intestinal, ayudarte a mantener una mejor higiene personal y reducir el tiempo de preparacion antes de tus encuentros.",
         "image_alt": "Fair Play For Men",
-        "section_width": 1280,
-        "text_width": 1120,
         "hero_product": "shopify://shop_images/tarro_fairplay-1.png",
         "product_image_width": 260,
         "product_image_width_mobile": 96,
@@ -69,10 +67,10 @@
         "image_alt": "Imagen destacada Fair Play",
         "image_width_percent": 100,
         "section_width": 1280,
-        "padding_inline": 0,
-        "padding_inline_mobile": 0,
         "padding_block_start": 16,
-        "padding_block_end": 16
+        "padding_block_end": 16,
+        "padding_inline": 0,
+        "padding_inline_mobile": 0
       }
     },
     "fairplay_home_benefits_Ku92Vz": {
@@ -86,6 +84,7 @@
         "highlight": "Ya lo sabes, con Fair Play For Men, estaras preparado para jugar desde el primer momento.",
         "text_width": 1280,
         "section_width": 1100,
+        "digest_image": "shopify://shop_images/fair-play-for-men-digestion.png",
         "digest_image_width": 224,
         "digest_image_width_mobile": 148,
         "card_label": "Fair Play For Men",
@@ -203,10 +202,10 @@
         "badge_text": "Play",
         "image_width_percent": 100,
         "section_width": 1280,
-        "padding_inline": 0,
-        "padding_inline_mobile": 0,
         "padding_block_start": 56,
-        "padding_block_end": 0
+        "padding_block_end": 0,
+        "padding_inline": 0,
+        "padding_inline_mobile": 0
       }
     },
     "fairplay_contact_home_x8R2Qa": {
