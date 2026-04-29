@@ -101,7 +101,8 @@
         "ingredient_1": {
           "type": "ingredient",
           "settings": {
-            "image_url": "https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-5egoshop.png",
+            "image": "shopify://shop_images/Recurso-5egoshop.png",
+            "image_url": "shopify://collections/frontpage",
             "title": "Chia, linaza y psyllium",
             "meta": "Fibra",
             "copy": "Debidamente hidratados con agua, estos ingredientes facilitan el transito intestinal y aportan proteinas, antioxidantes, acidos grasos y omega-3."
@@ -110,7 +111,8 @@
         "ingredient_2": {
           "type": "ingredient",
           "settings": {
-            "image_url": "https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-6egoshop.png",
+            "image": "shopify://shop_images/Recurso-6egoshop.png",
+            "image_url": "shopify://collections/frontpage",
             "title": "Ganoderma Lucidum",
             "meta": "",
             "copy": "Hongo milenario al que se le reconocen efectos potencialmente terapeuticos como inmunoreguladores, antioxidantes y de bienestar general."
@@ -119,7 +121,8 @@
         "ingredient_3": {
           "type": "ingredient",
           "settings": {
-            "image_url": "https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-7egoshop.png",
+            "image": "shopify://shop_images/Recurso-7egoshop.png",
+            "image_url": "shopify://collections/frontpage",
             "title": "Colageno Hidrolizado",
             "meta": "",
             "copy": "Ayuda a estimular la produccion de colageno en el organismo, mejorando la piel y fortaleciendo articulaciones, unas, huesos y cabello."
@@ -128,7 +131,8 @@
         "ingredient_4": {
           "type": "ingredient",
           "settings": {
-            "image_url": "https://fairplay4men.com/wp-content/uploads/2022/07/1vivimania.png",
+            "image": "shopify://shop_images/1vivimania.png",
+            "image_url": "shopify://collections/frontpage",
             "title": "Vitamina C",
             "meta": "",
             "copy": "Antioxidante que protege las celulas y participa en la formacion de vasos sanguineos, musculos, cartilagos y colageno."
@@ -137,7 +141,8 @@
         "ingredient_5": {
           "type": "ingredient",
           "settings": {
-            "image_url": "https://fairplay4men.com/wp-content/uploads/2022/07/1aloloe.png",
+            "image": "shopify://shop_images/1aloloe.png",
+            "image_url": "shopify://collections/frontpage",
             "title": "Aloe Vera",
             "meta": "",
             "copy": "Regula el pH del aparato digestivo y ayuda a evitar afecciones como ulceras, digestiones lentas o pesadez estomacal."
