@@ -195,6 +195,9 @@
     },
     "fairplay_home_recommendations_Ym84Qd": {
       "type": "fairplay-home-recommendations",
+      "custom_css": [
+        "@media screen and (max-width: 749px) {.fairplay-home-recommendations__panel picture {width: 100%; }}"
+      ],
       "settings": {
         "anchor_id": "recomendaciones",
         "eyebrow": "Recomendaciones",
