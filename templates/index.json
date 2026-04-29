@@ -69,6 +69,8 @@
         "image_alt": "Imagen destacada Fair Play",
         "image_width_percent": 100,
         "section_width": 1280,
+        "padding_inline": 0,
+        "padding_inline_mobile": 0,
         "padding_block_start": 16,
         "padding_block_end": 16
       }
@@ -201,6 +203,8 @@
         "badge_text": "Play",
         "image_width_percent": 100,
         "section_width": 1280,
+        "padding_inline": 0,
+        "padding_inline_mobile": 0,
         "padding_block_start": 56,
         "padding_block_end": 0
       }

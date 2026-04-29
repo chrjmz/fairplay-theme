@@ -21,7 +21,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-media section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 1280 }}px; --fairplay-feature-image-width: {{ section.settings.image_width_percent | default: 100 }}%; --fairplay-media-side-padding: {{ section.settings.side_padding | default: 0 }}px; --fairplay-media-side-padding-mobile: {{ section.settings.side_padding_mobile | default: 0 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 1280 }}px; --fairplay-feature-image-width: {{ section.settings.image_width_percent | default: 100 }}%; --fairplay-media-side-padding: {{ section.settings.padding_inline | default: 0 }}px; --fairplay-media-side-padding-mobile: {{ section.settings.padding_inline_mobile | default: 0 }}px;"
 >
   <div class="fairplay-home-section__wrap">
     <div class="fairplay-home-media__card">
@@ -91,26 +91,6 @@
       "default": 1280
     },
     {
-      "type": "range",
-      "id": "side_padding",
-      "label": "Side padding",
-      "min": 0,
-      "max": 160,
-      "step": 4,
-      "unit": "px",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "side_padding_mobile",
-      "label": "Mobile side padding",
-      "min": 0,
-      "max": 80,
-      "step": 4,
-      "unit": "px",
-      "default": 0
-    },
-    {
       "type": "header",
       "content": "Padding"
     },
@@ -133,6 +113,26 @@
       "step": 4,
       "unit": "px",
       "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_inline",
+      "label": "Izquierda y derecha",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_inline_mobile",
+      "label": "Izquierda y derecha mobile",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "unit": "px",
+      "default": 0
     }
   ],
   "presets": [
