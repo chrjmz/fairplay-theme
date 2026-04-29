@@ -42,6 +42,8 @@
         "video_width_percent": 62,
         "video_offset_y": -140,
         "video_offset_y_mobile": 0,
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
         "padding_block_start": 0,
         "padding_block_end": 60
       }
@@ -57,6 +59,10 @@
         "body_3": "<p>Adicionalmente, nuestra formula exclusiva incluye <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, ingredientes que fortalecen el sistema inmunologico y nutren el cabello, la piel, los huesos y las unas.</p>",
         "text_width": 560,
         "section_width": 900,
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "title_size": 48,
+        "title_size_mobile": 36,
         "padding_block_start": 72,
         "padding_block_end": 24
       }
@@ -91,6 +97,10 @@
         "digest_image_width_mobile": 148,
         "card_label": "Fair Play For Men",
         "card_text": "Evacua totalmente tu sistema intestinal, sin dejar residuos que incomodan.",
+        "text_alignment": "left",
+        "text_alignment_mobile": "",
+        "title_size": 48,
+        "title_size_mobile": 36,
         "padding_block_start": 72,
         "padding_block_end": 24
       }
@@ -161,6 +171,10 @@
         "eyebrow": "Composicion",
         "title": "Ingredientes que juegan a tu favor",
         "section_width": 1100,
+        "text_alignment": "left",
+        "text_alignment_mobile": "",
+        "title_size": 48,
+        "title_size_mobile": 36,
         "padding_block_start": 72,
         "padding_block_end": 24
       }
@@ -172,6 +186,8 @@
         "warning_image": "shopify://shop_images/advertencia.svg",
         "copy": "<p>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></p>",
         "section_width": 900,
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
         "padding_block_start": 28,
         "padding_block_end": 28
       }
@@ -188,12 +204,15 @@
         "text_width": 820,
         "lifestyle_image": "shopify://shop_images/Recurso-7egoshop-2-1.png",
         "lifestyle_image_alt": "Fair Play For Men",
-        "product": "",
+        "product": "fair-play-4-men",
+        "product_image": "shopify://shop_images/tarro_fairplay-1.png",
         "buy_link": "",
         "product_image_width": 280,
         "product_image_width_mobile": 220,
         "product_title": "Presentacion",
         "product_copy": "Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las cascaras de psyllium. De esa hidratacion depende la consistencia necesaria para arrastrar los residuos del tracto intestinal.",
+        "diagram_image": "shopify://shop_images/Recurso-8egoshop-2.png",
+        "diagram_image_mobile": "shopify://shop_images/fairPlay_landing_movilno-hacer-caso-a-fotos-04.png",
         "diagram_image_width": 220,
         "diagram_image_width_mobile": 180,
         "dose_title": "Dosis",
@@ -231,6 +250,7 @@
         "product_copy": "",
         "button_label": "Comprar",
         "buy_link": "shopify://products/fair-play-4-men",
+        "mobile_alignment": "left",
         "padding-block-start": 72,
         "padding-block-end": 72
       }
