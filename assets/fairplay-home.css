@@ -625,7 +625,7 @@
 
   .fairplay-home-hero__product {
     right: 20px;
-    bottom: -1.5rem;
+    bottom: -3.5rem;
     width: min(100%, var(--fairplay-hero-product-width-mobile, 96px));
     padding: 0;
     transform: translateY(var(--fairplay-hero-product-offset-y-mobile, 0));

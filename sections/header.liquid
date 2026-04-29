@@ -429,6 +429,8 @@
     .header-actions__action {
       /* reset style from base.css */
       transition: color var(--header-content-transition-timing), border-color var(--header-content-transition-timing);
+      padding-top: 14px;
+      padding-bottom: 14px;
     }
   }
 
@@ -789,6 +791,7 @@
 
       .header-logo {
         grid-area: center;
+        justify-self: center;
       }
 
       &:not(:has(header-actions)) .search-action {
@@ -824,6 +827,7 @@
 
     .header-logo {
       grid-area: center;
+      justify-self: center;
     }
 
     &:not(:has(header-actions)) .search-action {
