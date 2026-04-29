@@ -99,7 +99,7 @@
         "card_label": "Fair Play For Men",
         "card_text": "Evacua totalmente tu sistema intestinal, sin dejar residuos que incomodan.",
         "text_alignment": "left",
-        "text_alignment_mobile": "",
+        "text_alignment_mobile": "center",
         "title_size": 48,
         "title_size_mobile": 36,
         "padding_block_start": 72,
