@@ -18,12 +18,18 @@
     "fairplay_contact_product_w6Y3Lh": {
       "type": "fairplay-contact-cta",
       "settings": {
+        "anchor_id": "contacto",
         "title": "Que esperas para unirte al juego?",
         "intro": "Dejanos tus datos y te ayudamos a resolver dudas sobre Fair Play For Men antes de comprar.",
+        "product": "fair-play-4-men",
+        "product_image": "shopify://shop_images/tarro_fairplay-1.png",
+        "product_image_width": 180,
+        "product_image_width_mobile": 148,
         "product_title": "Fair Play 4 Men",
         "product_copy": "Formula con fibra dietaria, ganoderma lucidum y colageno hidrolizado para acompanar una rutina mas limpia.",
         "button_label": "Comprar",
         "buy_link": "",
+        "mobile_alignment": "center",
         "padding-block-start": 8,
         "padding-block-end": 64
       }
