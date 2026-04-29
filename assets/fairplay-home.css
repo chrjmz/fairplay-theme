@@ -277,8 +277,8 @@
 
 .fairplay-home-media__card {
   overflow: hidden;
-  width: var(--fairplay-feature-image-width, 100%);
-  max-width: min(100%, var(--fairplay-section-width, 1280px));
+  width: min(var(--fairplay-feature-image-width, 100%), calc(100% - (var(--fairplay-media-side-padding, 0px) * 2)));
+  max-width: min(calc(100% - (var(--fairplay-media-side-padding, 0px) * 2)), var(--fairplay-section-width, 1280px));
   margin-inline: auto;
   background: transparent;
 }
@@ -518,8 +518,8 @@
 .fairplay-home-community__card {
   position: relative;
   overflow: hidden;
-  width: var(--fairplay-community-image-width, 100%);
-  max-width: min(100%, var(--fairplay-section-width, 1280px));
+  width: min(var(--fairplay-community-image-width, 100%), calc(100% - (var(--fairplay-community-side-padding, 0px) * 2)));
+  max-width: min(calc(100% - (var(--fairplay-community-side-padding, 0px) * 2)), var(--fairplay-section-width, 1280px));
   margin-inline: auto;
   background: var(--fairplay-dark);
 }
@@ -642,6 +642,16 @@
 
   .fairplay-home-band__video-card {
     width: 100%;
+  }
+
+  .fairplay-home-media__card {
+    width: min(var(--fairplay-feature-image-width, 100%), calc(100% - (var(--fairplay-media-side-padding-mobile, 0px) * 2)));
+    max-width: min(calc(100% - (var(--fairplay-media-side-padding-mobile, 0px) * 2)), var(--fairplay-section-width, 1280px));
+  }
+
+  .fairplay-home-community__card {
+    width: min(var(--fairplay-community-image-width, 100%), calc(100% - (var(--fairplay-community-side-padding-mobile, 0px) * 2)));
+    max-width: min(calc(100% - (var(--fairplay-community-side-padding-mobile, 0px) * 2)), var(--fairplay-section-width, 1280px));
   }
 
   .fairplay-home-title {
