@@ -321,6 +321,9 @@
       --header-actions-font-weight: var(--font-{{ section.settings.actions_font | default: 'heading' }}--weight);
       --header-actions-text-case: {{ section.settings.actions_text_case | default: 'none' }};
     {% endif %}
+    --fairplay-mobile-header-height: {{ section.settings.mobile_logo_block_height | default: 58 }}px;
+    --fairplay-mobile-logo-block-width: {{ section.settings.mobile_logo_block_width | default: 76 }}px;
+    --fairplay-mobile-logo-image-height: {{ section.settings.mobile_logo_image_height | default: 38 }}px;
   "
 >
   <div class="header__underlay header__underlay-closed"></div>
@@ -1195,19 +1198,19 @@
 
   @media screen and (max-width: 749px) {
     .header__row--top .header__columns {
-      min-height: 58px;
+      min-height: var(--fairplay-mobile-header-height, 58px);
     }
 
     .header__row--top .header-logo {
-      min-height: 58px;
-      min-width: 76px;
+      min-height: var(--fairplay-mobile-header-height, 58px);
+      min-width: var(--fairplay-mobile-logo-block-width, 76px);
       padding-inline: 0.55rem;
       background: #595a60;
     }
 
     .header__row--top .header-logo__image {
       width: auto;
-      height: 38px;
+      height: var(--fairplay-mobile-logo-image-height, 38px);
     }
   }
 {% endstylesheet %}
@@ -1250,6 +1253,36 @@
         }
       ],
       "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_block_width",
+      "label": "Ancho recuadro logo mobile",
+      "min": 48,
+      "max": 180,
+      "step": 4,
+      "unit": "px",
+      "default": 76
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_block_height",
+      "label": "Alto recuadro logo mobile",
+      "min": 40,
+      "max": 88,
+      "step": 4,
+      "unit": "px",
+      "default": 58
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_image_height",
+      "label": "Alto logo mobile",
+      "min": 24,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "default": 38
     },
     {
       "type": "header",
