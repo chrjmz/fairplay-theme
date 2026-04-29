@@ -192,6 +192,53 @@
       "default": "Juega a tu ritmo, juega limpio"
     },
     {
+      "type": "header",
+      "content": "Texto"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Alineacion desktop",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_mobile",
+      "label": "Alineacion mobile",
+      "options": [
+        { "value": "", "label": "Igual que desktop" },
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": ""
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Tamano titulo desktop",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Tamano titulo mobile",
+      "min": 14,
+      "max": 52,
+      "step": 2,
+      "unit": "px",
+      "default": 36
+    },
+    {
       "type": "richtext",
       "id": "body_1",
       "label": "Paragraph 1",
@@ -228,6 +275,10 @@
       "step": 20,
       "unit": "px",
       "default": 900
+    },
+    {
+      "type": "header",
+      "content": "Imagenes"
     },
     {
       "type": "image_picker",
@@ -348,53 +399,6 @@
       "id": "dose_copy",
       "label": "Dose copy",
       "default": "Consumir 6 gramos, equivalentes a 2 porciones del dosificador incluido en el producto, maximo dos veces al dia, disueltas en 240 ml de agua."
-    },
-    {
-      "type": "header",
-      "content": "Texto"
-    },
-    {
-      "type": "select",
-      "id": "text_alignment",
-      "label": "Alineación desktop",
-      "options": [
-        { "value": "left", "label": "Izquierda" },
-        { "value": "center", "label": "Centro" },
-        { "value": "right", "label": "Derecha" }
-      ],
-      "default": "left"
-    },
-    {
-      "type": "select",
-      "id": "text_alignment_mobile",
-      "label": "Alineación mobile",
-      "options": [
-        { "value": "", "label": "— igual que desktop —" },
-        { "value": "left", "label": "Izquierda" },
-        { "value": "center", "label": "Centro" },
-        { "value": "right", "label": "Derecha" }
-      ],
-      "default": ""
-    },
-    {
-      "type": "range",
-      "id": "title_size",
-      "label": "Tamaño título desktop",
-      "min": 20,
-      "max": 72,
-      "step": 2,
-      "unit": "px",
-      "default": 48
-    },
-    {
-      "type": "range",
-      "id": "title_size_mobile",
-      "label": "Tamaño título mobile",
-      "min": 14,
-      "max": 52,
-      "step": 2,
-      "unit": "px",
-      "default": 36
     },
     {
       "type": "header",

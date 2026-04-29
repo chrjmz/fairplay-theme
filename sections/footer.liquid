@@ -1,6 +1,25 @@
 
 
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
+{% liquid
+  case section.settings.footer_text_alignment
+    when 'center'
+      assign footer_text_align_items = 'center'
+    when 'right'
+      assign footer_text_align_items = 'flex-end'
+    else
+      assign footer_text_align_items = 'flex-start'
+  endcase
+
+  case section.settings.footer_text_alignment_mobile
+    when 'left'
+      assign footer_text_align_items_mobile = 'flex-start'
+    when 'right'
+      assign footer_text_align_items_mobile = 'flex-end'
+    else
+      assign footer_text_align_items_mobile = 'center'
+  endcase
+%}
 <div
   class="section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
 >
@@ -40,6 +59,10 @@
       --grid-columns: {{ grid_columns }};
       --last-row-count: {{ last_row_count }};
       --tablet-last-row-count: {{ tablet_last_row_count }};
+      --fairplay-footer-text-align: {{ section.settings.footer_text_alignment | default: 'left' }};
+      --fairplay-footer-text-align-mobile: {{ section.settings.footer_text_alignment_mobile | default: 'center' }};
+      --fairplay-footer-text-align-items: {{ footer_text_align_items }};
+      --fairplay-footer-text-align-items-mobile: {{ footer_text_align_items_mobile }};
     "
   >
     {% content_for 'blocks' %}
@@ -107,6 +130,14 @@
   .footer-content .text-block,
   .footer-content .text-block > * {
     color: #fff;
+  }
+
+  .footer-content .text-block {
+    align-items: var(--fairplay-footer-text-align-items, flex-start);
+  }
+
+  .footer-content .text-block > * {
+    text-align: var(--fairplay-footer-text-align, left);
   }
 
   .footer-content .text-block p {
@@ -184,7 +215,11 @@
     }
 
     .footer-content .text-block {
-      align-items: center;
+      align-items: var(--fairplay-footer-text-align-items-mobile, center);
+    }
+
+    .footer-content .text-block > * {
+      text-align: var(--fairplay-footer-text-align-mobile, center);
     }
 
     .footer-content .social-icons__wrapper {
@@ -245,6 +280,50 @@
     "groups": ["footer"]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "Fair Play footer"
+    },
+    {
+      "type": "select",
+      "id": "footer_text_alignment",
+      "label": "Alineacion texto desktop",
+      "options": [
+        {
+          "value": "left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Derecha"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "footer_text_alignment_mobile",
+      "label": "Alineacion texto mobile",
+      "options": [
+        {
+          "value": "left",
+          "label": "Izquierda"
+        },
+        {
+          "value": "center",
+          "label": "Centro"
+        },
+        {
+          "value": "right",
+          "label": "Derecha"
+        }
+      ],
+      "default": "center"
+    },
     {
       "type": "select",
       "id": "section_width",
