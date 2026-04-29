@@ -216,13 +216,14 @@
         "anchor_id": "contacto",
         "title": "Que esperas para unirte al juego?",
         "intro": "Los campos marcados con * son obligatorios",
-        "product": "",
+        "product": "fair-play-4-men",
+        "product_image": "shopify://shop_images/tarro_fairplay-1.png",
         "product_image_width": 280,
         "product_image_width_mobile": 220,
         "product_title": "",
         "product_copy": "",
         "button_label": "Comprar",
-        "buy_link": "",
+        "buy_link": "shopify://products/fair-play-4-men",
         "padding-block-start": 16,
         "padding-block-end": 72
       }
