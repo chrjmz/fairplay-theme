@@ -393,7 +393,7 @@
   color: var(--fairplay-ink-soft);
 }
 
-.fairplay-home-warning {
+.fairplay-home-warning.fairplay-home-warning {
   background: var(--fairplay-dark);
 }
 
@@ -694,16 +694,57 @@
   }
 
   .fairplay-home-recommendations__panel:first-child img {
-    width: min(100%, var(--fairplay-recommendations-product-width-mobile, 150px));
+    width: min(100%, var(--fairplay-recommendations-product-width-mobile, 260px));
   }
 
   .fairplay-home-recommendations__panel:last-child img {
-    width: min(100%, var(--fairplay-recommendations-diagram-width-mobile, 110px));
+    width: min(100%, var(--fairplay-recommendations-diagram-width-mobile, 180px));
   }
 
   .fairplay-home-community__badge {
     min-width: 56px;
     min-height: 56px;
     font-size: 0.92rem;
+  }
+
+  /* Mobile alignment overrides — use --fairplay-text-align-mobile if set, otherwise keep desktop value */
+  .fairplay-home-hero__wrap,
+  .fairplay-home-band__bar {
+    text-align: var(--fairplay-text-align-mobile, var(--fairplay-text-align));
+  }
+
+  .fairplay-home-hero__copy {
+    justify-items: var(--fairplay-justify-items-mobile, var(--fairplay-justify-items));
+  }
+
+  .fairplay-home-band__bar {
+    justify-items: var(--fairplay-justify-items-mobile, var(--fairplay-justify-items));
+  }
+
+  .fairplay-home-intro__wrap {
+    text-align: var(--fairplay-text-align-mobile, var(--fairplay-text-align));
+    justify-items: var(--fairplay-justify-items-mobile, var(--fairplay-justify-items));
+  }
+
+  .fairplay-home-intro__body {
+    text-align: var(--fairplay-text-align-mobile, var(--fairplay-text-align));
+  }
+
+  .fairplay-home-composition__header {
+    text-align: var(--fairplay-text-align-mobile, var(--fairplay-text-align));
+    justify-items: var(--fairplay-justify-items-mobile, var(--fairplay-justify-items));
+  }
+
+  .fairplay-home-warning__wrap {
+    text-align: var(--fairplay-text-align-mobile, var(--fairplay-text-align));
+    justify-items: var(--fairplay-justify-items-mobile, var(--fairplay-justify-items));
+  }
+
+  .fairplay-home-benefits__copy {
+    text-align: var(--fairplay-text-align-mobile, var(--fairplay-text-align));
+  }
+
+  .fairplay-home-recommendations__copy {
+    text-align: var(--fairplay-text-align-mobile, var(--fairplay-text-align));
   }
 }

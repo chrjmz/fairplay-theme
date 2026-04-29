@@ -13,6 +13,17 @@
     else
       assign justify_items = 'center'
   endcase
+
+  case section.settings.text_alignment_mobile
+    when 'left'
+      assign justify_items_mobile = 'start'
+    when 'center'
+      assign justify_items_mobile = 'center'
+    when 'right'
+      assign justify_items_mobile = 'end'
+    else
+      assign justify_items_mobile = justify_items
+  endcase
 %}
 
 {{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
@@ -22,7 +33,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-warning section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'center' }}; --fairplay-justify-items: {{ justify_items | default: 'center' }};"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'center' }}; --fairplay-justify-items: {{ justify_items | default: 'center' }}; --fairplay-text-align-mobile: {{ section.settings.text_alignment_mobile | default: section.settings.text_alignment | default: 'center' }}; --fairplay-justify-items-mobile: {{ justify_items_mobile | default: justify_items | default: 'center' }};"
 >
   <div class="fairplay-home-section__wrap fairplay-home-warning__wrap">
     {% if warning_image != blank %}
@@ -81,13 +92,25 @@
     {
       "type": "select",
       "id": "text_alignment",
-      "label": "Alineación",
+      "label": "Alineación desktop",
       "options": [
         { "value": "left", "label": "Izquierda" },
         { "value": "center", "label": "Centro" },
         { "value": "right", "label": "Derecha" }
       ],
       "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment_mobile",
+      "label": "Alineación mobile",
+      "options": [
+        { "value": "", "label": "— igual que desktop —" },
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": ""
     },
     {
       "type": "header",

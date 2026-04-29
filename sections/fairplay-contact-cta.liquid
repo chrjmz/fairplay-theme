@@ -21,6 +21,18 @@
   endif
   assign anchor_id = section.settings.anchor_id | strip
 
+  case section.settings.mobile_alignment
+    when 'center'
+      assign contact_mobile_justify = 'center'
+      assign contact_mobile_align = 'center'
+    when 'right'
+      assign contact_mobile_justify = 'end'
+      assign contact_mobile_align = 'right'
+    else
+      assign contact_mobile_justify = 'start'
+      assign contact_mobile_align = 'left'
+  endcase
+
   if section.settings.product_image != blank
     assign product_image = section.settings.product_image | image_url: width: 900
   elsif selected_product != blank and selected_product.featured_image != blank
@@ -54,7 +66,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-contact section section--page-width color-scheme-1"
-  style="--fairplay-contact-top: {{ section.settings.padding-block-start }}px; --fairplay-contact-bottom: {{ section.settings.padding-block-end }}px; --fairplay-contact-product-width: {{ section.settings.product_image_width | default: 180 }}px; --fairplay-contact-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px;"
+  style="--fairplay-contact-top: {{ section.settings.padding-block-start }}px; --fairplay-contact-bottom: {{ section.settings.padding-block-end }}px; --fairplay-contact-product-width: {{ section.settings.product_image_width | default: 180 }}px; --fairplay-contact-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-contact-mobile-justify: {{ contact_mobile_justify | default: 'start' }}; --fairplay-contact-mobile-align: {{ contact_mobile_align | default: 'left' }};"
 >
   <div class="fairplay-contact__grid">
     <div class="fairplay-contact__copy">
@@ -328,7 +340,7 @@
     min-height: 36px;
     border-radius: 6px;
     background: #fff;
-    border-color: #b7b8bc;
+    border: 1px solid #b7b8bc;
     color: var(--fairplay-contact-ink);
   }
 
@@ -372,8 +384,8 @@
     }
 
     .fairplay-contact__product-card {
-      justify-items: start;
-      text-align: left;
+      justify-items: var(--fairplay-contact-mobile-justify, start);
+      text-align: var(--fairplay-contact-mobile-align, left);
     }
   }
 
@@ -473,6 +485,21 @@
       "type": "url",
       "id": "buy_link",
       "label": "Fallback buy link"
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "select",
+      "id": "mobile_alignment",
+      "label": "Alineación tarjeta (mobile/tablet)",
+      "options": [
+        { "value": "left", "label": "Izquierda" },
+        { "value": "center", "label": "Centro" },
+        { "value": "right", "label": "Derecha" }
+      ],
+      "default": "left"
     },
     {
       "type": "header",
