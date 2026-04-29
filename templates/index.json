@@ -33,6 +33,7 @@
         "statement": "<p>Con <strong>Fair Play For Men</strong> estaras preparado para jugar desde el <strong>primer momento</strong>.</p>",
         "button_label": "Comprar",
         "text_width": 580,
+        "section_width": 1280,
         "product": "fair-play-4-men",
         "buy_link": "",
         "video_embed_url": "https://www.youtube.com/embed/JVkUjvbwGYM",
@@ -53,6 +54,7 @@
         "body_2": "<p>Las fibras 100% naturales, debidamente hidratadas con agua, funcionan como un agente de limpieza a medida que pasan a traves del sistema digestivo, reduciendo significativamente el uso de enemas y el tiempo que dedicas para estar preparado.</p>",
         "body_3": "<p>Adicionalmente, nuestra formula exclusiva incluye <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, ingredientes que fortalecen el sistema inmunologico y nutren el cabello, la piel, los huesos y las unas.</p>",
         "text_width": 560,
+        "section_width": 900,
         "padding_block_start": 72,
         "padding_block_end": 24
       }
@@ -63,6 +65,7 @@
         "anchor_id": "feature-media",
         "image_alt": "Imagen destacada Fair Play",
         "image_width_percent": 100,
+        "section_width": 1280,
         "padding_block_start": 16,
         "padding_block_end": 16
       }
@@ -76,8 +79,9 @@
         "body_1": "<p><strong>Fair Play For Men</strong> reune la mejor seleccion de ingredientes que le aportan a tu organismo la cantidad de fibra necesaria para garantizar un adecuado transito intestinal que, junto a una sensacion de bienestar, reducira significativamente el uso de enemas y el tiempo que dedicas para disfrutar de un encuentro sexual mas limpio y placentero.</p>",
         "body_2": "<p>De otro lado, nuestra formula exclusiva con <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, potencia la capacidad de defensa del organismo, funciona como antioxidante y contribuye al fortalecimiento de la piel, las unas, el cabello y las articulaciones.</p>",
         "highlight": "Ya lo sabes, con Fair Play For Men, estaras preparado para jugar desde el primer momento.",
-        "text_width": 580,
-        "digest_image_width": 228,
+        "text_width": 1280,
+        "section_width": 1100,
+        "digest_image_width": 224,
         "digest_image_width_mobile": 148,
         "card_label": "Fair Play For Men",
         "card_text": "Evacua totalmente tu sistema intestinal, sin dejar residuos que incomodan.",
@@ -145,6 +149,7 @@
         "anchor_id": "composicion",
         "eyebrow": "Composicion",
         "title": "Ingredientes que juegan a tu favor",
+        "section_width": 1100,
         "padding_block_start": 72,
         "padding_block_end": 24
       }
@@ -154,6 +159,7 @@
       "settings": {
         "anchor_id": "warning",
         "copy": "<p>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></p>",
+        "section_width": 900,
         "padding_block_start": 28,
         "padding_block_end": 28
       }
@@ -191,6 +197,7 @@
         "image_alt": "Comunidad Fair Play",
         "badge_text": "Play",
         "image_width_percent": 100,
+        "section_width": 1280,
         "padding_block_start": 56,
         "padding_block_end": 0
       }
