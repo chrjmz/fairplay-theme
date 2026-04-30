@@ -171,6 +171,9 @@
         "group_contact_fairplay",
         "group_brand_fairplay"
       ],
+      "custom_css": [
+        ".logo-block__image {max-width: 140px;}"
+      ],
       "name": "t:names.footer",
       "settings": {
         "footer_text_alignment": "left",
