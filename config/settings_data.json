@@ -636,7 +636,8 @@
   },
   "platform_customizations": {
     "custom_css": [
-      ".fairplay-product {--fairplay-product-green: #6ca132;}"
+      ".fairplay-product {--fairplay-product-green: #6ca132;}",
+      "p.fairplay-product__eyebrow {display: none;}"
     ]
   }
 }
