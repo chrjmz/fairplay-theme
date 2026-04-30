@@ -632,5 +632,10 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".fairplay-product {--fairplay-product-green: #6ca132;}"
+    ]
   }
 }
