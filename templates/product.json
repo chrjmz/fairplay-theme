@@ -12,11 +12,14 @@
     "main": {
       "type": "fairplay-main-product",
       "settings": {
-        "color_scheme": ""
+        "color_scheme": "scheme-1"
       }
     },
     "fairplay_contact_product_w6Y3Lh": {
       "type": "fairplay-contact-cta",
+      "custom_css": [
+        "a.fairplay-contact__product-link img {/* text-align: center; */ margin: auto;}"
+      ],
       "settings": {
         "anchor_id": "contacto",
         "title": "Que esperas para unirte al juego?",

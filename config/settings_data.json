@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/fairplay-logo.webp",
+    "logo": "shopify://shop_images/Fair-play-logo.svg",
     "logo_height": 42,
     "logo_height_mobile": 28,
     "type_body_font": "montserrat_n4",
@@ -43,7 +43,7 @@
     "type_size_h6": "12",
     "type_line_height_h6": "display-loose",
     "page_width": "narrow",
-    "page_transition_enabled": false,
+    "page_transition_enabled": true,
     "transition_to_main_product": false,
     "card_hover_effect": "none",
     "badge_position": "top-right",
@@ -59,6 +59,7 @@
     "cart_price_font": "secondary",
     "show_cart_note": false,
     "show_add_discount_code": true,
+    "show_installments": false,
     "drawer_drop_shadow": true,
     "icon_stroke": "default",
     "input_border_width": 1,
@@ -632,5 +633,11 @@
         }
       }
     }
+  },
+  "platform_customizations": {
+    "custom_css": [
+      ".fairplay-product {--fairplay-product-green: #6ca132;}",
+      "p.fairplay-product__eyebrow {display: none;}"
+    ]
   }
 }
