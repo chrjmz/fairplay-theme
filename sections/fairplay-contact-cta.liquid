@@ -59,22 +59,6 @@
     assign product_image = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
   endif
 
-  if section.settings.product_title != blank
-    assign product_title = section.settings.product_title
-  elsif selected_product != blank
-    assign product_title = selected_product.title
-  else
-    assign product_title = blank
-  endif
-
-  if section.settings.product_copy != blank
-    assign product_copy = section.settings.product_copy
-  elsif selected_product != blank and selected_product.description != blank
-    assign product_copy = selected_product.description | strip_html | truncate: 150
-  else
-    assign product_copy = blank
-  endif
-
   assign form_id = 'ContactForm-' | append: section.id
 %}
 
@@ -190,22 +174,16 @@
       <a
         class="fairplay-contact__product-link"
         href="{{ buy_link }}"
-        aria-label="Comprar {% if product_title != blank %}{{ product_title | escape }}{% else %}Fair Play For Men{% endif %}"
+        aria-label="Comprar Fair Play For Men"
       >
         <img
           src="{{ product_image }}"
-          alt="{% if product_title != blank %}{{ product_title | escape }}{% else %}Fair Play For Men{% endif %}"
+          alt="Fair Play For Men"
           width="{{ section.settings.product_image.width | default: selected_product.featured_image.width | default: 426 }}"
           height="{{ section.settings.product_image.height | default: selected_product.featured_image.height | default: 641 }}"
           loading="lazy"
         >
       </a>
-      {% if product_title != blank %}
-        <h3>{{ product_title }}</h3>
-      {% endif %}
-      {% if product_copy != blank %}
-        <p>{{ product_copy }}</p>
-      {% endif %}
       <a
         href="{{ buy_link }}"
         class="button fairplay-contact__buy"
@@ -519,18 +497,6 @@
     },
     {
       "type": "text",
-      "id": "product_title",
-      "label": "Product title",
-      "default": "Fair Play 4 Men"
-    },
-    {
-      "type": "textarea",
-      "id": "product_copy",
-      "label": "Product copy",
-      "default": "Complemento alimenticio con fibra dietaria para una preparación más simple y limpia."
-    },
-    {
-      "type": "text",
       "id": "button_label",
       "label": "Button label",
       "default": "Comprar"
@@ -587,3 +553,5 @@
   ]
 }
 {% endschema %}
+
+

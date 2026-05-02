@@ -585,8 +585,6 @@
         "product_image": "shopify://shop_images/tarro_fairplay-1.png",
         "product_image_width": 280,
         "product_image_width_mobile": 220,
-        "product_title": "",
-        "product_copy": "",
         "button_label": "Comprar",
         "buy_link": "shopify://products/fair-play-4-men",
         "mobile_alignment": "center",
@@ -626,3 +624,4 @@
     "fairplay_home_warning_Hz41Nc"
   ]
 }
+

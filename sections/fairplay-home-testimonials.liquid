@@ -19,31 +19,102 @@
     {% endif %}
 
     {% if section.blocks.size > 0 %}
-      <div class="fairplay-home-testimonials__grid">
-        {% for block in section.blocks %}
-          <article class="fairplay-home-testimonials__card" {{ block.shopify_attributes }}>
-            {% if block.settings.quote != blank %}
-              <div class="fairplay-home-richtext fairplay-home-testimonials__quote">
-                {{ block.settings.quote }}
-              </div>
-            {% endif %}
+      <div class="fairplay-home-testimonials__carousel" data-testimonials-carousel>
+        {% if section.blocks.size > 1 %}
+          <button
+            type="button"
+            class="fairplay-home-testimonials__nav fairplay-home-testimonials__nav--prev"
+            data-testimonials-prev
+            aria-label="Testimonio anterior"
+          >
+            <span aria-hidden="true">&lsaquo;</span>
+          </button>
+        {% endif %}
 
-            {% if block.settings.author != blank or block.settings.meta != blank %}
-              <div class="fairplay-home-testimonials__author">
-                {% if block.settings.author != blank %}
-                  <strong>{{ block.settings.author }}</strong>
+        <div class="fairplay-home-testimonials__viewport" data-testimonials-viewport>
+          <div class="fairplay-home-testimonials__track">
+            {% for block in section.blocks %}
+              <article class="fairplay-home-testimonials__card" {{ block.shopify_attributes }}>
+                {% if block.settings.quote != blank %}
+                  <div class="fairplay-home-richtext fairplay-home-testimonials__quote">
+                    {{ block.settings.quote }}
+                  </div>
                 {% endif %}
-                {% if block.settings.meta != blank %}
-                  <span>{{ block.settings.meta }}</span>
+
+                {% if block.settings.author != blank or block.settings.meta != blank %}
+                  <div class="fairplay-home-testimonials__author">
+                    {% if block.settings.author != blank %}
+                      <strong>{{ block.settings.author }}</strong>
+                    {% endif %}
+                    {% if block.settings.meta != blank %}
+                      <span>{{ block.settings.meta }}</span>
+                    {% endif %}
+                  </div>
                 {% endif %}
-              </div>
-            {% endif %}
-          </article>
-        {% endfor %}
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+
+        {% if section.blocks.size > 1 %}
+          <button
+            type="button"
+            class="fairplay-home-testimonials__nav fairplay-home-testimonials__nav--next"
+            data-testimonials-next
+            aria-label="Siguiente testimonio"
+          >
+            <span aria-hidden="true">&rsaquo;</span>
+          </button>
+        {% endif %}
       </div>
     {% endif %}
   </div>
 </section>
+
+<script>
+  (() => {
+    const script = document.currentScript;
+    const section = script?.previousElementSibling;
+    if (!section || section.dataset.testimonialsCarouselReady === 'true') return;
+
+    const viewport = section.querySelector('[data-testimonials-viewport]');
+    const previousButton = section.querySelector('[data-testimonials-prev]');
+    const nextButton = section.querySelector('[data-testimonials-next]');
+    const track = section.querySelector('.fairplay-home-testimonials__track');
+
+    if (!viewport || !previousButton || !nextButton || !track) {
+      section.dataset.testimonialsCarouselReady = 'true';
+      return;
+    }
+
+    const getStep = () => {
+      const firstCard = viewport.querySelector('.fairplay-home-testimonials__card');
+      if (!firstCard) return viewport.clientWidth;
+      const gap = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap || '0');
+      return firstCard.getBoundingClientRect().width + gap;
+    };
+
+    const updateState = () => {
+      const maxScrollLeft = viewport.scrollWidth - viewport.clientWidth - 4;
+      previousButton.disabled = viewport.scrollLeft <= 4;
+      nextButton.disabled = viewport.scrollLeft >= maxScrollLeft;
+    };
+
+    previousButton.addEventListener('click', () => {
+      viewport.scrollBy({ left: getStep() * -1, behavior: 'smooth' });
+    });
+
+    nextButton.addEventListener('click', () => {
+      viewport.scrollBy({ left: getStep(), behavior: 'smooth' });
+    });
+
+    viewport.addEventListener('scroll', updateState, { passive: true });
+    window.addEventListener('resize', updateState);
+
+    updateState();
+    section.dataset.testimonialsCarouselReady = 'true';
+  })();
+</script>
 
 {% schema %}
 {
