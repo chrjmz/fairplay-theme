@@ -74,8 +74,8 @@
       "type": "fairplay-home-feature-media",
       "settings": {
         "anchor_id": "feature-media",
-        "image": "shopify://shop_images/fair-play-2.jpg",
-        "image_mobile": "shopify://shop_images/fair-play-2.jpg",
+        "image": "shopify://shop_images/FairPlay_7.jpg",
+        "image_mobile": "shopify://shop_images/FairPlay_7.jpg",
         "image_alt": "Imagen destacada Fair Play",
         "image_width_percent": 100,
         "section_width": 1280,
