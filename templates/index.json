@@ -17,7 +17,7 @@
       "settings": {
         "anchor_id": "fairplay",
         "eyebrow": "Play clean, play better",
-        "title": "Con Fair Play For Men estaras preparado para jugar desde el primer momento",
+        "title": "Fairplay, la fibra que te ayuda a estar siempre listo",
         "lede": "",
         "image_alt": "Fair Play For Men",
         "hero_background": "shopify://shop_images/fair-play-for-men-f2_2.png",
@@ -35,7 +35,7 @@
       "type": "fairplay-home-statement-video",
       "settings": {
         "anchor_id": "video",
-        "statement": "<p>Con <strong>Fair Play For Men</strong> estaras preparado para jugar desde el <strong>primer momento</strong>.</p>",
+        "statement": "<p>Mantén el control de tu cuerpo <strong>todos los días</strong></p>",
         "button_label": "Comprar",
         "text_width": 580,
         "section_width": 1280,
@@ -43,7 +43,7 @@
         "buy_link": "",
         "video_embed_url": "https://www.youtube.com/embed/JVkUjvbwGYM",
         "video_width_percent": 62,
-        "video_offset_y": -140,
+        "video_offset_y": -104,
         "video_offset_y_mobile": 0,
         "text_alignment": "center",
         "text_alignment_mobile": "",
