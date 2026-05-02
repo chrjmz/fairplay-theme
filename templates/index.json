@@ -313,6 +313,47 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "accordion_row_e4aQzt": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "¿Cómo debo tomarlo correctamente?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_PtppY6": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Mezcla la porción indicada en un vaso con agua y consúmelo de inmediato. Acompáñalo con buena hidratación durante el día.<br/></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_PtppY6"
+              ]
+            },
             "accordion_row_iEtmza": {
               "type": "_accordion-row",
               "settings": {
@@ -473,21 +514,20 @@
                 "text_ADpxNp"
               ]
             },
-            "accordion_row_e4aQzt": {
+            "accordion_row_YLYxYY": {
               "type": "_accordion-row",
               "name": "t:names.accordion_row",
               "settings": {
-                "heading": "¿Cuánto cuesta el envío?",
+                "heading": "¿A qué hora es mejor tomarlo?",
                 "open_by_default": false,
                 "icon": "none",
                 "width": 20
               },
               "blocks": {
-                "text_PtppY6": {
+                "text_awPfQj": {
                   "type": "text",
-                  "name": "t:names.text",
                   "settings": {
-                    "text": "<p>El envío se calcula según tu ubicación y los artículos de tu pedido. Siempre conocerás el precio del envío antes de realizar la compra.</p>",
+                    "text": "<p>Puedes incorporarlo en el momento del día que mejor se adapte a tu rutina. Lo importante es mantener consistencia.<br/></p>",
                     "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
@@ -511,16 +551,304 @@
                 }
               },
               "block_order": [
-                "text_PtppY6"
+                "text_awPfQj"
+              ]
+            },
+            "accordion_row_H4mdQf": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "¿Puedo combinarlo con otros productos o suplementos?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_j6kDXM": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>En general sí, pero si tienes dudas específicas o condiciones médicas, consulta con un profesional.<br/></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_j6kDXM"
+              ]
+            },
+            "accordion_row_yPdnhH": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "¿Qué pasa si no lo tomo todos los días?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_RxKrtT": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Al no mantener constancia, los resultados pueden variar. La clave está en el uso continuo.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_RxKrtT"
+              ]
+            },
+            "accordion_row_rqfFXG": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "¿Tiene sabor?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_GHfPnn": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Tiene un sabor suave y natural, pensado para ser fácil de consumir diariamente.<br/></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_GHfPnn"
+              ]
+            },
+            "accordion_row_FctWQB": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "¿Genera dependencia?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_XeAWRe": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>No está diseñado para generar dependencia, ya que su enfoque es acompañar el funcionamiento natural del cuerpo.<br/></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_XeAWRe"
+              ]
+            },
+            "accordion_row_7H3iXx": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "¿Es apto para cualquier persona?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_qGLM7n": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Está pensado para hombres adultos. Si tienes condiciones médicas específicas, consulta antes de usarlo.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_qGLM7n"
+              ]
+            },
+            "accordion_row_faxcNN": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "¿Cuánto dura un envase?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_QwCwD6": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Aproximadamente 35 dosis, dependiendo de la frecuencia de uso.<br/></p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_QwCwD6"
+              ]
+            },
+            "accordion_row_ahN9zB": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "¿Qué pasa si no me gusta o no es para mí?",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_tPE8XF": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>Puedes contactar al equipo de soporte para revisar tu caso según la política de la marca.</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_tPE8XF"
               ]
             }
           },
           "block_order": [
+            "accordion_row_e4aQzt",
             "accordion_row_iEtmza",
             "accordion_row_VXbDyb",
             "accordion_row_LbabYm",
             "accordion_row_gnLCpX",
-            "accordion_row_e4aQzt"
+            "accordion_row_YLYxYY",
+            "accordion_row_H4mdQf",
+            "accordion_row_yPdnhH",
+            "accordion_row_rqfFXG",
+            "accordion_row_FctWQB",
+            "accordion_row_7H3iXx",
+            "accordion_row_faxcNN",
+            "accordion_row_ahN9zB"
           ]
         }
       },
@@ -585,6 +913,8 @@
         "product_image": "shopify://shop_images/tarro_fairplay-1.png",
         "product_image_width": 280,
         "product_image_width_mobile": 220,
+        "product_title": "",
+        "product_copy": "",
         "button_label": "Comprar",
         "buy_link": "shopify://products/fair-play-4-men",
         "mobile_alignment": "center",
@@ -624,4 +954,3 @@
     "fairplay_home_warning_Hz41Nc"
   ]
 }
-
