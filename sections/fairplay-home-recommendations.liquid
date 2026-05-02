@@ -47,7 +47,7 @@
     id="{{ anchor_id | escape }}"
   {% endif %}
   class="fairplay-home-section fairplay-home-recommendations section section--full-width color-scheme-1"
-  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-recommendations-copy-width: {{ section.settings.text_width | default: 330 }}px; --fairplay-recommendations-photo-width: {{ section.settings.lifestyle_image_width | default: 236 }}px; --fairplay-recommendations-photo-width-mobile: {{ section.settings.lifestyle_image_width_mobile | default: 260 }}px; --fairplay-recommendations-product-width: {{ section.settings.product_image_width | default: 168 }}px; --fairplay-recommendations-product-width-mobile: {{ section.settings.product_image_width_mobile | default: 148 }}px; --fairplay-recommendations-diagram-width: {{ section.settings.diagram_image_width | default: 120 }}px; --fairplay-recommendations-diagram-width-mobile: {{ section.settings.diagram_image_width_mobile | default: 108 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items: {{ justify_items | default: 'start' }}; --fairplay-text-align-mobile: {{ section.settings.text_alignment_mobile | default: section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items-mobile: {{ justify_items_mobile | default: justify_items | default: 'start' }}; --fairplay-title-size: {{ section.settings.title_size | default: 48 }}px; --fairplay-title-size-mobile: {{ section.settings.title_size_mobile | default: 36 }}px;"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 900 }}px; --fairplay-recommendations-copy-width: {{ section.settings.text_width | default: 330 }}px; --fairplay-recommendations-photo-width: {{ section.settings.lifestyle_image_width | default: 236 }}px; --fairplay-recommendations-photo-width-mobile: {{ section.settings.lifestyle_image_width_mobile | default: 260 }}px; --fairplay-recommendations-diagram-width: {{ section.settings.diagram_image_width | default: 120 }}px; --fairplay-recommendations-diagram-width-mobile: {{ section.settings.diagram_image_width_mobile | default: 108 }}px; --fairplay-text-align: {{ section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items: {{ justify_items | default: 'start' }}; --fairplay-text-align-mobile: {{ section.settings.text_alignment_mobile | default: section.settings.text_alignment | default: 'left' }}; --fairplay-justify-items-mobile: {{ justify_items_mobile | default: justify_items | default: 'start' }}; --fairplay-title-size: {{ section.settings.title_size | default: 48 }}px; --fairplay-title-size-mobile: {{ section.settings.title_size_mobile | default: 36 }}px;"
 >
   <div class="fairplay-home-section__wrap fairplay-home-recommendations__grid">
     <div class="fairplay-home-recommendations__copy">
@@ -246,48 +246,6 @@
       "type": "product",
       "id": "product",
       "label": "Linked product"
-    },
-    {
-      "type": "image_picker",
-      "id": "product_image",
-      "label": "Custom product image"
-    },
-    {
-      "type": "url",
-      "id": "buy_link",
-      "label": "Fallback buy link"
-    },
-    {
-      "type": "range",
-      "id": "product_image_width",
-      "label": "Product desktop width",
-      "min": 100,
-      "max": 1600,
-      "step": 4,
-      "unit": "px",
-      "default": 168
-    },
-    {
-      "type": "range",
-      "id": "product_image_width_mobile",
-      "label": "Product mobile width",
-      "min": 80,
-      "max": 1600,
-      "step": 4,
-      "unit": "px",
-      "default": 520
-    },
-    {
-      "type": "text",
-      "id": "product_title",
-      "label": "Product title",
-      "default": "Presentacion"
-    },
-    {
-      "type": "textarea",
-      "id": "product_copy",
-      "label": "Product copy",
-      "default": "Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las cascaras de psyllium. De esa hidratacion depende la consistencia necesaria para arrastrar los residuos del tracto intestinal."
     },
     {
       "type": "image_picker",

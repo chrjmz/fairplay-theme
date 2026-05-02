@@ -368,8 +368,9 @@
   display: grid;
   align-content: start;
   gap: 0.7rem;
-  flex: 0 1 180px;
-  max-width: 220px;
+  flex: 0 1 calc((100% - 3.2rem) / 3);
+  max-width: calc((100% - 3.2rem) / 3);
+  min-width: 220px;
   padding: 0;
   background: transparent;
   text-align: center;
@@ -596,6 +597,11 @@
   .fairplay-home-composition__grid {
     gap: 1.5rem;
   }
+
+  .fairplay-home-composition__card {
+    flex-basis: calc((100% - 1.5rem) / 2);
+    max-width: calc((100% - 1.5rem) / 2);
+  }
 }
 
 @media screen and (max-width: 989px) {
@@ -620,6 +626,12 @@
 
   .fairplay-home-composition__grid {
     gap: 1.25rem;
+  }
+
+  .fairplay-home-composition__card {
+    flex-basis: calc((100% - 1.25rem) / 2);
+    max-width: calc((100% - 1.25rem) / 2);
+    min-width: 0;
   }
 }
 
@@ -727,7 +739,7 @@
 
   .fairplay-home-composition__card {
     flex-basis: min(100%, 260px);
-    max-width: 260px;
+    max-width: min(100%, 260px);
   }
 
   .fairplay-home-recommendations__panel {
