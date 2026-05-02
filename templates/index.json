@@ -17,7 +17,7 @@
       "settings": {
         "anchor_id": "fairplay",
         "eyebrow": "Play clean, play better",
-        "title": "Con Fair Play For Men estaras preparado para jugar desde el primer momento",
+        "title": "Fairplay, la fibra que te ayuda a estar siempre listo",
         "lede": "",
         "image_alt": "Fair Play For Men",
         "hero_background": "shopify://shop_images/fair-play-for-men-f2_2.png",
@@ -35,15 +35,15 @@
       "type": "fairplay-home-statement-video",
       "settings": {
         "anchor_id": "video",
-        "statement": "<p>Con <strong>Fair Play For Men</strong> estaras preparado para jugar desde el <strong>primer momento</strong>.</p>",
-        "button_label": "Comprar",
+        "statement": "<p>Mantén el control de tu cuerpo <strong>todos los días</strong></p>",
+        "button_label": "Empieza Hoy",
         "text_width": 580,
         "section_width": 1280,
         "product": "fair-play-4-men",
         "buy_link": "",
         "video_embed_url": "https://www.youtube.com/embed/JVkUjvbwGYM",
         "video_width_percent": 62,
-        "video_offset_y": -140,
+        "video_offset_y": -104,
         "video_offset_y_mobile": 0,
         "text_alignment": "center",
         "text_alignment_mobile": "",
@@ -57,9 +57,9 @@
         "anchor_id": "que-es-fairplay",
         "eyebrow": "Que es Fair Play For Men?",
         "title": "Una rutina mas limpia y placentera desde el primer momento",
-        "body_1": "<p><strong>Fair Play For Men</strong> es un suplemento de fibra dietaria que ayuda a mantener un adecuado transito intestinal y contribuye con la higiene personal. En pocas palabras, es un aliado para experimentar encuentros mas limpios y placenteros.</p>",
+        "body_1": "<p><strong>Fair Play For Men</strong> es un suplemento de fibra dietaria que ayuda a mantener un adecuado transito intestinal y contribuye con la higiene personal. Es un aliado para experimentar encuentros mas limpios y placenteros.</p>",
         "body_2": "<p>Las fibras 100% naturales, debidamente hidratadas con agua, funcionan como un agente de limpieza a medida que pasan a traves del sistema digestivo, reduciendo significativamente el uso de enemas y el tiempo que dedicas para estar preparado.</p>",
-        "body_3": "<p>Adicionalmente, nuestra formula exclusiva incluye <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, ingredientes que fortalecen el sistema inmunologico y nutren el cabello, la piel, los huesos y las unas.</p>",
+        "body_3": "<p>Adicionalmente, nuestra formula exclusiva incluye <strong>Ganoderma Lucidum, Vitamina C,</strong> <strong>Colageno Hidrolizado y Aloe Vera,</strong> ingredientes que fortalecen el sistema inmunológico aportando bienestar integral.</p>",
         "text_width": 560,
         "section_width": 900,
         "text_alignment": "center",
@@ -92,8 +92,8 @@
         "eyebrow": "Y tu... Como juegas?",
         "title": "Mas bienestar para tu cuerpo, menos pasos antes de disfrutar",
         "body_1": "<p><strong>Fair Play For Men</strong> reune la mejor seleccion de ingredientes que le aportan a tu organismo la cantidad de fibra necesaria para garantizar un adecuado transito intestinal que, junto a una sensacion de bienestar, reducira significativamente el uso de enemas y el tiempo que dedicas para disfrutar de un encuentro sexual mas limpio y placentero.</p>",
-        "body_2": "<p>De otro lado, nuestra formula exclusiva con <strong>Ganoderma Lucidum</strong> y <strong>Colageno Hidrolizado</strong>, potencia la capacidad de defensa del organismo, funciona como antioxidante y contribuye al fortalecimiento de la piel, las unas, el cabello y las articulaciones.</p>",
-        "highlight": "Ya lo sabes, con Fair Play For Men, estaras preparado para jugar desde el primer momento.",
+        "body_2": "<p><strong>Fair Play For Men </strong>es una rutina de bienestar digestivo e higiene personal para hombres que quieren sentirse preparados, tranquilos y en control.</p><p></p>",
+        "highlight": "",
         "text_width": 1280,
         "section_width": 1100,
         "digest_image": "shopify://shop_images/fair-play-for-men-digestion.png",
@@ -119,7 +119,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Chia, linaza y psyllium",
             "meta": "Fibra",
-            "copy": "Debidamente hidratados con agua, estos ingredientes facilitan el transito intestinal y aportan proteinas, antioxidantes, acidos grasos y omega-3."
+            "copy": "Fuentes naturales de fibra que ayudan a complementar tu alimentación y apoyar el tránsito intestinal como parte de una rutina equilibrada."
           }
         },
         "ingredient_2": {
@@ -129,7 +129,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Ganoderma Lucidum",
             "meta": "",
-            "copy": "Hongo milenario al que se le reconocen efectos potencialmente terapeuticos como inmunoreguladores, antioxidantes y de bienestar general."
+            "copy": "Ingrediente de origen natural utilizado tradicionalmente en rutinas de bienestar."
           }
         },
         "ingredient_3": {
@@ -139,7 +139,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Colageno Hidrolizado",
             "meta": "",
-            "copy": "Ayuda a estimular la produccion de colageno en el organismo, mejorando la piel y fortaleciendo articulaciones, unas, huesos y cabello."
+            "copy": "Complementa la fórmula con una proteína ampliamente usada en productos de cuidado personal."
           }
         },
         "ingredient_4": {
@@ -149,7 +149,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Vitamina C",
             "meta": "",
-            "copy": "Antioxidante que protege las celulas y participa en la formacion de vasos sanguineos, musculos, cartilagos y colageno."
+            "copy": "Ingrediente antioxidante que acompaña la fórmula nutricional del producto."
           }
         },
         "ingredient_5": {
@@ -159,7 +159,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Aloe Vera",
             "meta": "",
-            "copy": "Regula el pH del aparato digestivo y ayuda a evitar afecciones como ulceras, digestiones lentas o pesadez estomacal."
+            "copy": "Ingrediente de origen vegetal que complementa la mezcla de bienestar digestivo."
           }
         }
       },
@@ -173,7 +173,7 @@
       "settings": {
         "anchor_id": "composicion",
         "eyebrow": "Composicion",
-        "title": "Ingredientes que juegan a tu favor",
+        "title": "Una fórmula pensada para tu rutina",
         "section_width": 1100,
         "text_alignment": "center",
         "text_alignment_mobile": "",
@@ -205,10 +205,10 @@
       "settings": {
         "anchor_id": "recomendaciones",
         "eyebrow": "Recomendaciones",
-        "title": "Juega a tu ritmo, juega limpio",
-        "body_1": "<p><strong>Precauciones:</strong> No exceda la dosis diaria recomendada. Este producto debe ser consumido luego de ser diluido en agua; consumirlo en polvo podria causar asfixia. Si al consumir el producto surgen sintomas como dolor en el pecho, vomito, dificultad para respirar o tragar, o alguna otra reaccion alergica, busque inmediatamente atencion medica.</p>",
-        "body_2": "<p>Evite su uso en mujeres en embarazo o en periodo de lactancia, asi como en personas con dolor abdominal o sintomas de diarrea. En caso de estar consumiendo algun medicamento o en medio de un tratamiento medico, consulte con su medico antes de hacer uso de este producto. <strong>Producto sugerido para personas mayores de 18 anos.</strong></p>",
-        "body_3": "<p><strong>Conservacion:</strong> Conservese en su envase original, a temperatura ambiente y en un lugar fresco, ventilado y seco. Cerciorese de cerrarlo hermeticamente despues de cada uso para evitar su contaminacion y humedad.</p>",
+        "title": "Cómo tomarFair Play For Men",
+        "body_1": "<p>FairPlay For Men viene en polvo para facilitar su consumo y mejorar su efectividad al mezclarse con agua.<br/><br/>Su fórmula combina ingredientes como linaza, chía y cáscaras de psyllium, que al hidratarse correctamente ayudan a generar la consistencia adecuada para acompañar el proceso natural del sistema digestivo.<br/><br/>La clave está en una buena hidratación, ya que permite que el producto actúe de forma óptima dentro de tu rutina diaria.</p><p></p>",
+        "body_2": "",
+        "body_3": "",
         "text_width": 820,
         "lifestyle_image": "shopify://shop_images/Recurso-7egoshop-2-1.png",
         "lifestyle_image_alt": "Fair Play For Men",
@@ -218,13 +218,13 @@
         "product_image_width": 112,
         "product_image_width_mobile": 148,
         "product_title": "Presentacion",
-        "product_copy": "Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las cascaras de psyllium. De esa hidratacion depende la consistencia necesaria para arrastrar los residuos del tracto intestinal.",
+        "product_copy": "Fair Play For Men viene en polvo para mezclarse con agua y hacer parte de tu rutina diaria. Su fórmula con linaza, chía y cáscaras de psyllium acompaña tu bienestar digestivo y ayuda a una preparación más práctica y cómoda.",
         "diagram_image": "shopify://shop_images/Recurso-8egoshop-2.png",
         "diagram_image_mobile": "shopify://shop_images/fairPlay_landing_movilno-hacer-caso-a-fotos-04.png",
         "diagram_image_width": 80,
         "diagram_image_width_mobile": 180,
         "dose_title": "Dosis",
-        "dose_copy": "Consumir 6 gramos, equivalentes a 2 porciones del dosificador incluido en el producto, maximo dos veces al dia, disueltas en 240 ml de agua.",
+        "dose_copy": "Mezcla 6 gramos — 1 porción del dosificador incluido — en mínimo 240 ml de agua. Revuelve bien hasta hidratar completamente el producto y consúmelo según la recomendación de uso.",
         "padding_block_start": 72,
         "padding_block_end": 24
       }
