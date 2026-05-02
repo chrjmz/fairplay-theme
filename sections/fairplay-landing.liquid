@@ -61,14 +61,6 @@
     assign dosage_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/fair-play-for-men-digestion.png'
   endif
 
-  if section.settings.detail_image != blank
-    assign detail_image = section.settings.detail_image | image_url: width: 900
-  elsif selected_product != blank and selected_product.featured_image != blank
-    assign detail_image = selected_product.featured_image | image_url: width: 900
-  else
-    assign detail_image = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
-  endif
-
   if section.settings.detail_diagram_image != blank
     assign detail_diagram_image = section.settings.detail_diagram_image | image_url: width: 900
   else
@@ -361,22 +353,6 @@
     </div>
 
     <div class="fairplay-landing__recommendations-detail">
-      <div class="fairplay-landing__detail-panel fairplay-landing__detail-panel--product">
-        <img
-          src="{{ detail_image }}"
-          alt="Presentacion Fair Play For Men"
-          loading="lazy"
-        >
-        <div>
-          <h3>Presentacion</h3>
-          <p>
-            Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las
-            cascaras de psyllium. De esa hidratacion depende la consistencia necesaria para arrastrar los residuos del
-            tracto intestinal.
-          </p>
-        </div>
-      </div>
-
       <div class="fairplay-landing__detail-panel fairplay-landing__detail-panel--diagram">
         <picture>
           <source
