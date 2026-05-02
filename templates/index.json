@@ -218,6 +218,14 @@
     "fairplay_home_testimonials_3Qk9Lm": {
       "type": "fairplay-home-testimonials",
       "blocks": {
+        "testimonial_BNPbwa": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>\"Me siento mucho mas tranquilo y seguro. Ahora mi rutina es mas simple y me preparo con mucha mas confianza.\"</p>",
+            "author": "Andres, 32",
+            "meta": "Cliente Fair Play"
+          }
+        },
         "testimonial_1": {
           "type": "testimonial",
           "settings": {
@@ -244,6 +252,7 @@
         }
       },
       "block_order": [
+        "testimonial_BNPbwa",
         "testimonial_1",
         "testimonial_2",
         "testimonial_3"
