@@ -1,0 +1,155 @@
+{% liquid
+  assign anchor_id = section.settings.anchor_id | strip
+%}
+
+{{ 'fairplay-home.css' | asset_url | stylesheet_tag }}
+
+<section
+  {% if anchor_id != blank %}
+    id="{{ anchor_id | escape }}"
+  {% endif %}
+  class="fairplay-home-section fairplay-home-testimonials section section--full-width color-scheme-1"
+  style="--fairplay-padding-top: {{ section.settings.padding_block_start }}px; --fairplay-padding-bottom: {{ section.settings.padding_block_end }}px; --fairplay-section-width: {{ section.settings.section_width | default: 1180 }}px;"
+>
+  <div class="fairplay-home-section__wrap fairplay-home-testimonials__wrap">
+    {% if section.settings.title != blank %}
+      <div class="fairplay-home-testimonials__header">
+        <h2 class="fairplay-home-title">{{ section.settings.title }}</h2>
+      </div>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <div class="fairplay-home-testimonials__grid">
+        {% for block in section.blocks %}
+          <article class="fairplay-home-testimonials__card" {{ block.shopify_attributes }}>
+            {% if block.settings.quote != blank %}
+              <div class="fairplay-home-richtext fairplay-home-testimonials__quote">
+                {{ block.settings.quote }}
+              </div>
+            {% endif %}
+
+            {% if block.settings.author != blank or block.settings.meta != blank %}
+              <div class="fairplay-home-testimonials__author">
+                {% if block.settings.author != blank %}
+                  <strong>{{ block.settings.author }}</strong>
+                {% endif %}
+                {% if block.settings.meta != blank %}
+                  <span>{{ block.settings.meta }}</span>
+                {% endif %}
+              </div>
+            {% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Fair Play Testimonials",
+  "tag": "section",
+  "class": "section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "anchor_id",
+      "label": "Anchor ID",
+      "default": "testimonios"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Hombres que ya tomaron el control"
+    },
+    {
+      "type": "range",
+      "id": "section_width",
+      "label": "Section content width",
+      "min": 320,
+      "max": 1280,
+      "step": 20,
+      "unit": "px",
+      "default": 1180
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_block_start",
+      "label": "Top",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_block_end",
+      "label": "Bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Quote",
+          "default": "<p>\"Me siento mucho mas tranquilo y seguro. Ahora mi rutina es mas simple y me preparo con mucha mas confianza.\"</p>"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Andres, 32"
+        },
+        {
+          "type": "text",
+          "id": "meta",
+          "label": "Meta",
+          "default": "Cliente Fair Play"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Fair Play Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>\"Lo que mas valoro es la consistencia. Siento control, comodidad y menos estres antes de cada encuentro.\"</p>",
+            "author": "Juan, 29",
+            "meta": "Cliente Fair Play"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>\"Desde que lo inclui en mi rutina me siento mas preparado y con mejor digestion en el dia a dia.\"</p>",
+            "author": "Mateo, 35",
+            "meta": "Cliente Fair Play"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

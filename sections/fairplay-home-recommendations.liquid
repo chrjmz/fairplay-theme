@@ -1,39 +1,10 @@
 {% liquid
-  assign selected_product = section.settings.product
-  if selected_product == blank and product != blank
-    assign selected_product = product
-  endif
-
-  assign default_buy_link = routes.all_products_collection_url
-  assign selected_product_handle = selected_product.handle | downcase
-  assign selected_product_title = selected_product.title | downcase
-  assign product_is_placeholder = false
-  if selected_product_handle == 'aaaa' or selected_product_title == 'aaaa'
-    assign product_is_placeholder = true
-  endif
-
-  if section.settings.buy_link != blank
-    assign buy_link = section.settings.buy_link
-  elsif selected_product != blank and product_is_placeholder == false
-    assign buy_link = selected_product.url
-  else
-    assign buy_link = default_buy_link
-  endif
-
   assign anchor_id = section.settings.anchor_id | strip
 
   if section.settings.lifestyle_image != blank
     assign lifestyle_image = section.settings.lifestyle_image | image_url: width: 900
   else
     assign lifestyle_image = 'https://fairplay4men.com/wp-content/uploads/2021/04/Recurso-7egoshop-2-1.png'
-  endif
-
-  if section.settings.product_image != blank
-    assign product_image = section.settings.product_image | image_url: width: 900
-  elsif selected_product != blank and selected_product.featured_image != blank
-    assign product_image = selected_product.featured_image | image_url: width: 900
-  else
-    assign product_image = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
   endif
 
   if section.settings.diagram_image != blank
@@ -46,22 +17,6 @@
     assign diagram_image_mobile = section.settings.diagram_image_mobile | image_url: width: 700
   else
     assign diagram_image_mobile = 'https://fairplay4men.com/wp-content/uploads/2021/04/fairPlay_landing_movilno-hacer-caso-a-fotos-04.png'
-  endif
-
-  if section.settings.product_title != blank
-    assign product_title = section.settings.product_title
-  elsif selected_product != blank
-    assign product_title = selected_product.title
-  else
-    assign product_title = blank
-  endif
-
-  if section.settings.product_copy != blank
-    assign product_copy = section.settings.product_copy
-  elsif selected_product != blank and selected_product.description != blank
-    assign product_copy = selected_product.description | strip_html | truncate: 150
-  else
-    assign product_copy = blank
   endif
 
   case section.settings.text_alignment
@@ -120,30 +75,6 @@
     </div>
 
     <div class="fairplay-home-recommendations__detail">
-      <div class="fairplay-home-recommendations__panel">
-        <a
-          class="fairplay-home-recommendations__product-link"
-          href="{{ buy_link }}"
-          aria-label="Comprar {% if product_title != blank %}{{ product_title | escape }}{% else %}Fair Play For Men{% endif %}"
-        >
-          <img
-            src="{{ product_image }}"
-            alt="{% if product_title != blank %}{{ product_title | escape }}{% else %}Presentacion Fair Play For Men{% endif %}"
-            width="{{ section.settings.product_image.width | default: selected_product.featured_image.width | default: 426 }}"
-            height="{{ section.settings.product_image.height | default: selected_product.featured_image.height | default: 641 }}"
-            loading="lazy"
-          >
-        </a>
-        <div>
-          {% if product_title != blank %}
-            <h3>{{ product_title }}</h3>
-          {% endif %}
-          {% if product_copy != blank %}
-            <p>{{ product_copy }}</p>
-          {% endif %}
-        </div>
-      </div>
-
       <div class="fairplay-home-recommendations__panel">
         <picture>
           <source

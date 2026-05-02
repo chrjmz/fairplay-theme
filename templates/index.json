@@ -244,6 +244,47 @@
         "padding_inline_mobile": 0
       }
     },
+    "fairplay_home_testimonials_3Qk9Lm": {
+      "type": "fairplay-home-testimonials",
+      "blocks": {
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>\"Me siento mucho mas tranquilo y seguro. Ahora mi rutina es mas simple y me preparo con mucha mas confianza.\"</p>",
+            "author": "Andres, 32",
+            "meta": "Cliente Fair Play"
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>\"Lo que mas valoro es la consistencia. Siento control, comodidad y menos estres antes de cada encuentro.\"</p>",
+            "author": "Juan, 29",
+            "meta": "Cliente Fair Play"
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "<p>\"Desde que lo inclui en mi rutina me siento mas preparado y con mejor digestion en el dia a dia.\"</p>",
+            "author": "Mateo, 35",
+            "meta": "Cliente Fair Play"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
+      "settings": {
+        "anchor_id": "testimonios",
+        "title": "Hombres que ya tomaron el control",
+        "section_width": 1180,
+        "padding_block_start": 48,
+        "padding_block_end": 48
+      }
+    },
     "fairplay_contact_home_x8R2Qa": {
       "type": "fairplay-contact-cta",
       "custom_css": [
@@ -276,6 +317,7 @@
     "fairplay_home_composition_Xa37Hs",
     "fairplay_home_warning_Hz41Nc",
     "fairplay_home_recommendations_Ym84Qd",
+    "fairplay_home_testimonials_3Qk9Lm",
     "fairplay_home_community_Ur16Mx",
     "fairplay_contact_home_x8R2Qa"
   ]

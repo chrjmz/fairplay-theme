@@ -458,22 +458,15 @@
 
 .fairplay-home-recommendations__detail {
   grid-column: 1 / -1;
-  grid-template-columns: var(--fairplay-recommendations-product-width, 160px) minmax(0, 265px) var(--fairplay-recommendations-diagram-width, 74px) minmax(0, 170px);
+  grid-template-columns: var(--fairplay-recommendations-diagram-width, 74px) minmax(0, 170px);
   gap: clamp(1rem, 2.8vw, 2.1rem);
   align-items: start;
   margin-top: clamp(1.75rem, 4vw, 3rem);
+  justify-content: start;
 }
 
 .fairplay-home-recommendations__panel {
   display: contents;
-}
-
-.fairplay-home-recommendations__product-link {
-  display: inline-flex;
-  justify-content: center;
-  grid-column: 1;
-  align-self: start;
-  padding-top: 0.2rem;
 }
 
 .fairplay-home-recommendations__panel img {
@@ -482,30 +475,21 @@
   object-fit: contain;
 }
 
-.fairplay-home-recommendations__panel:first-child img {
-  width: 100%;
-  margin-inline: auto;
-}
-
-.fairplay-home-recommendations__panel:first-child > div {
-  grid-column: 2;
-}
-
 .fairplay-home-recommendations__panel > div {
   text-align: var(--fairplay-text-align, left);
 }
 
-.fairplay-home-recommendations__panel:last-child picture {
+.fairplay-home-recommendations__panel picture {
   display: block;
-  grid-column: 3;
+  grid-column: 1;
   justify-self: center;
 }
 
-.fairplay-home-recommendations__panel:last-child > div {
-  grid-column: 4;
+.fairplay-home-recommendations__panel > div {
+  grid-column: 2;
 }
 
-.fairplay-home-recommendations__panel:last-child img {
+.fairplay-home-recommendations__panel img {
   width: 100%;
   margin-inline: auto;
 }
@@ -525,6 +509,52 @@
 .fairplay-home-community .fairplay-home-section__wrap {
   width: 100%;
   max-width: none;
+}
+
+.fairplay-home-testimonials__wrap {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.fairplay-home-testimonials__header {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.fairplay-home-testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.fairplay-home-testimonials__card {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border-radius: 24px;
+  background: #f5f1ea;
+  box-shadow: 0 18px 40px rgb(42 31 18 / 10%);
+}
+
+.fairplay-home-testimonials__quote {
+  color: var(--fairplay-dark);
+}
+
+.fairplay-home-testimonials__quote p {
+  margin: 0;
+}
+
+.fairplay-home-testimonials__author {
+  display: grid;
+  gap: 0.2rem;
+  color: rgb(42 31 18 / 0.82);
+  font-size: 0.95rem;
+}
+
+.fairplay-home-testimonials__author strong {
+  color: var(--fairplay-dark);
+  font-size: 1rem;
 }
 
 .fairplay-home-community__card {
@@ -567,7 +597,8 @@
 
 @media screen and (max-width: 989px) {
   .fairplay-home-benefits__grid,
-  .fairplay-home-recommendations__grid {
+  .fairplay-home-recommendations__grid,
+  .fairplay-home-testimonials__grid {
     grid-template-columns: 1fr;
   }
 
@@ -581,7 +612,7 @@
   }
 
   .fairplay-home-recommendations__detail {
-    grid-template-columns: var(--fairplay-recommendations-product-width, 150px) minmax(0, 1fr) var(--fairplay-recommendations-diagram-width, 70px) minmax(0, 0.78fr);
+    grid-template-columns: var(--fairplay-recommendations-diagram-width, 70px) minmax(0, 0.78fr);
   }
 
   .fairplay-home-composition__grid {
@@ -666,6 +697,10 @@
     max-width: min(calc(100% - (var(--fairplay-community-side-padding-mobile, 0px) * 2)), var(--fairplay-section-width, 1280px));
   }
 
+  .fairplay-home-testimonials__card {
+    border-radius: 20px;
+  }
+
   .fairplay-home-title {
     font-size: var(--fairplay-title-size-mobile, clamp(1.7rem, 8vw, 2.25rem));
   }
@@ -689,10 +724,8 @@
     gap: 0.75rem;
   }
 
-  .fairplay-home-recommendations__product-link,
-  .fairplay-home-recommendations__panel:first-child > div,
-  .fairplay-home-recommendations__panel:last-child picture,
-  .fairplay-home-recommendations__panel:last-child > div {
+  .fairplay-home-recommendations__panel picture,
+  .fairplay-home-recommendations__panel > div {
     grid-column: auto;
   }
 
@@ -700,22 +733,12 @@
     width: min(100%, var(--fairplay-recommendations-photo-width-mobile, 260px));
   }
 
-  .fairplay-home-recommendations__product-link {
-    justify-self: center;
-    width: min(100%, var(--fairplay-recommendations-product-width-mobile, 148px));
-  }
-
-  .fairplay-home-recommendations__panel:last-child picture {
+  .fairplay-home-recommendations__panel picture {
     justify-self: center;
     width: min(100%, var(--fairplay-recommendations-diagram-width-mobile, 108px));
   }
 
-  .fairplay-home-recommendations__panel:first-child img {
-    width: 100%;
-    max-width: none;
-  }
-
-  .fairplay-home-recommendations__panel:last-child img {
+  .fairplay-home-recommendations__panel img {
     width: 100%;
     max-width: none;
   }
