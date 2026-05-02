@@ -183,19 +183,6 @@
         "padding_block_end": 24
       }
     },
-    "fairplay_home_warning_Hz41Nc": {
-      "type": "fairplay-home-warning",
-      "settings": {
-        "anchor_id": "warning",
-        "warning_image": "shopify://shop_images/advertencia.svg",
-        "copy": "<p>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></p>",
-        "section_width": 720,
-        "text_alignment": "center",
-        "text_alignment_mobile": "",
-        "padding_block_start": 72,
-        "padding_block_end": 72
-      }
-    },
     "fairplay_home_recommendations_Ym84Qd": {
       "type": "fairplay-home-recommendations",
       "custom_css": [
@@ -212,6 +199,12 @@
         "text_width": 820,
         "lifestyle_image": "shopify://shop_images/Recurso-7egoshop-2-1.png",
         "lifestyle_image_alt": "Fair Play For Men",
+        "product": "",
+        "buy_link": "",
+        "product_image_width": 168,
+        "product_image_width_mobile": 148,
+        "product_title": "Presentacion",
+        "product_copy": "Fair Play For Men viene en polvo porque al mezclarse con agua hidrata mejor la linaza, la chia y las cascaras de psyllium. De esa hidratacion depende la consistencia necesaria para arrastrar los residuos del tracto intestinal.",
         "diagram_image": "shopify://shop_images/Recurso-8egoshop-2.png",
         "diagram_image_mobile": "shopify://shop_images/fairPlay_landing_movilno-hacer-caso-a-fotos-04.png",
         "diagram_image_width": 80,
@@ -220,21 +213,6 @@
         "dose_copy": "Mezcla 6 gramos — 1 porción del dosificador incluido — en mínimo 240 ml de agua. Revuelve bien hasta hidratar completamente el producto y consúmelo según la recomendación de uso.",
         "padding_block_start": 72,
         "padding_block_end": 24
-      }
-    },
-    "fairplay_home_community_Ur16Mx": {
-      "type": "fairplay-home-community",
-      "settings": {
-        "anchor_id": "community",
-        "image": "shopify://shop_images/landing_FairPlay_ajustes-01-1.png",
-        "image_alt": "Comunidad Fair Play",
-        "badge_text": "Play",
-        "image_width_percent": 100,
-        "section_width": 1280,
-        "padding_block_start": 56,
-        "padding_block_end": 0,
-        "padding_inline": 0,
-        "padding_inline_mobile": 0
       }
     },
     "fairplay_home_testimonials_3Qk9Lm": {
@@ -278,6 +256,21 @@
         "padding_block_end": 48
       }
     },
+    "fairplay_home_community_Ur16Mx": {
+      "type": "fairplay-home-community",
+      "settings": {
+        "anchor_id": "community",
+        "image": "shopify://shop_images/landing_FairPlay_ajustes-01-1.png",
+        "image_alt": "Comunidad Fair Play",
+        "badge_text": "Play",
+        "image_width_percent": 100,
+        "section_width": 1280,
+        "padding_block_start": 56,
+        "padding_block_end": 0,
+        "padding_inline": 0,
+        "padding_inline_mobile": 0
+      }
+    },
     "fairplay_contact_home_x8R2Qa": {
       "type": "fairplay-contact-cta",
       "custom_css": [
@@ -299,6 +292,19 @@
         "padding-block-start": 72,
         "padding-block-end": 72
       }
+    },
+    "fairplay_home_warning_Hz41Nc": {
+      "type": "fairplay-home-warning",
+      "settings": {
+        "anchor_id": "warning",
+        "warning_image": "shopify://shop_images/advertencia.svg",
+        "copy": "<p>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></p>",
+        "section_width": 720,
+        "text_alignment": "center",
+        "text_alignment_mobile": "",
+        "padding_block_start": 72,
+        "padding_block_end": 72
+      }
     }
   },
   "order": [
@@ -308,10 +314,10 @@
     "fairplay_home_feature_media_Wq5ePc",
     "fairplay_home_benefits_Ku92Vz",
     "fairplay_home_composition_Xa37Hs",
-    "fairplay_home_warning_Hz41Nc",
     "fairplay_home_recommendations_Ym84Qd",
     "fairplay_home_testimonials_3Qk9Lm",
     "fairplay_home_community_Ur16Mx",
-    "fairplay_contact_home_x8R2Qa"
+    "fairplay_contact_home_x8R2Qa",
+    "fairplay_home_warning_Hz41Nc"
   ]
 }
