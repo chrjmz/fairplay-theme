@@ -299,7 +299,7 @@
         "anchor_id": "warning",
         "warning_image": "shopify://shop_images/advertencia.svg",
         "copy": "<p>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></p>",
-        "section_width": 720,
+        "section_width": 1280,
         "text_alignment": "center",
         "text_alignment_mobile": "",
         "padding_block_start": 72,
