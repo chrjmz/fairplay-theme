@@ -295,15 +295,18 @@
     },
     "fairplay_home_warning_Hz41Nc": {
       "type": "fairplay-home-warning",
+      "custom_css": [
+        ".fairplay-home-warning__copy {max-width: 981px;}"
+      ],
       "settings": {
         "anchor_id": "warning",
         "warning_image": "shopify://shop_images/advertencia.svg",
-        "copy": "<p>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y almacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. <strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></p>",
+        "copy": "<p><em>Mantengase fuera del alcance de los ninos. Bajo condiciones de buen uso y  lmacenamiento, este producto tiene una vida util de 24 meses. Evite consumir el producto si el sello de la tapa esta roto o deteriorado. Verifique su fecha de vencimiento antes de consumir. </em><em><strong>Este producto es un suplemento dietario. No es un medicamento y no suple una alimentacion equilibrada.</strong></em></p>",
         "section_width": 1280,
         "text_alignment": "center",
         "text_alignment_mobile": "",
-        "padding_block_start": 72,
-        "padding_block_end": 72
+        "padding_block_start": 32,
+        "padding_block_end": 32
       }
     }
   },
