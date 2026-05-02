@@ -119,7 +119,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Chia, linaza y psyllium",
             "meta": "Fibra",
-            "copy": "Debidamente hidratados con agua, estos ingredientes facilitan el transito intestinal y aportan proteinas, antioxidantes, acidos grasos y omega-3."
+            "copy": "Fuentes naturales de fibra que ayudan a complementar tu alimentación y apoyar el tránsito intestinal como parte de una rutina equilibrada."
           }
         },
         "ingredient_2": {
@@ -129,7 +129,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Ganoderma Lucidum",
             "meta": "",
-            "copy": "Hongo milenario al que se le reconocen efectos potencialmente terapeuticos como inmunoreguladores, antioxidantes y de bienestar general."
+            "copy": "Ingrediente de origen natural utilizado tradicionalmente en rutinas de bienestar."
           }
         },
         "ingredient_3": {
@@ -139,7 +139,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Colageno Hidrolizado",
             "meta": "",
-            "copy": "Ayuda a estimular la produccion de colageno en el organismo, mejorando la piel y fortaleciendo articulaciones, unas, huesos y cabello."
+            "copy": "Complementa la fórmula con una proteína ampliamente usada en productos de bienestar personal."
           }
         },
         "ingredient_4": {
@@ -149,7 +149,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Vitamina C",
             "meta": "",
-            "copy": "Antioxidante que protege las celulas y participa en la formacion de vasos sanguineos, musculos, cartilagos y colageno."
+            "copy": "Ingrediente antioxidante que acompaña la fórmula nutricional del producto."
           }
         },
         "ingredient_5": {
@@ -159,7 +159,7 @@
             "image_url": "shopify://collections/frontpage",
             "title": "Aloe Vera",
             "meta": "",
-            "copy": "Regula el pH del aparato digestivo y ayuda a evitar afecciones como ulceras, digestiones lentas o pesadez estomacal."
+            "copy": "Ingrediente de origen vegetal que complementa la mezcla de bienestar digestivo."
           }
         }
       },
@@ -173,7 +173,7 @@
       "settings": {
         "anchor_id": "composicion",
         "eyebrow": "Composicion",
-        "title": "Ingredientes que juegan a tu favor",
+        "title": "Una fórmula pensada para tu rutina",
         "section_width": 1100,
         "text_alignment": "center",
         "text_alignment_mobile": "",
