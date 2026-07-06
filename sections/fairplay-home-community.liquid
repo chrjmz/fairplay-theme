@@ -28,10 +28,19 @@
       <picture>
         <source
           media="(max-width: 749px)"
-          srcset="{{ community_image_mobile }}"
+          {% if section.settings.image_mobile != blank %}
+            srcset="{{ section.settings.image_mobile | image_url: width: 375 }} 375w, {{ section.settings.image_mobile | image_url: width: 750 }} 750w, {{ section.settings.image_mobile | image_url: width: 900 }} 900w"
+            sizes="100vw"
+          {% else %}
+            srcset="{{ community_image_mobile }}"
+          {% endif %}
         >
         <img
           src="{{ community_image }}"
+          {% if section.settings.image != blank %}
+            srcset="{{ section.settings.image | image_url: width: 750 }} 750w, {{ section.settings.image | image_url: width: 1100 }} 1100w, {{ section.settings.image | image_url: width: 1500 }} 1500w, {{ section.settings.image | image_url: width: 1800 }} 1800w"
+            sizes="(min-width: {{ section.settings.section_width | default: 1280 }}px) {{ section.settings.section_width | default: 1280 }}px, 100vw"
+          {% endif %}
           alt="{{ section.settings.image_alt | escape | default: 'Comunidad Fair Play' }}"
           width="{{ section.settings.image.width | default: 1920 }}"
           height="{{ section.settings.image.height | default: 889 }}"

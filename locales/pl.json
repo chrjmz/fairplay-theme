@@ -72,7 +72,10 @@
     "active_filters": "Aktywne filtry:",
     "product_details": "Szczegóły produktu",
     "show_product_details": "Pokaż szczegóły produktu dla {{ product_name }}",
-    "featured_product": "Polecany produkt"
+    "featured_product": "Polecany produkt",
+    "search_suggestions_available": "Dostępne sugestie wyszukiwania dla „{{ query }}”",
+    "price_filter_low": "Najniższa cena",
+    "price_filter_high": "Najwyższa cena"
   },
   "actions": {
     "add_to_cart": "Dodaj do koszyka",
@@ -114,7 +117,9 @@
     "sign_up": "Zarejestruj się",
     "sort": "Sortuj",
     "show_all_options": "Pokaż wszystkie opcje",
-    "open": "Otwórz"
+    "open": "Otwórz",
+    "back_to": "Powrót do {{ title }}",
+    "zoom_media": "Powiększ multimedia {{ index }}"
   },
   "content": {
     "reviews": "recenzje",
@@ -278,7 +283,8 @@
       "few": "Dodano {{ count }} pozycje(-i) do koszyka",
       "many": "Dodano {{ count }} pozycje(-i) do koszyka"
     },
-    "item_count_cutoff": "Więcej niż {{ count }} pozycje(-i)"
+    "item_count_cutoff": "Więcej niż {{ count }} pozycje(-i)",
+    "quick_order_list": "Lista szybkiego zamówienia"
   },
   "gift_cards": {
     "issued": {

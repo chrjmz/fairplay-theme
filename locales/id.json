@@ -70,7 +70,10 @@
     "active_filters": "Filter aktif:",
     "featured_product": "Produk unggulan",
     "product_details": "Detail produk",
-    "show_product_details": "Tampilkan detail produk untuk {{ product_name }}"
+    "show_product_details": "Tampilkan detail produk untuk {{ product_name }}",
+    "search_suggestions_available": "Saran pencarian tersedia untuk \"{{ query }}\"",
+    "price_filter_low": "Harga terendah",
+    "price_filter_high": "Harga tertinggi"
   },
   "actions": {
     "add_to_cart": "Tambahkan ke keranjang",
@@ -110,7 +113,9 @@
     "sign_up": "Daftar",
     "sort": "Urutkan",
     "show_all_options": "Tampilkan semua opsi",
-    "open": "Buka"
+    "open": "Buka",
+    "back_to": "Kembali ke {{ title }}",
+    "zoom_media": "Perbesar media {{ index }}"
   },
   "content": {
     "reviews": "ulasan",
@@ -266,7 +271,8 @@
     "items_added_to_cart": {
       "one": "1 item ditambahkan ke keranjang",
       "other": "{{ count }} item ditambahkan ke keranjang"
-    }
+    },
+    "quick_order_list": "Daftar pesanan cepat"
   },
   "gift_cards": {
     "issued": {

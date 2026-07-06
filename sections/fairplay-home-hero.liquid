@@ -34,12 +34,19 @@
   endif
 
   if section.settings.hero_product != blank
-    assign hero_product = section.settings.hero_product | image_url: width: 800
+    assign hero_product_image = section.settings.hero_product
   elsif selected_product != blank and selected_product.featured_image != blank
-    assign hero_product = selected_product.featured_image | image_url: width: 800
+    assign hero_product_image = selected_product.featured_image
+  endif
+
+  if hero_product_image != blank
+    assign hero_product = hero_product_image | image_url: width: 800
   else
     assign hero_product = 'https://fairplay4men.com/wp-content/uploads/2023/08/tarro_fairplay-1.png'
   endif
+
+  assign hero_product_width = section.settings.product_image_width | default: 140
+  assign hero_product_width_mobile = section.settings.product_image_width_mobile | default: 96
 
   case section.settings.text_alignment
     when 'left'
@@ -88,15 +95,25 @@
       <picture>
         <source
           media="(max-width: 749px)"
-          srcset="{{ hero_background_mobile }}"
+          {% if section.settings.hero_background_mobile != blank %}
+            srcset="{{ section.settings.hero_background_mobile | image_url: width: 375 }} 375w, {{ section.settings.hero_background_mobile | image_url: width: 750 }} 750w, {{ section.settings.hero_background_mobile | image_url: width: 900 }} 900w"
+            sizes="100vw"
+          {% else %}
+            srcset="{{ hero_background_mobile }}"
+          {% endif %}
         >
         <img
           class="fairplay-home-hero__image"
           src="{{ hero_background }}"
+          {% if section.settings.hero_background != blank %}
+            srcset="{{ section.settings.hero_background | image_url: width: 750 }} 750w, {{ section.settings.hero_background | image_url: width: 1100 }} 1100w, {{ section.settings.hero_background | image_url: width: 1500 }} 1500w, {{ section.settings.hero_background | image_url: width: 1800 }} 1800w"
+            sizes="(min-width: {{ section.settings.section_width | default: 1280 }}px) {{ section.settings.section_width | default: 1280 }}px, 100vw"
+          {% endif %}
           alt="{{ section.settings.image_alt | escape | default: 'Fair Play For Men' }}"
           width="{{ section.settings.hero_background.width | default: 1500 }}"
           height="{{ section.settings.hero_background.height | default: 1001 }}"
-          loading="lazy"
+          loading="eager"
+          fetchpriority="high"
         >
       </picture>
 
@@ -116,10 +133,14 @@
       >
         <img
           src="{{ hero_product }}"
+          {% if hero_product_image != blank %}
+            srcset="{{ hero_product_image | image_url: width: 200 }} 200w, {{ hero_product_image | image_url: width: 320 }} 320w, {{ hero_product_image | image_url: width: 520 }} 520w, {{ hero_product_image | image_url: width: 800 }} 800w"
+            sizes="(max-width: 749px) {{ hero_product_width_mobile }}px, {{ hero_product_width }}px"
+          {% endif %}
           alt="{% if selected_product != blank %}{{ selected_product.title | escape }}{% else %}Envase Fair Play For Men{% endif %}"
           width="{{ section.settings.hero_product.width | default: selected_product.featured_image.width | default: 426 }}"
           height="{{ section.settings.hero_product.height | default: selected_product.featured_image.height | default: 641 }}"
-          loading="lazy"
+          loading="eager"
         >
       </a>
     </div>

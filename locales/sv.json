@@ -70,7 +70,10 @@
     "active_filters": "Aktiva filter:",
     "product_details": "Produktdetaljer",
     "show_product_details": "Visa produktdetaljer för {{ product_name }}",
-    "featured_product": "Utvald produkt"
+    "featured_product": "Utvald produkt",
+    "search_suggestions_available": "Sökförslag tillgängliga för \"{{ query }}\"",
+    "price_filter_low": "Lägsta pris",
+    "price_filter_high": "Högsta pris"
   },
   "actions": {
     "add_to_cart": "Lägg till i varukorgen",
@@ -110,7 +113,9 @@
     "sign_up": "Registrera dig",
     "sort": "Sortera",
     "show_all_options": "Visa alla alternativ",
-    "open": "Öppna"
+    "open": "Öppna",
+    "back_to": "Tillbaka till {{ title }}",
+    "zoom_media": "Zooma media {{ index }}"
   },
   "content": {
     "reviews": "recensioner",
@@ -266,7 +271,8 @@
       "one": "1 artikel har lagts till i varukorgen",
       "other": "{{ count }} artiklar har lagts till i varukorgen"
     },
-    "item_count_cutoff": "Fler än {{ count }} artiklar"
+    "item_count_cutoff": "Fler än {{ count }} artiklar",
+    "quick_order_list": "Snabbeställningslista"
   },
   "gift_cards": {
     "issued": {

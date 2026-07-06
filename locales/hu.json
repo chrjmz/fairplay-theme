@@ -70,7 +70,10 @@
     "active_filters": "Aktív szűrők:",
     "product_details": "Termékadatok",
     "show_product_details": "A(z) {{ product_name }} termékadatainak megjelenítése",
-    "featured_product": "Kiemelt termék"
+    "featured_product": "Kiemelt termék",
+    "search_suggestions_available": "Keresési javaslatok érhetők el a(z) „{{ query }}” kifejezéshez",
+    "price_filter_low": "Legalacsonyabb ár",
+    "price_filter_high": "Legmagasabb ár"
   },
   "actions": {
     "add_to_cart": "Hozzáadás a kosárhoz",
@@ -110,7 +113,9 @@
     "open_image_in_full_screen": "Kép megnyitása teljes képernyőn",
     "sort": "Rendezés",
     "show_all_options": "Összes lehetőség megjelenítése",
-    "open": "Megnyitás"
+    "open": "Megnyitás",
+    "back_to": "Vissza ide: {{ title }}",
+    "zoom_media": "Média nagyítása: {{ index }}"
   },
   "content": {
     "reviews": "összegzés",
@@ -266,7 +271,8 @@
       "one": "1 tétel hozzáadva a kosárhoz",
       "other": "{{ count }} tétel hozzáadva a kosárhoz"
     },
-    "item_count_cutoff": "Több mint {{ count }} tétel"
+    "item_count_cutoff": "Több mint {{ count }} tétel",
+    "quick_order_list": "Gyorsrendelési lista"
   },
   "gift_cards": {
     "issued": {

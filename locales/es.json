@@ -71,7 +71,10 @@
     "active_filters": "Filtros activos:",
     "product_details": "Detalles del producto",
     "show_product_details": "Mostrar detalles del producto para {{ product_name }}",
-    "featured_product": "Producto destacado"
+    "featured_product": "Producto destacado",
+    "search_suggestions_available": "Sugerencias de búsqueda disponibles para \"{{ query }}\"",
+    "price_filter_low": "Precio mínimo",
+    "price_filter_high": "Precio máximo"
   },
   "actions": {
     "add_to_cart": "Agregar al carrito",
@@ -112,9 +115,12 @@
     "sign_up": "Registrarse",
     "sort": "Ordenar",
     "show_all_options": "Mostrar todas las opciones",
-    "open": "Abrir"
+    "open": "Abrir",
+    "back_to": "Volver a {{ title }}",
+    "zoom_media": "Ampliar contenido multimedia {{ index }}"
   },
   "content": {
+    "quick_order_list": "Lista de pedido rápido",
     "reviews": "reseñas",
     "language": "Idioma",
     "localization_region_and_language": "Región e idioma",

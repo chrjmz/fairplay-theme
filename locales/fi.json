@@ -70,7 +70,10 @@
     "active_filters": "AKtiiviset suodattimet:",
     "product_details": "Tuotetiedot",
     "show_product_details": "Näytä tuotteen {{ product_name }} tuotetiedot",
-    "featured_product": "Esittelyssä oleva tuote"
+    "featured_product": "Esittelyssä oleva tuote",
+    "search_suggestions_available": "Hakuehdotuksia saatavilla haulle \"{{ query }}\"",
+    "price_filter_low": "Alin hinta",
+    "price_filter_high": "Ylin hinta"
   },
   "actions": {
     "add_to_cart": "Lisää ostoskoriin",
@@ -110,7 +113,9 @@
     "open_image_in_full_screen": "Avaa kuva koko näytön tilassa",
     "sort": "Lajittele",
     "show_all_options": "Näytä kaikki vaihtoehdot",
-    "open": "Avaa"
+    "open": "Avaa",
+    "back_to": "Takaisin kohteeseen {{ title }}",
+    "zoom_media": "Suurenna media {{ index }}"
   },
   "content": {
     "reviews": "arvostelua",
@@ -266,7 +271,8 @@
     "items_added_to_cart": {
       "one": "Yksi tuote lisätty ostoskoriin",
       "other": "{{ count }} tuotetta lisätty ostoskoriin"
-    }
+    },
+    "quick_order_list": "Pikatilauslista"
   },
   "gift_cards": {
     "issued": {

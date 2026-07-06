@@ -72,7 +72,10 @@
     "active_filters": "Aktivni filtri:",
     "product_details": "Podrobnosti o izdelku",
     "show_product_details": "Prikaži podrobnosti o izdelku {{ product_name }}",
-    "featured_product": "Izpostavljen izdelek"
+    "featured_product": "Izpostavljen izdelek",
+    "search_suggestions_available": "Na voljo so predlogi iskanja za »{{ query }}«",
+    "price_filter_low": "Najnižja cena",
+    "price_filter_high": "Najvišja cena"
   },
   "actions": {
     "add_to_cart": "Dodaj v košarico",
@@ -114,7 +117,9 @@
     "open_image_in_full_screen": "Odpri sliko v celozaslonskem načinu",
     "sort": "Razvrsti",
     "show_all_options": "Prikaži vse možnosti",
-    "open": "Odpri"
+    "open": "Odpri",
+    "back_to": "Nazaj na {{ title }}",
+    "zoom_media": "Povečaj medij {{ index }}"
   },
   "content": {
     "reviews": "ocen.",
@@ -278,7 +283,8 @@
       "other": "Toliko izdelkov je dodanih v košarico: {{ count }}",
       "few": "Toliko izdelkov je dodanih v košarico: {{ count }}",
       "two": "Toliko izdelkov je dodanih v košarico: {{ count }}"
-    }
+    },
+    "quick_order_list": "Seznam za hitro naročilo"
   },
   "gift_cards": {
     "issued": {
