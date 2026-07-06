@@ -462,20 +462,25 @@
 
 .fairplay-home-recommendations__detail {
   grid-column: 1 / -1;
-  grid-template-columns: var(--fairplay-recommendations-diagram-width, 74px) minmax(0, 170px);
-  gap: clamp(1rem, 2.8vw, 2.1rem);
+  grid-template-columns: 1fr;
+  gap: clamp(1.5rem, 3.5vw, 2.5rem);
   align-items: start;
   margin-top: clamp(1.75rem, 4vw, 3rem);
   justify-content: start;
 }
 
 .fairplay-home-recommendations__panel {
-  display: contents;
+  display: grid;
+  grid-template-columns: max(var(--fairplay-recommendations-diagram-width, 74px), var(--fairplay-recommendations-product-width, 74px)) minmax(0, 420px);
+  gap: clamp(1rem, 2.8vw, 2.1rem);
+  align-items: start;
+  justify-content: start;
 }
 
 .fairplay-home-recommendations__panel img {
   display: block;
   width: 100%;
+  height: auto;
   object-fit: contain;
 }
 
@@ -483,10 +488,16 @@
   text-align: var(--fairplay-text-align, left);
 }
 
-.fairplay-home-recommendations__panel picture {
+.fairplay-home-recommendations__panel picture,
+.fairplay-home-recommendations__product-link {
   display: block;
   grid-column: 1;
   justify-self: center;
+  width: min(100%, var(--fairplay-recommendations-diagram-width, 74px));
+}
+
+.fairplay-home-recommendations__product-link {
+  width: min(100%, var(--fairplay-recommendations-product-width, 168px));
 }
 
 .fairplay-home-recommendations__panel > div {
@@ -668,8 +679,8 @@
     padding-bottom: 8rem;
   }
 
-  .fairplay-home-recommendations__detail {
-    grid-template-columns: var(--fairplay-recommendations-diagram-width, 70px) minmax(0, 0.78fr);
+  .fairplay-home-recommendations__panel {
+    grid-template-columns: max(var(--fairplay-recommendations-diagram-width, 70px), var(--fairplay-recommendations-product-width, 70px)) minmax(0, 0.78fr);
   }
 
   .fairplay-home-composition__grid {
@@ -808,10 +819,12 @@
 
   .fairplay-home-recommendations__panel {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 0.75rem;
   }
 
   .fairplay-home-recommendations__panel picture,
+  .fairplay-home-recommendations__product-link,
   .fairplay-home-recommendations__panel > div {
     grid-column: auto;
   }
@@ -823,6 +836,11 @@
   .fairplay-home-recommendations__panel picture {
     justify-self: center;
     width: min(100%, var(--fairplay-recommendations-diagram-width-mobile, 108px));
+  }
+
+  .fairplay-home-recommendations__product-link {
+    justify-self: center;
+    width: min(100%, var(--fairplay-recommendations-product-width-mobile, 148px));
   }
 
   .fairplay-home-recommendations__panel img {
