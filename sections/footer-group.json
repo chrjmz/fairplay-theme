@@ -184,9 +184,24 @@
         "padding-block-start": 56,
         "padding-block-end": 56
       }
+    },
+    "fairplay_whatsapp_button": {
+      "type": "fairplay-whatsapp-button",
+      "settings": {
+        "link": "https://wa.me/message/2P5FYIHFQLQML1",
+        "button_label": "Escríbenos por WhatsApp",
+        "show_on_mobile": true,
+        "size": 56,
+        "size_mobile": 52,
+        "offset_side": 20,
+        "offset_bottom": 20,
+        "background_color": "#25d366",
+        "icon_color": "#ffffff"
+      }
     }
   },
   "order": [
-    "footer_main_fairplay"
+    "footer_main_fairplay",
+    "fairplay_whatsapp_button"
   ]
 }
