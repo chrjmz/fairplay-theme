@@ -98,6 +98,8 @@
           {% if section.settings.hero_background_mobile != blank %}
             srcset="{{ section.settings.hero_background_mobile | image_url: width: 375 }} 375w, {{ section.settings.hero_background_mobile | image_url: width: 750 }} 750w, {{ section.settings.hero_background_mobile | image_url: width: 900 }} 900w"
             sizes="100vw"
+            width="{{ section.settings.hero_background_mobile.width }}"
+            height="{{ section.settings.hero_background_mobile.height }}"
           {% else %}
             srcset="{{ hero_background_mobile }}"
           {% endif %}
