@@ -99,6 +99,9 @@
         <textarea
           class="fairplay-contact__hidden"
           name="contact[body]"
+          aria-label="Mensaje"
+          aria-hidden="true"
+          tabindex="-1"
         >Quiero recibir más información sobre Fair Play For Men.</textarea>
 
         <div class="fairplay-contact__fields">
@@ -125,7 +128,7 @@
             value="{% if form['Telefono'] %}{{ form['Telefono'] }}{% endif %}"
           >
 
-          <select name="contact[Pais]">
+          <select name="contact[Pais]" aria-label="País">
             <option value="">- Elige el país -</option>
             <option value="Colombia">Colombia</option>
             <option value="Mexico">Mexico</option>
