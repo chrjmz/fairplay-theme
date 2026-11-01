@@ -267,6 +267,9 @@
     },
     "section_Xrt8rk": {
       "type": "section",
+      "custom_css": [
+        ".custom-section-content {width: 100%; max-width: 800px; margin-inline: auto;}"
+      ],
       "blocks": {
         "text_paxMAX": {
           "type": "text",
