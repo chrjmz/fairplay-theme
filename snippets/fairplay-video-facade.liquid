@@ -1,0 +1,122 @@
+{% doc %}
+  Renders a lightweight YouTube placeholder (thumbnail + play button).
+  The real iframe is only injected when the user clicks, so YouTube's
+  player scripts don't compete with the initial page load.
+
+  @param {string} url - YouTube embed or watch URL
+  @param {string} [title] - Accessible title for the video
+{% enddoc %}
+
+{% liquid
+  assign video_title = title | default: 'Video Fair Play For Men'
+
+  if url contains 'youtu.be/'
+    assign video_id = url | split: 'youtu.be/' | last
+  elsif url contains 'watch?v='
+    assign video_id = url | split: 'watch?v=' | last
+  else
+    assign video_id = url | split: '/embed/' | last
+  endif
+  assign video_id = video_id | split: '?' | first | split: '&' | first | split: '/' | first | strip
+%}
+
+<fairplay-video-facade
+  class="fairplay-video-facade"
+  data-video-id="{{ video_id | escape }}"
+  data-video-title="{{ video_title | escape }}"
+>
+  <button
+    type="button"
+    class="fairplay-video-facade__button"
+    aria-label="Reproducir: {{ video_title | escape }}"
+  >
+    <img
+      class="fairplay-video-facade__thumb"
+      src="https://i.ytimg.com/vi/{{ video_id | escape }}/hqdefault.jpg"
+      srcset="https://i.ytimg.com/vi/{{ video_id | escape }}/mqdefault.jpg 320w, https://i.ytimg.com/vi/{{ video_id | escape }}/hqdefault.jpg 480w, https://i.ytimg.com/vi/{{ video_id | escape }}/sddefault.jpg 640w"
+      sizes="(max-width: 749px) 100vw, 800px"
+      alt=""
+      width="480"
+      height="360"
+      loading="lazy"
+      decoding="async"
+    >
+    <span class="fairplay-video-facade__play" aria-hidden="true">
+      <svg viewBox="0 0 68 48" width="68" height="48" focusable="false">
+        <path d="M66.5 7.7a8.6 8.6 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.6 8.6 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.6 8.6 0 0 0 6 6c5.3 1.4 26.5 1.4 26.5 1.4s21.2 0 26.5-1.4a8.6 8.6 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3Z" fill="#212121" fill-opacity=".85"/>
+        <path d="M45 24 27 14v20z" fill="#fff"/>
+      </svg>
+    </span>
+  </button>
+</fairplay-video-facade>
+
+{% stylesheet %}
+  .fairplay-video-facade {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+  }
+
+  .fairplay-video-facade__button {
+    all: unset;
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+  }
+
+  .fairplay-video-facade__button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: -6px;
+  }
+
+  .fairplay-video-facade__thumb {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .fairplay-video-facade__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+  }
+
+  .fairplay-video-facade__button:hover .fairplay-video-facade__play {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  .fairplay-video-facade iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  if (!customElements.get('fairplay-video-facade')) {
+    customElements.define(
+      'fairplay-video-facade',
+      class extends HTMLElement {
+        connectedCallback() {
+          this.querySelector('button')?.addEventListener('click', () => this.play(), { once: true });
+        }
+
+        play() {
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://www.youtube-nocookie.com/embed/${this.dataset.videoId}?autoplay=1&rel=0`;
+          iframe.title = this.dataset.videoTitle || '';
+          iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          iframe.allowFullscreen = true;
+          this.replaceChildren(iframe);
+        }
+      }
+    );
+  }
+{% endjavascript %}

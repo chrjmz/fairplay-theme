@@ -67,13 +67,7 @@
     {% if video_embed_url != blank %}
       <div class="fairplay-home-band__video">
         <div class="fairplay-home-band__video-card">
-          <iframe
-            src="{{ video_embed_url }}"
-            title="Video Fair Play For Men"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          {% render 'fairplay-video-facade', url: video_embed_url, title: 'Video Fair Play For Men' %}
         </div>
       </div>
     {% endif %}
